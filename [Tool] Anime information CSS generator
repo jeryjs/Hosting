@@ -1313,7 +1313,7 @@ function ProcessNext()
 			}
 			
 			/* rank */
-			rank = "?";
+			rank = "N/A";
 			rankStartTxt = "Ranked:</span>";
 			rankStartIndex = str.indexOf(rankStartTxt);
 			if(rankStartIndex != -1)
@@ -1327,7 +1327,7 @@ function ProcessNext()
 			removeTagIfExist('Ranked: ', mode = 2);
 			
 			/* score */
-			score = "?";
+			score = "N/A";
 			scoreEle = $(doc).find("[itemprop=\"ratingValue\"]");
 			if(scoreEle.length > 0)
 			{

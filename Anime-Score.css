@@ -6,27 +6,27 @@ Template=/* [TITLE] *[DEL]/ .list-table td.data.image > a[href^="/[TYPE]/[ID]/"]
 MatchTemplate=/[TYPE]/[ID]/
 */
 
-/* 86 Part 2 */ .list-table td.data.image > a[href^="/anime/48569/"]::after { content: "8.62"; }
-/* Blue Period */ .list-table td.data.image > a[href^="/anime/46352/"]::after { content: "7.82"; }
-/* Boruto: Naruto Next Generations */ .list-table td.data.image > a[href^="/anime/34566/"]::after { content: "5.89"; }
-/* Isekai Shokudou 2 */ .list-table td.data.image > a[href^="/anime/48804/"]::after { content: "7.66"; }
-/* Jahy-sama wa Kujikenai! */ .list-table td.data.image > a[href^="/anime/48753/"]::after { content: "7.05"; }
-/* Kimetsu no Yaiba: Mugen Ressha-hen */ .list-table td.data.image > a[href^="/anime/49926/"]::after { content: "8.58"; }
-/* Komi-san wa, Comyushou desu. */ .list-table td.data.image > a[href^="/anime/48926/"]::after { content: "8.54"; }
-/* Mieruko-chan */ .list-table td.data.image > a[href^="/anime/48483/"]::after { content: "7.47"; }
-/* Mushoku Tensei: Isekai Ittara Honki Dasu Part 2 */ .list-table td.data.image > a[href^="/anime/45576/"]::after { content: "8.62"; }
-/* One Piece */ .list-table td.data.image > a[href^="/anime/21/"]::after { content: "8.60"; }
-/* Platinum End */ .list-table td.data.image > a[href^="/anime/44961/"]::after { content: "7.61"; }
-/* Saihate no Paladin */ .list-table td.data.image > a[href^="/anime/48761/"]::after { content: "7.56"; }
-/* Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru */ .list-table td.data.image > a[href^="/anime/47790/"]::after { content: "7.60"; }
-/* Shaman King (2021) */ .list-table td.data.image > a[href^="/anime/42205/"]::after { content: "6.67"; }
-/* Shin no Nakama ja Nai to Yuusha no Party wo Oidasareta node, Henkyou de Slow Life suru Koto ni Shimashita */ .list-table td.data.image > a[href^="/anime/44037/"]::after { content: "7.14"; }
-/* Shinka no Mi: Shiranai Uchi ni Kachigumi Jinsei */ .list-table td.data.image > a[href^="/anime/46985/"]::after { content: "6.63"; }
-/* Shuumatsu no Harem */ .list-table td.data.image > a[href^="/anime/41946/"]::after { content: "6.61"; }
-/* Takt Op. Destiny */ .list-table td.data.image > a[href^="/anime/48556/"]::after { content: "8.15"; }
-/* Tennis no Ouji-sama */ .list-table td.data.image > a[href^="/anime/22/"]::after { content: "7.88"; }
-/* Tsuki to Laika to Nosferatu */ .list-table td.data.image > a[href^="/anime/48471/"]::after { content: "7.35"; }
-/* World Trigger 3rd Season */ .list-table td.data.image > a[href^="/anime/44940/"]::after { content: "8.07"; }
+/* 86 Part 2 */ .list-table td.data.image > a[href^="/anime/48569/"]::after { content: "8.60"; } MatchTemplate=/anime/48569/
+/* Blue Period */ .list-table td.data.image > a[href^="/anime/46352/"]::after { content: "7.78"; } MatchTemplate=/anime/46352/
+/* Boruto: Naruto Next Generations */ .list-table td.data.image > a[href^="/anime/34566/"]::after { content: "5.89"; } MatchTemplate=/anime/34566/
+/* Isekai Shokudou 2 */ .list-table td.data.image > a[href^="/anime/48804/"]::after { content: "7.65"; } MatchTemplate=/anime/48804/
+/* Jahy-sama wa Kujikenai! */ .list-table td.data.image > a[href^="/anime/48753/"]::after { content: "7.04"; } MatchTemplate=/anime/48753/
+/* Kimetsu no Yaiba: Mugen Ressha-hen */ .list-table td.data.image > a[href^="/anime/49926/"]::after { content: "8.52"; } MatchTemplate=/anime/49926/
+/* Komi-san wa, Comyushou desu. */ .list-table td.data.image > a[href^="/anime/48926/"]::after { content: "8.49"; } MatchTemplate=/anime/48926/
+/* Mieruko-chan */ .list-table td.data.image > a[href^="/anime/48483/"]::after { content: "7.47"; } MatchTemplate=/anime/48483/
+/* Mushoku Tensei: Isekai Ittara Honki Dasu Part 2 */ .list-table td.data.image > a[href^="/anime/45576/"]::after { content: "8.61"; } MatchTemplate=/anime/45576/
+/* One Piece */ .list-table td.data.image > a[href^="/anime/21/"]::after { content: "8.60"; } MatchTemplate=/anime/21/
+/* Platinum End */ .list-table td.data.image > a[href^="/anime/44961/"]::after { content: "7.52"; } MatchTemplate=/anime/44961/
+/* Saihate no Paladin */ .list-table td.data.image > a[href^="/anime/48761/"]::after { content: "7.51"; } MatchTemplate=/anime/48761/
+/* Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru */ .list-table td.data.image > a[href^="/anime/47790/"]::after { content: "7.68"; } MatchTemplate=/anime/47790/
+/* Shaman King (2021) */ .list-table td.data.image > a[href^="/anime/42205/"]::after { content: "6.67"; } MatchTemplate=/anime/42205/
+/* Shin no Nakama ja Nai to Yuusha no Party wo Oidasareta node, Henkyou de Slow Life suru Koto ni Shimashita */ .list-table td.data.image > a[href^="/anime/44037/"]::after { content: "7.13"; } MatchTemplate=/anime/44037/
+/* Shinka no Mi: Shiranai Uchi ni Kachigumi Jinsei */ .list-table td.data.image > a[href^="/anime/46985/"]::after { content: "6.55"; } MatchTemplate=/anime/46985/
+/* Shuumatsu no Harem */ .list-table td.data.image > a[href^="/anime/41946/"]::after { content: "6.63"; } MatchTemplate=/anime/41946/
+/* Takt Op. Destiny */ .list-table td.data.image > a[href^="/anime/48556/"]::after { content: "8.09"; } MatchTemplate=/anime/48556/
+/* Tennis no Ouji-sama */ .list-table td.data.image > a[href^="/anime/22/"]::after { content: "7.88"; } MatchTemplate=/anime/22/
+/* Tsuki to Laika to Nosferatu */ .list-table td.data.image > a[href^="/anime/48471/"]::after { content: "7.34"; } MatchTemplate=/anime/48471/
+/* World Trigger 3rd Season */ .list-table td.data.image > a[href^="/anime/44940/"]::after { content: "8.09"; } MatchTemplate=/anime/44940/
 /* 100-man no Inochi no Ue ni Ore wa Tatteiru */ .list-table td.data.image > a[href^="/anime/41380/"]::after { content: "6.48"; }
 /* 100-man no Inochi no Ue ni Ore wa Tatteiru 2nd Season */ .list-table td.data.image > a[href^="/anime/44881/"]::after { content: "6.85"; }
 /* 2.43: Seiin Koukou Danshi Volley-bu */ .list-table td.data.image > a[href^="/anime/40679/"]::after { content: "6.15"; }
@@ -723,6 +723,7 @@ MatchTemplate=/[TYPE]/[ID]/
 /* Hataraku Maou-sama! 2nd Season */ .list-table td.data.image > a[href^="/anime/48413/"]::after { content: "N/A"; }
 /* Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen 3rd Season */ .list-table td.data.image > a[href^="/anime/42429/"]::after { content: "N/A"; }
 /* IDOLiSH7 3rd Season Part 2 */ .list-table td.data.image > a[href^="/anime/46654/"]::after { content: "N/A"; }
+/* Ijiranaide, Nagatoro-san 2nd Season */ .list-table td.data.image > a[href^="/anime/50197/"]::after { content: "N/A"; } MatchTemplate=/anime/50197/
 /* Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu. II */ .list-table td.data.image > a[href^="/anime/41514/"]::after { content: "N/A"; }
 /* JoJo no Kimyou na Bouken Part 6: Stone Ocean */ .list-table td.data.image > a[href^="/anime/48661/"]::after { content: "N/A"; }
 /* Jujutsu Kaisen 0 Movie */ .list-table td.data.image > a[href^="/anime/48561/"]::after { content: "N/A"; }
@@ -730,6 +731,7 @@ MatchTemplate=/[TYPE]/[ID]/
 /* Kanojo, Okarishimasu 2nd Season */ .list-table td.data.image > a[href^="/anime/42963/"]::after { content: "N/A"; }
 /* Kimetsu no Yaiba: Yuukaku-hen */ .list-table td.data.image > a[href^="/anime/47778/"]::after { content: "N/A"; }
 /* Kimi to Boku no Saigo no Senjou, Aruiwa Sekai ga Hajimaru Seisen (Zoku-hen) */ .list-table td.data.image > a[href^="/anime/49981/"]::after { content: "N/A"; }
+/* Kimi wa Kanata */ .list-table td.data.image > a[href^="/anime/41379/"]::after { content: "6.55"; } MatchTemplate=/anime/41379/
 /* Kono Subarashii Sekai ni Shukufuku wo! (Shinsaku Anime) */ .list-table td.data.image > a[href^="/anime/49458/"]::after { content: "N/A"; }
 /* Kyouko to Katsuya no Monogatari */ .list-table td.data.image > a[href^="/anime/49310/"]::after { content: "N/A"; }
 /* Made in Abyss: Retsujitsu no Ougonkyou */ .list-table td.data.image > a[href^="/anime/41084/"]::after { content: "N/A"; }
@@ -750,6 +752,6 @@ MatchTemplate=/[TYPE]/[ID]/
 /* Tennis no Ouji-sama: Zenkoku Taikai-hen */ .list-table td.data.image > a[href^="/anime/995/"]::after { content: "7.92"; }
 /* Tensei shitara Slime Datta Ken Movie */ .list-table td.data.image > a[href^="/anime/49877/"]::after { content: "N/A"; }
 /* Tsuki ga Michibiku Isekai Douchuu 2nd Season */ .list-table td.data.image > a[href^="/anime/49889/"]::after { content: "N/A"; }
-/* Uzaki-chan wa Asobitai! 2nd Season */ .list-table td.data.image > a[href^="/anime/42962/"]::after { content: "N/A"; } MatchTemplate=/anime/42962/
+/* Uzaki-chan wa Asobitai! 2nd Season */ .list-table td.data.image > a[href^="/anime/42962/"]::after { content: "N/A"; }
 /* Youjo Senki II */ .list-table td.data.image > a[href^="/anime/49233/"]::after { content: "N/A"; }
 /* Zombieland Saga Movie */ .list-table td.data.image > a[href^="/anime/50159/"]::after { content: "N/A"; }

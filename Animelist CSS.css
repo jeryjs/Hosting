@@ -1,0 +1,1225 @@
+@\import "https://malscraper.azurewebsites.net/covers/anime/jery_js/presets/dataimagelinkbefore";
+ 
+
+@\import "https://valeriolyndon.github.io/MAL-Public-List-Designs/Clarity%20Theme/Theme%20-%20Compressed.css";
+@\import "https://valeriolyndon.github.io/MAL-Public-List-Designs/Clarity%20Theme/Mod%20-%20Hover%20Image%20Compressed.css";
+@\import "https://valeriolyndon.github.io/MAL-Public-List-Designs/Clarity%20Theme/Mod%20-%20Dark%20Mode%20Compressed.css";
+
+@\import "https://jeryjs.github.io/Hosting/Anime-Synopsis.css";
+@\import "https://jeryjs.github.io/Hosting/Anime-Score.css";
+
+
+
+/*-T-I-N-Y--T-W-E-A-K-S-----------*\
+| _______________________________  |
+\*-------------------------------*/
+
+/*------------------------------*\
+|  Hover Image    |
+\*------------------------------*/
+.data.image a:before{  
+    background: contain !important;
+    height: 270px !important;
+    width: 190px !important;
+    top: -150% !important;
+    left: -207px;
+}
+/*------------------------------*\
+|  Title Length    |
+\*------------------------------*/
+body.ownlist.anime .list-table .list-table-data .data.title {
+    position: relative;
+    width: 180px;
+    height: 25px;
+    order: 12;
+    line-height: 16px;
+    flex: 1 0 auto;
+    padding: 32px 0px 0px 8px !important;
+}
+/*------------------------------*\
+|   Progress    |
+\*------------------------------*/
+body.ownlist.anime .data.progress {
+    width: 120px;
+}
+/*------------------------------*\
+|   Chapter & Volume    |
+\*------------------------------*/
+td.data.chapter {
+    margin-top: -23px; 
+    white-space: nowrap;
+    overflow-x: visible;
+}
+td.data.volume {
+    margin-top: 40px;
+}
+/*------------------------------*\
+|   Score    |
+\*------------------------------*/
+body.ownlist.manga .data.score {
+    margin-right: 20px;
+}
+/*------------------------------*\
+|   Tags    |
+\*------------------------------*/
+body.ownlist.manga .list-table .list-table-data .data.tags {
+    margin-left: 5px;
+}
+/*------------------------------*\
+|   Edit/More Buttons    |
+\*------------------------------*/
+.list-table .list-table-data .data.title a {
+ color:  !important;
+ font-size: 11px;
+}
+/*------------------------------*\
+|   Switch List Btn    |
+\*------------------------------*/
+#header-menu-dropdown a.icon-menu.anime-list:hover {
+    min-width: 180px;
+}
+#header-menu-dropdown a.icon-menu.animev span:before {
+    content: "View Jery's ";
+}
+.list-menu-float a.icon-menu.anime-list:hover {
+  min-width: 140px;
+}
+.list-menu-float a.icon-menu.anime-list span.text:before {
+    content: "Your ";
+}
+/*------------------------------*\
+|   Background Color    |
+\*------------------------------*/
+.ownlist {
+    background: #161616 !important
+}
+/*------------------------------*\
+|   Global Scores {UserScript}    |
+\*------------------------------*/
+td.data.public-score a {
+position: absolute;
+padding: 4px 4px 4px 4px !important;
+background: black;
+margin: 14px 0 0 23px;
+border-radius: 40px 40px 100px 100px;
+z-index: 10;
+}
+
+/*------------------------------*\
+|   Quick Sort Button   |
+\*------------------------------*/
+.list-table>tbody:first-of-type {
+    position: relative;
+    top: 10px;
+    margin-top: -38px;
+    left: 48%;
+    display: inline-block;
+    width: 35px;
+    height: 25px;
+    background: 0 0!important;
+    z-index: 39;
+}
+.list-table>tbody:first-of-type:after {
+  content: "\f0dc  Sort" !important;
+  width: 50px !important;
+}
+.list-table-header { 
+  right: 35px !important; 
+}
+
+/*------------------------------*\
+|   Colored Tags  |
+\*------------------------------*/
+.data.tags span a[href*="=Rewatched"], .data.tags span a[href*="=Reread"] { background: #0f1c5f; 
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+}
+.data.tags span a[href*="=x"] { background: #0f1c5f;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+margin-top: -4px;
+}
+
+.data.tags span a[href*="=Winter"] { background: #00172b;}
+.data.tags span a[href*="=Spring"] { background: #310029;}
+.data.tags span a[href*="=Summer"] { background: #310000;}
+.data.tags span a[href*="=Fall"] { background: #273100;}
+
+/*------------------------------*\
+|   Copyright  |
+\*------------------------------*/
+div#footer-block {
+    margin-top: 0 !important; 
+}
+#copyright:after {
+    content: "\a Be Sure To Recommend Me an Anime Once u Finish Checking Out My List 😁";
+    white-space: pre;
+}
+
+/*------------------------------*\
+| MAL-Sync - Next Ep {UserScript} |
+\*------------------------------*/
+a.nextStream, 
+a.resumeStream {
+    margin: 0 -5px 0 0 !important;
+}
+
+/*-------------------------------*\
+| Rewatched List Btn {UserScript} |
+\*------------------------------*/
+span.stats a#rewatchedlistbtn {
+    width: 60px !important;
+}
+body.ownlist.anime span.stats a#rewatchedlistbtn:hover {
+    width: 163px !important;
+}
+
+/*------------------------------*\
+|   List Category Lines    |
+\*------------------------------*/
+.list-table .list-table-data .data.status {
+    padding: 0px 0.5px !important;
+    margin-left: -2.5px;
+}
+/*--Watching--*/
+div.list-unit.all_anime td.data.status.watching:before {
+    position: relative;
+    content: "Watching";
+    display: inline-block;
+    transform: rotate(-90deg);
+    margin-left: -30px;
+    margin-top: 31px;
+    color: var(--watching);
+}
+/*--Reading--*/
+div.list-unit.all_anime td.data.status.reading:before {
+    position: relative;
+    content: "Reading";
+    display: inline-block;
+    transform: rotate(-90deg);
+    margin-left: -28px;
+    margin-top: 31px;
+    color: var(--watching);
+}
+/*--Completed--*/ /*
+div.list-unit.all_anime td.data.status.completed:before {
+    position: relative;
+    content: "Completed";
+    display: inline-block;
+    transform: rotate(-90deg);
+    margin-left: -36px;
+    margin-top: 32px;
+    color: var(--completed);
+}
+/*--OnHold--*/
+div.list-unit.all_anime td.data.status.onhold:before {
+    position: relative;
+    content: "OnHold";
+    display: inline-block;
+    transform: rotate(-90deg);
+    margin-left: -26px;
+    margin-top: 32px;
+    color: var(--onhold);
+}
+/*--Dropped--*/
+div.list-unit.all_anime td.data.status.dropped:before {
+    position: relative;
+    content: "Dropped";
+    display: inline-block;
+    transform: rotate(-90deg);
+    margin-left: -29px;
+    margin-top: 31px;
+    color: var(--dropped);
+}
+/*--Plan-To-Watch--*/
+div.list-unit.all_anime td.data.status.plantowatch:before {
+    position: relative;
+    content: "Plan To Watch";
+    display: inline-block;
+    transform: rotate(-90deg);
+    margin-left: -44px;
+    margin-top: 31px;
+    white-space: pre;
+    color: var(--plantowatch);
+}
+/*--Plan-To-Read--*/
+div.list-unit.all_anime td.data.status.plantoread:before {
+    position: relative;
+    content: "Plan To Read";
+    display: inline-block;
+    transform: rotate(-90deg);
+    margin-left: -40px;
+    margin-top: 31px;
+    white-space: pre;
+    color: var(--plantowatch);
+}
+/*  Data Status Fix  */   /*
+.data.status::before {
+	content: none !important;
+}
+
+/***********************************/
+/*-L-I-N-K-S--------------------*\
+
+https://myanimelist.net/forum/?topicid=1723114&show=50#msg56670007    
+//V_l's Tweaks
+
+https://myanimelist.net/forum/?topicid=1807962  //Necessary Tweaks
+
+https://myanimelist.net/forum/?topicid=1640096  //Clarity Theme + Extensions
+
+https://myanimelist.net/forum/?topicid=1499059  //All List Extensions
+
+https://myanimelist.net/forum/?topicid=1924490  //Has The Split Header
+
+https://myanimelist.net/forum/?topicid=1905478  //Anime Synopsis
+
+https://pastebin.com/raw/bdPbPrdp
+
+\*------------------------------*/
+/*************************************/
+
+
+/*-S-T-A-R-T--------------------*\
+| Custom Cursor         |
+\*------------------------------*/
+
+/*Lower the size under 32px wide and high if its too large.
+https://myanimelist.net/forum/?topicid=1903808
+*/
+
+body *, :not(*) {
+cursor: url(https://i.ibb.co/0sZVdWB/ezgif-4-5b45f690d776.png), auto !important;
+}
+
+a:hover,
+.data.tags span a,
+.data.tags span a:hover,
+.fa:hover,.data.progress span:hover,.list-table .list-table-data .data.score:hover,
+.list-table .list-table-data .data.licensor a:hover,.list-table .list-table-data .data.score .link:before,
+.data.progress span a:before,.list-table .list-table-data .data.season a:hover,.list-item .data.studio:hover *,
+.list-table .list-table-data .data.title .link:hover,.list-table-data .data.tags:hover,.list-table .list-table-data .tags .edit:hover,
+.list-table .list-table-data .data.title .edit:hover a,.list-table .list-table-data .data.title .add:hover a{
+
+cursor: url(https://i.ibb.co/bWpV7x6/cursor.png), auto !important;
+}
+
+
+/*-S-T-A-R-T--------------------*\
+| Header Outline R0.0            |
+\*------------------------------*/
+
+/* Change colour of border here. */
+:root { --header-border: #444; } /* #444 - Default Color */
+
+.status-menu-container:before{height:56px;border-width:4px 0;border-style:solid;border-color:var(--header-border)}.status-menu:after{left:-4px;top:-47px;border-width:4px;box-shadow:0 0 0 4px var(--header-border)}.fixed .status-menu:after{top:4px}
+/*------------------------E-N-D-*/
+
+
+/*-S-T-A-R-T--------------------*\
+| Banner Quotes   |
+\*------------------------------*/
+
+body[data-query*='status":7'] { --name: " \"Who cares if we don't see the sun shine ever again?\a I want you more than any blue sky.\a  The weather can go CRAZY!\"\a\a       ~Hodaka"; 
+}
+body[data-query*='status":1'] { --name: "\"I spared your life on a whim, nothing more.\a But this time, my whim is telling me,\a to finish what I started...\"\a\a      ~Uchiha Sasuke"; 
+}
+body[data-query*='status":2'] { --name: ""; 
+}
+body[data-query*='status":3'] { --name: "\"Don’t Ever Give Up.\a Even If It’s Painful, Even If It’s Agonizing,\a Don’t Try To Take The Easy Way Out.\" \a\a      ~Zenitsu";
+}
+body[data-query*='status":4'] { --name: "\"If you win, you live. If you lose, you die.\a If you don't fight, you can't win!\" \a\a       ~Eren Yeager";
+}
+body[data-query*='status":6'] { --name: "\"Never trust anyone too much\a Remember, the devil was once an angel.\"\a\a       ~Ken Kaneki";
+}
+
+/*********************************\
+\*----Configure-Banner-Quotes----*/
+#cover-image-container:after {
+    content: var(--name);
+    position: absolute;
+    top: 30px;
+    left: 0%;
+    margin-left: 85px;
+    color: var(--text);
+  /*  color: var(--banner-text); */
+    overflow: visible;
+    font: bold 25px/35px Lucida Handwriting !important;
+    text-align: left;
+    letter-spacing: 5px;
+    text-shadow: 1px 4px 7px var(--banner-text-shadow);
+    /*text-transform: uppercase;
+    white-space: pre;*/
+    transform: scale(.9) perspective(350px) rotateY(8deg) rotateZ(-3deg) !important;
+    animation: name-slide 2s 1 .5s backwards !important;
+}
+/*********************************/
+
+
+/*-S-T-A-R-T--------------------*\
+| Per-Category Banner Background Image
+To change background images: delete what's in the parenthesis. Upload 
+the new background to Imgur or a similar site, then copy the direct link (or Original GIF link if it's animated) and paste it into the parenthesis. Save.
+|
+\*------------------------------*/
+
+/* All Anime */
+[data-query*='status":7'] { --banner: url(https://i.ibb.co/KG3GPpP/ezgif-2-ee4e0efda764.jpg); }
+/* Watching/Reading */
+[data-query*='status":1'] { --banner: url(https://i.imgur.com/CSSMbjX.jpg);}
+/* Completed */
+[data-query*='status":2'] { --banner: url(https://i.ibb.co/LQQ3CBT/ezgif-2-911b541aff34.webp); }
+/* Onhold */
+[data-query*='status":3'] { --banner: url(https://i.imgur.com/N2fyiOE.jpg); }
+/* Dropped */
+[data-query*='status":4'] { --banner: url(https://i.imgur.com/3Pv1ODP.jpg); }
+/* Planned */
+[data-query*='status":6'] { --banner: url(https://i.ibb.co/jfL3XB6/ezgif-2-2129b766ad31.jpg); }
+
+
+
+/*-S-T-A-R-T--------------------*\
+| Per-Category Banner Character (Render)
+Background size is the size of the image. 100% is full size. 
+
+The first percentage after background position is the position from the left. Lower percentages move it left and you can go negative. The second percentage is position from the top. Lower percentages move it down. 
+|
+\*------------------------------*/
+
+/*_____________BACKUPS__________*\
+
+/* Onhold */  /*
+
+[data-query*='status":3'] { --character: url(https://i.ibb.co/rZYtrSY/ezgif-6-5c96d193c544.webp);
+}
+    [data-query*='status":3'] #list-container #cover-image-container {
+    background-size: 40%;
+    background-position: 50% 10%;
+}
+
+/*-----------------------------*/
+
+/*ALL Animes*/  /*
+[data-query*='status":7'] { --character: url(https://i.ibb.co/Vv8VXPx/ezgif-6-f359b67f5162.webp);
+}
+[data-query*='status":7'] #list-container #cover-image-container {
+    background-size: 60%;
+    background-position: 80% 25%;
+}
+
+\*______________________________*/
+
+
+
+/* All Anime */
+[data-query*='status":7'] { --character: url();
+}
+[data-query*='status":7'] #list-container #cover-image-container {
+    background-size: 50%;
+    background-position: 85% 5%;
+}
+
+/* Watching/Reading */
+[data-query*='status":1'] { --character: url(https://i.ibb.co/CQX9bQJ/ezgif-6-59994a0c8c5c.webp);
+}
+[data-query*='status":1'] #list-container #cover-image-container {
+    background-size: 50%;
+    background-position: 85% 10%;
+}
+/* Completed */
+[data-query*='status":2'] { --character: url();
+}    
+[data-query*='status":2'] #list-container #cover-image-container {
+    background-size: 50%;
+    background-position: 0% 10%;
+}
+/* Onhold */  
+[data-query*='status":3'] { --character: url(https://i.ibb.co/Vv8VXPx/ezgif-6-f359b67f5162.webp);
+}
+[data-query*='status":3'] #list-container #cover-image-container {
+    background-size: 60%;
+    background-position: 80% 25%;
+}
+/* Dropped */
+[data-query*='status":4'] { --character: url(https://i.ibb.co/RQtCfTJ/ezgif-6-dc6b259bd05f.webp);
+}
+    [data-query*='status":4'] #list-container #cover-image-container {
+    background-size: 34%;
+    background-position: 100% 10%;
+}
+/* Planned */   
+[data-query*='status":6'] { --character:/* url(https://i.ibb.co/260pyK5/ezgif-6-1eaab718e2cd.webp); */     
+}
+ [data-query*='status":6'] #list-container #cover-image-container {
+    background-size: 45%;
+    background-position: -10% 10%;
+}
+
+
+/*-S-T-A-R-T--------------------*\
+| Banner Avatar    |
+\*------------------------------*/
+
+/*___________BACKUPS____________*\
+
+\*______________________________*/
+
+body[data-query*='status":7']  { --avatar: url(https://i.imgur.com/EYinKr2.jpg?1); }
+body[data-query*='status":1']  { --avatar: url(https://i.imgur.com/EYinKr2.jpg?1); }
+body[data-query*='status":2']  { --avatar: url(https://i.imgur.com/EYinKr2.jpg?1); }
+body[data-query*='status":3']  { --avatar: url(https://i.imgur.com/EYinKr2.jpg?1); }
+body[data-query*='status":4']  { --avatar: url(https://i.imgur.com/EYinKr2.jpg?1); }
+body[data-query*='status":6']  { --avatar: url(https://i.imgur.com/EYinKr2.jpg?1); }
+
+
+/*-S-T-A-R-T--------------------*\
+| Per-Category Background Image
+If you want a wallpaper on a category, you can add direct background images links to the parenthesis here for each category! By default, there is no wallpaper.
+
+|
+\*------------------------------*/
+
+/* All Anime */
+body[data-query*='status":7'] {
+    background: url(https://i.ibb.co/ryYsHwf/Falling-Comets-2.webp) fixed no-repeat !important;
+    background-color: #161616 !important;
+    background-size: cover !important;
+    background-position: bottom !important;
+}
+/* Watching/Reading */
+body[data-query*='status":1'] { --background: url(); }
+/* Completed */
+body[data-query*='status":2'] { --background: url(); }
+/* Onhold */
+body[data-query*='status":3'] { --background: url(); }
+/* Dropped */
+body[data-query*='status":4'] { --background: url(); }
+/* Planned */
+body[data-query*='status":6'] { --background: url(); }
+
+
+
+/*SIDE RENDERS (left and right)
+
+To move the renders, adjust the percentage after "left" or "right" and "top". You can use negatives. The percentage is the distance from the left, top, or right. 
+
+To resize the renders, adjust the percentage after "width". 0% will remove the render.*/
+
+
+/*___________BACKUPS____________*\
+
+/*ALL ANIME/MANGA RENDERS*/  /*
+[data-query*='"status":7'] footer:before {
+left: -5%;
+top: 15%;
+width: 35% !important;
+background-size: contain !important;
+background-image: url(https://i.ibb.co/60fCZ5F/ezgif-6-7d869f57d24d.webp);
+background-position: left bottom !important;
+} 
+[data-query*='"status":7'] footer:after {
+right: -10%;
+top: 0%;
+width: 40% !important;
+background-size: contain !important;;
+background-image: url(https://i.ibb.co/nLXzvc1/ezgif-6-0cdc02508b5b.webp);
+background-position: right bottom !important;
+}
+
+/*------------------------------*/
+
+/*ON HOLD RENDERS*/  /*
+[data-query*='"status":3'] footer:before {
+left: -4%;
+top: 0%;
+width: 25% !important;
+background-size: contain !important;
+background-image: url(https://i.ibb.co/GPNW0RL/ezgif-3-61c8cbf65118.webp);
+background-position: left bottom !important;
+}
+[data-query*='"status":3'] footer:after {
+right: -4%;
+top: 0%;
+width: 25% !important;
+background-size: contain !important;;
+background-image: url(https://i.ibb.co/8gZNnMQ/ezgif-3-74256944c551.webp);
+background-position: right bottom !important;
+}
+
+\*______________________________*/
+
+
+/*ALL ANIME/MANGA RENDERS*/
+[data-query*='"status":7'] footer:before {
+left: -0%;
+top: 0%;
+width: 26% !important;
+background-size: contain !important;
+background-image: url(https://i.ibb.co/XzvDYL7/taki.webp);
+background-position: left bottom !important;
+} 
+[data-query*='"status":7'] footer:after {
+right: -2%;
+top: 2%;
+width: 29% !important;
+background-size: contain !important;;
+background-image: url(https://i.ibb.co/GRdnnWz/ezgif-2-63dc458730e7.webp);
+background-position: right bottom !important;
+}
+/*CURRENT RENDERS*/
+[data-query*='"status":1'] footer:before {
+left: -3%;
+top: 0%;
+width: 25% !important;
+background-size: contain !important;
+background-image: url(https://i.ibb.co/tJ8rv85/ezgif-3-a51c8923b50b.webp);
+background-position: left bottom !important;
+}
+[data-query*='"status":1'] footer:after {
+right: -5%;
+top: 60px;
+width: 28% !important;
+background-size: contain !important;;
+background-image: url(https://i.ibb.co/9pfxkbs/ezgif-2-4b7e11e4b1e8.webp);
+background-position: right bottom !important;
+}
+/*COMPLETED RENDERS*/
+[data-query*='"status":2'] footer:before {
+left: -5%;
+top: 0%;
+width: 55% !important;
+background-size: contain !important;
+background-image: url(https://i.ibb.co/T86N7vB/ezgif-3-f397f2be4935.webp);
+background-position: left bottom !important;
+}
+[data-query*='"status":2'] footer:after {
+right: -15%;
+top: 0%;
+width: 52.5% !important;
+background-size: contain !important;;
+background-image: url(https://i.ibb.co/YBhFyWr/ezgif-6-9f7b5ed196ee.webp);
+background-position: right bottom !important;
+}
+/*ON HOLD RENDERS*/
+[data-query*='"status":3'] footer:before {
+left: -5%;
+top: 15%;
+width: 35% !important;
+background-size: contain !important;
+background-image: url(https://i.ibb.co/60fCZ5F/ezgif-6-7d869f57d24d.webp);
+background-position: left bottom !important;
+} 
+[data-query*='"status":3'] footer:after {
+right: -10%;
+top: 0%;
+width: 40% !important;
+background-size: contain !important;;
+background-image: url(https://i.ibb.co/nLXzvc1/ezgif-6-0cdc02508b5b.webp);
+background-position: right bottom !important;
+}
+/*DROPPED RENDERS*/
+[data-query*='"status":4'] footer:before {
+left: -2%;
+top: 0%;
+width: 38% !important;
+background-size: contain !important;
+background-image: url(https://i.ibb.co/VC06YFk/ezgif-3-d83a09bad59e.webp);
+background-position: left bottom !important;
+}
+[data-query*='"status":4'] footer:after {
+right: -15%;
+top: 10%;
+width: 36% !important;
+background-size: contain !important;;
+background-image: url(https://i.ibb.co/r3RGKc3/ezgif-3-97a364e705e5.webp);
+background-position: right bottom !important;
+}
+/*PLANNED RENDERS*/
+[data-query*='"status":6'] footer:before {
+left: -3%;
+top: 0%;
+width: 45% !important;
+background-size: contain !important;
+background-image: url(https://i.ibb.co/j4cvSsD/ezgif-3-7b58b4dc4080.webp);
+background-position: left bottom !important;
+}
+[data-query*='"status":6'] footer:after {
+right: -3%;
+top: 0%;
+width: 28% !important;
+background-size: contain !important;;
+background-image: url(https://i.ibb.co/d2kZZmw/ezgif-3-b102c51808ad.webp);
+background-position: right bottom !important;
+}
+
+/*------------------------------*\
+| Character Renders R0.3         |
+\*------------------------------*/
+
+footer:before, footer:after {
+	content: "";
+	position: fixed;
+	top: 0;
+	z-index: -11;
+	
+	width: calc(50% - 538px);
+	min-width: 262px;
+	height: 100%;
+	background: transparent no-repeat center bottom / contain scroll;
+}
+
+
+/*------------------------------*\
+| List colors       |
+pbg is the color of the wallpaper when you have no image there
+
+bg is the color of the tables and rows
+
+text is the color of your anime
+titles and some text on your rows (numbers, score, information, tags)
+
+text-dim is other text on your rows (edit, more, non-links, Progress:, Rated:, etc)
+
+btn-bg is the button color around score and tags
+
+text-head is the category links unselected
+
+text-head-h is the current category link selected
+
+btn-head-bg-h is buttons under the header when selected
+
+btn-text-h is that button text
+
+banner-text is the banner text color, and its shadow color is under that
+
+checkmark - 
+
+Get a new HTML/Hex color number here, or use color names.
+https://htmlcolorcodes.com/
+
+Get new RGBA colors here for the rows
+https://cssgenerator.org/rgba-and-hex-color-generator.html
+\*------------------------------*/
+:root {
+
+    --off-btn: #444;
+    --pbg: #161616;
+    --bg: #212121;
+    --bg-dark: #444;
+    --text: cyan; /* #00FFFB */
+    --text-h: #fffafa;
+    --text-dim: darkcyan; /* #00B2B5 */
+    --text-dim-h: #fffafa;
+    --text-dark: #ababab;
+    --shadow: rgba(0,0,0,0.8);
+    --icon: #959595;
+    --accent: #008BFF;
+    --banner-text: #f6f5ff;
+    --banner-text-shadow: #0008ff;
+    --btn-bg: #000000;
+    --btn-bg-h: #fffafa;
+    --btn-head-bg-h: cyan;
+    --btn-text-h: #212121;
+    --text-head: cyan;
+    --text-head-h: #00F7FF;
+    --cover-bg: #090909;
+    --edit-btn: #FF0101;
+    --checkmark: #008BFF;
+}
+
+
+/*------------------------------*\
+| List colors       |
+status menu container is the color of the header under the banner when there is transparency on your tables, and the last codes control the rows on hover and the glow around them. Make a new box shadow here
+https://html-css-js.com/css/generator/box-shadow/
+\*------------------------------*/
+
+.status-menu-container{
+background: ; 
+}
+
+.list-table-data:hover{
+background: ; 
+box-shadow: -webkit-box-shadow: 0px 0px 7px 10px rgba(33,255,209,0.42); 
+box-shadow: 0px 0px 7px 10px rgba(33,255,209,0.42);;
+
+}
+
+
+/* ====================
+Dark Mode Filter Fix */
+body[data-owner="1"] #fancybox-frame { filter: none; }
+
+
+/*-------------------------------*\
+|    PATCH for render overlap     |
+\*------------------------------*/
+
+.list-table {
+	display: block;
+	min-width: calc(196px * 2);
+	max-width: 100%;
+	
+	text-align: center;
+	font-size: 0;
+}
+
+.list-table > tbody {
+	font-size: 11px;
+}
+
+.list-item {
+	display: inline-block;
+	float: none;
+}
+
+/* Currently Watching Width */
+[data-query*='status":1'] .list-table {
+	width: 65vw;
+}
+/* Completed Width */
+[data-query*='status":2'] .list-table {
+	width: 65vw;
+}
+/* On Hold Width */
+[data-query*='status":3'] .list-table {
+	width: 65vw;
+}
+/* Dropped Width */
+[data-query*='status":4'] .list-table {
+	width: 65vw;
+}
+/* Planned Width */
+[data-query*='status":6'] .list-table {
+	width: 65vw;
+}
+/* All Anime Width */
+[data-query*='status":7'] .list-table {
+	width: 65vw;
+}
+
+
+/*-------------------------------*\
+|   CUSTOM SCROLLBAR    |
+\*------------------------------*/
+
+/* Firefox */
+* {
+	scrollbar-color: var(--text) var(--bg);
+}
+
+/* Chrome */
+
+*::-webkit-scrollbar {
+	background: var(--bg);
+}
+
+*::-webkit-scrollbar-button:vertical {
+	background: transparent center / 10px auto no-repeat;
+} *::-webkit-scrollbar-button:vertical:start {
+	background-image: url(https://i.imgur.com/Cu2u9Hu.png);
+} *::-webkit-scrollbar-button:vertical:end {
+	background-image: url(https://i.imgur.com/0YI7VxA.png);
+} *::-webkit-scrollbar-button:horizontal {
+	background: transparent center / auto 10px no-repeat;
+} *::-webkit-scrollbar-button:horizontal:start {
+	background-image: url(https://i.imgur.com/BArw1oI.png);
+} *::-webkit-scrollbar-button:horizontal:end {
+	background-image: url(https://i.imgur.com/vqOtoms.png);
+}
+
+*::-webkit-scrollbar-corner {
+	background: var(--bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--text) content-box;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background-clip: content-box; 
+}
+*::-webkit-scrollbar-thumb:vertical {
+	border-width: 0 1px transparent;
+} *::-webkit-scrollbar-thumb:horizontal {
+	border-width: 2px 0 transparent;
+} *::-webkit-scrollbar-thumb:hover {
+	background-color: var(--text-dim);
+} 
+
+*::-webkit-scrollbar-track {
+	width: 5px;
+}
+/*------------------------E-N-D-*/
+
+/*-S-T-A-R-T--------------------*\
+| Favourite Hearts (Left) R0.4   |
+\*------------------------------*/
+.data.tags span{padding:0}.data.tags span a{margin:1px 0}.data.tags span a[href*="=Loved%20it!"],
+.data.tags span a[href*="=Enjoyed%20it"]{
+  position:absolute;
+  right:-28px;
+  top:calc(50% - 13px);
+  width:26px;
+  height:26px;
+  padding:0;
+  background:var(--bg);
+  border-radius:50%;
+  color:#00FFFB!important;
+  font-size:0!important;
+  line-height:26px;
+  box-shadow:0 1px 2px rgba(0,0,0,.2)
+}
+.data.tags span a[href*="=Loved%20it!"]:before,
+.data.tags span a[href*="=Enjoyed%20it"]:before {
+  content:"❤";
+  font-size:18px;
+}
+/*------------------------E-N-D-*/
+
+
+/*-S-T-A-R-T--------------------*\
+| Tag Desc Basis Vertical R1.2   |
+\*------------------------------*/
+
+.data.tags span a{position:relative}
+.data.tags span a:after,
+.data.tags span a:not([href*="=Loved%20it!"]):not([href*="=Enjoyed%20it1"]):before {
+  position:absolute;
+  z-index:5;
+  display:block;
+  transition:all .15s ease;
+  pointer-events:none;
+  opacity:0
+}
+.data.tags span a:after 
+{
+  top:50%;
+  left:-215px;
+  width:200px;
+  height:auto;
+  padding:4px 8px;
+  background:var(--btn-bg);
+  border:1px solid var(--text-dim);
+  border-radius:4px;
+  box-sizing:border-box;
+  color:var(--text);
+  font:11px/15px Arial,Verdana;
+  text-align:left;
+  white-space:pre-wrap;
+  transform:translateY(-50%)
+}
+.data.tags span a:not([href*="=Loved%20it!"]):not([href*="=Enjoyed%20it1"]):before
+{
+  content:"";
+  top:calc(50% - 5px);
+  left:-15px;
+  border-width:5px;
+  border-style:solid;
+  border-color:transparent transparent transparent var(--text-dim)
+}
+.data.tags span a:hover::after
+{
+  left:-210px;
+  opacity:1
+}
+.data.tags span a:not([href*="=Loved%20it!"]):not([href*="=Enjoyed%20it1"]):hover:before
+{
+  left:-10px;
+  opacity:1
+}
+
+/*-----------------------------------*\
+https://myanimelist.net/forum/?topicid=1723114
+  "\a" = New Line(enter)
+\*-----------------------------------*/
+
+/* TAG - Rewatched */   
+.data.tags span a[href*="=Rewatched"]:after {
+	content: "I Have ReWatched This Anime."
+}
+/*  TAG - Loved it! */    
+.anime .data.tags span a[href*="=Loved%20it!"]:after {
+	content: "The Heart Icon Is To Show That I Really Really Enjoyed This Anime."
+}
+/*  TAG - Re Times */  
+.data.tags span a[href*="=x"]:after {
+	content: "The Date Is In (DD/MM/YY) format."
+}
+/*  TAG - Most Fav Ever */  
+.anime .data.tags span a[href*="=Most%20Fav"]:after {
+  content: "This Is One Of My Most Fav Animes Ever !"
+}
+/*-----TAG - Seasons-----*/  
+/* Winter 2021*/ 
+.data.tags span a[href*="=Winter%202021"]:after { content: "Animes I watched on a weekly basis in Winter 2021" }
+/* Spring 2021*/ 
+.data.tags span a[href*="=Spring%202021"]:after { content: "Animes I watched on a weekly basis in Spring 2021" }
+/* Summer 2021*/ 
+.data.tags span a[href*="=Summer%202021"]:after { content: "Animes I watched on a weekly basis in Summer 2021" }
+/* Fall 2021*/ 
+.data.tags span a[href*="=Fall%202021"]:after { content: "Animes I watched on a weekly basis in Fall 2021" }
+
+/* Winter 2022*/ 
+.data.tags span a[href*="=Winter%202021"]:after { content: "Animes I watched on a weekly basis in Winter 2022" }
+/* Spring 2022*/ 
+.data.tags span a[href*="=Spring%202021"]:after { content: "Animes I watched on a weekly basis in Spring 2022" }
+/* Summer 2022*/ 
+.data.tags span a[href*="=Summer%202021"]:after { content: "Animes I watched on a weekly basis in Summer 2022" }
+/* Fall 2022*/ 
+.data.tags span a[href*="=Fall%202021"]:after { content: "Animes I watched on a weekly basis in Fall 2022" }
+
+/*------------------------E-N-D-*/
+
+
+
+/*-------------------------------*\
+|      Horizontal Studio         |
+\*-------------------------------*/
+
+body.ownlist.anime .list-table-data {
+	padding-top: 0px;
+}
+
+body.ownlist.anime .data.studio {
+	position: absolute;
+	margin-left: 100px;
+	top: -26px;
+	z-index: 5;
+	display: -webkit-flex !important;
+	display: -moz-flex !important;
+	display: flex !important;
+	width: 0;
+	height: 100%;
+	padding: 0 !important;
+	
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	align-items: center;
+}
+.data.studio div {
+	max-width: 980px;
+	margin: 0 0 4px 80px;
+	
+	white-space: nowrap;
+}
+.data.studio span {
+	display: inline-block;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	align-items: center;
+	padding: 0;
+}
+body.ownlist.anime .list-table .list-table-data .data.studio span a {
+	padding: 0px 7px !important;
+	margin-right: 4px;
+	font-size: 10px !important;
+	white-space: nowrap;
+	color: var(--text-dim) !important;
+	background: none;
+	align-items: center;
+}
+/*===============================*/
+body.ownlist.anime .list-table .list-table-data 
+.data.studio span a:hover, 
+.data.studio a:hover {
+	background: white !important;
+	color: black !important;
+	font-weight: bold !important;
+}
+.data.studio:before {content: "-"; margin-top: -3px;}
+.data.studio > span:nth-child(2) a:before {
+  content: "|    "; 
+  font-weight: bold; 
+  margin-left: -13px;
+}
+.data.studio > span:nth-child(3) a:before {
+  content: "|    "; 
+  font-weight: bold; 
+  margin-left: -13px;
+}
+/*===============================*/
+body.ownlist.anime .list-table .list-table-data .data.studio a{
+	color: #00fbffcc !important;
+  line-height: 15px;
+  font-size: 11px !important;
+}
+body.ownlist.anime .data.studio a.edit { right: -1060px; }
+body.ownlist.anime .data.studio textarea { right: -1060px; }
+
+.data.studio:empty:before {
+    content: "Unknown Studio" !important;
+}
+/*===============================*/
+
+
+
+.data.type {top: -25px;}
+.list-table-data .data.title {top: -5px; }
+
+/*-------------------------------*\
+|      Horizontal Genres          |
+\*-------------------------------*/
+
+body.ownlist .list-table-data {
+	padding-bottom: 2px;
+}
+
+body.ownlist .data.genre {
+	position: absolute;
+	margin-left: 82px;
+	bottom: 2px;
+	z-index: 5;
+	display: flex !important;
+	width: 0;
+	height: auto;
+	padding: 0 !important;
+	
+}
+.data.genre > {
+	max-width: 980px;
+	margin: 0 0 4px 80px;
+	
+	font-size: 0;
+	white-space: nowrap;
+}
+.data.genre span {
+	display: inline-flex;
+	
+	padding: 0;
+}
+body.ownlist .list-table .list-table-data .data.genre span a {
+	margin-left: -1px;
+	white-space: nowrap;
+	background: var(--btn-bg);
+  padding: 1px 4px;
+  border-radius: 20px;
+  font-size: 9px !important;
+  /* font-weight: bold; */
+  font-style: italic;
+}
+/*===============================*/
+body.ownlist .list-table .list-table-data .data.genre span a:hover, 
+.data.genre a:hover {
+	background: white !important;
+	color: black !important;
+	font-weight: bold !important;
+  transition: all .3s ease !important;
+}
+.data.genre:before {content: "";}
+/*===============================*/
+
+body.ownlist .list-table .list-table-data .data.genre a{
+	color: #00fbffcc !important;
+  line-height: 15px;
+  font-size: 11px !important;
+}
+body.ownlist .data.genre a.edit { right: -1060px; }
+body.ownlist .data.genre textarea { right: -1060px; }
+/*===============================*/
+
+
+/*------------------------------*\
+|  Anime/Manga-Score    |
+\*------------------------------*/
+.data.image a:after {
+  z-index: 5;
+  color: var(--text) !important;
+  position: absolute;
+  padding: 4px !important;
+  border-radius: 40px 40px 100px 100px !important;
+  background: black;
+  margin-left: 100px;
+  left: -85px;
+  top: 46px;
+  visibility: hidden;
+  opacity: 1 !important;
+  height: auto !important; 
+  width: auto !important;
+  font: inherit !important;
+}
+/*------------------------------*\
+|  Anime/Manga-Synopsis    |
+\*------------------------------*/
+.list-table .list-table-data:hover .data.title .link:before{
+	background-position: top right;
+	background-size: contain;
+	background-repeat: no-repeat;
+  position: fixed;
+  color: var(--text);
+	text-shadow: none !important;
+  right: 0.5%;
+	width: 40%;
+	height: auto;
+  top: 0.5%;
+	white-space: pre-wrap;
+	overflow: auto;
+  font-family: arial !important;
+	font-size: 12px;
+	border: var(--text) 2px groove;
+	border-radius: 20px;
+	padding: 1%;
+	background-color: var(--bg);
+	opacity: 0.9;
+	z-index:100;
+	transition: all .3s ease-in-out !important;
+}
+.list-table .list-table-data:hover .data.title .link:hover{z-index:101;}
+
+
+
+/* Premiered Season Mod */
+div.list-unit:not(.plantowatch) .data.season {
+    margin-left: -100px;
+    visibility: hidden;
+}
+div.list-unit.plantowatch  .data.season {
+  margin-left: -15px;
+}
+
+/* PTW & PTR Airing Dates Mod*/
+div.list-unit:not(.plantowatch):not(.plantoread) .data.airing-finished {
+    margin-left: -100px;
+    visibility: hidden;
+}
+div.list-unit:not(.plantowatch):not(.plantoread) .data.airing-started {
+    margin-left: -100px;
+    visibility: hidden;
+}
+
+div.list-unit.plantoread .data.started,
+div.list-unit.plantowatch .data.started {
+  visibility: hidden;
+  margin-left: -220px;
+}
+div.list-unit.plantoread .data.finished,
+div.list-unit.plantowatch .data.finished {
+  visibility: hidden;
+}
+div.list-unit.plantoread .data.days,
+div.list-unit.plantowatch .data.days {
+  visibility: hidden;
+}
+
+/* Expand title on Hover*/
+.data.title a.link.sort:hover {
+    overflow: auto !important;
+    text-overflow: initial;
+}
+.data.title a.link.sort::-webkit-scrollbar-thumb:horizontal { 
+  border-width: 5px
+}
+
+/* Content Status (NYA / Airing) */
+.plantowatch span.content-status {
+    color: cyan !important;
+    font-style: italic;
+}
+.content-status:before{content:"『 "  !important}
+.content-status:after{content:"』 - " !important}
+
+/* Smooth Scroll */
+html { scroll-behavior: smooth; }
+
+/*Quick diable snow*/   
+.list-container:after  {
+background-image: url(), url(), url();}

@@ -122,7 +122,7 @@ z-index: 10;
 .list-table>tbody:first-of-type:after {
   content: "\f0dc  Sort" !important;
   width: 50px !important;
-  font-family: 'FontAwesome 4';
+  font-family: 'FontAwesome 4' !important;
 }
 .list-table-header { 
   right: 35px !important; 

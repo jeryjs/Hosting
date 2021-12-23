@@ -201,7 +201,7 @@ div.list-unit.all_anime td.data.status.reading:before {
     margin-top: 31px;
     color: var(--watching);
 }
-/*--Completed--*/ /*
+/*--Completed--*/ 
 div.list-unit.all_anime td.data.status.completed:before {
     position: relative;
     content: "Completed";
@@ -479,11 +479,17 @@ If you want a wallpaper on a category, you can add direct background images link
 |
 \*------------------------------*/
 
-/* All Anime */
+/* All Anime */		/*
 body[data-query*='status":7'] {
     background: url(https://i.ibb.co/ryYsHwf/Falling-Comets-2.webp) fixed no-repeat !important;
     background-color: #161616 !important;
     background-size: cover !important;
+    background-position: bottom !important;
+} */
+body[data-query*='status":7'] {
+    background: url(https://i.ibb.co/wBvPdk9/Comet-Less-BG.webp) fixed no-repeat !important;
+    background-color: #161616 !important;
+    background-size: contain !important;
     background-position: bottom !important;
 }
 /* Watching/Reading */
@@ -1170,8 +1176,8 @@ body.ownlist .data.genre textarea { right: -1060px; }
 |        FALLING SNOW           |
 \*------------------------------*/
 
-.list-container:after  {    
-position: fixed;
+.cover-block:before  {    
+/*position: fixed;*/
 left: 0;
 top: 0;
 content: '';

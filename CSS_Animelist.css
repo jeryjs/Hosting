@@ -486,7 +486,7 @@ body[data-query*='status":7'] {
     background-size: cover !important;
     background-position: bottom !important;
 } */
-body[data-query*='status":4'] div#list-container:after {
+body[data-query*='status":7'] div#list-container:after {
     content: '';
     background: url(https://i.ibb.co/ryYsHwf/Falling-Comets-2.webp) fixed no-repeat !important;
     background-color: #161616 !important;

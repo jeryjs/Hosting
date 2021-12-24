@@ -1066,7 +1066,6 @@ body.ownlist.anime .data.studio textarea { right: -1060px; }
 
 
 
-.data.type {top: -25px;}
 .list-table-data .data.title {top: -5px; }
 
 /*-------------------------------*\
@@ -1202,6 +1201,11 @@ z-index: -10;
 	100% { background-position: 500px 1000px, 400px 400px, 300px 300px; }
 }
 
+
+/* Data Type Mod */
+.data.type {
+    top: -25px;
+}
 
 /* Premiered Season Mod */
 div.list-unit:not(.plantowatch) .data.season {

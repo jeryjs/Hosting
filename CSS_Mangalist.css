@@ -1125,6 +1125,11 @@ body.ownlist .data.genre textarea { right: -1060px; }
 
 
 
+/* Data Type Mod */
+.data.type {
+    top: -25px;
+}
+
 /* Premiered Season Mod */
 div.list-unit:not(.plantowatch) .data.season {
     margin-left: -100px;

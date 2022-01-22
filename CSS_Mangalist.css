@@ -1183,6 +1183,13 @@ div.list-unit.plantowatch .data.days {
 /* Smooth Scroll */
 html { scroll-behavior: smooth; }
 
+/* List Hover Circle */
+.list-table-data:hover {
+    background: url(https://i.ibb.co/8jsXnf4/Hover-Circle-Neon-Cyan.gif) no-repeat;
+    background-position: -3px;
+    background-size: 10%;
+}
+
 /*Quick diable snow*/   
 .list-container:after  {
 background-image: url(), url(), url();}

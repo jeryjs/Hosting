@@ -86,6 +86,9 @@ body.ownlist.manga .list-table .list-table-data .data.tags {
 .list-menu-float a.icon-menu.anime-list span.text:before {
     content: "Your ";
 }
+.list-menu-float a.icon-menu.manga-list span.text:before {
+    content: "Your ";
+}
 /*------------------------------*\
 |   Background Color    |
 \*------------------------------*/
@@ -385,31 +388,6 @@ Background size is the size of the image. 100% is full size.
 The first percentage after background position is the position from the left. Lower percentages move it left and you can go negative. The second percentage is position from the top. Lower percentages move it down. 
 |
 \*------------------------------*/
-
-/*_____________BACKUPS__________*\
-
-/* Onhold */  /*
-
-[data-query*='status":3'] { --character: url(https://i.ibb.co/rZYtrSY/ezgif-6-5c96d193c544.webp);
-}
-    [data-query*='status":3'] #list-container #cover-image-container {
-    background-size: 40%;
-    background-position: 50% 10%;
-}
-
-/*-----------------------------*/
-
-/*ALL Animes*/  /*
-[data-query*='status":7'] { --character: url(https://i.ibb.co/Vv8VXPx/ezgif-6-f359b67f5162.webp);
-}
-[data-query*='status":7'] #list-container #cover-image-container {
-    background-size: 60%;
-    background-position: 80% 25%;
-}
-
-\*______________________________*/
-
-
 
 /* All Anime */
 [data-query*='status":7'] { --character: url();
@@ -935,7 +913,7 @@ body[data-owner="1"] #fancybox-frame { filter: none; }
   left:-210px;
   opacity:1
 }
-.data.tags span a:not([href*="=Loved%20it!"]):not([href*="=Enjoyed%20it1"]):hover:before
+.data.tags span a:not([href*="=Loved%20it!"]):not([href*="=Enjoyed%20it!"]):hover:before
 {
   left:-10px;
   opacity:1
@@ -973,16 +951,15 @@ https://myanimelist.net/forum/?topicid=1723114
 .data.tags span a[href*="=Fall%202021"]:after { content: "Animes I watched on a weekly basis in Fall 2021" }
 
 /* Winter 2022*/ 
-.data.tags span a[href*="=Winter%202021"]:after { content: "Animes I watched on a weekly basis in Winter 2022" }
+.data.tags span a[href*="=Winter%202022"]:after { content: "Animes I watched on a weekly basis in Winter 2022" }
 /* Spring 2022*/ 
-.data.tags span a[href*="=Spring%202021"]:after { content: "Animes I watched on a weekly basis in Spring 2022" }
+.data.tags span a[href*="=Spring%202022"]:after { content: "Animes I watched on a weekly basis in Spring 2022" }
 /* Summer 2022*/ 
-.data.tags span a[href*="=Summer%202021"]:after { content: "Animes I watched on a weekly basis in Summer 2022" }
+.data.tags span a[href*="=Summer%202022"]:after { content: "Animes I watched on a weekly basis in Summer 2022" }
 /* Fall 2022*/ 
-.data.tags span a[href*="=Fall%202021"]:after { content: "Animes I watched on a weekly basis in Fall 2022" }
+.data.tags span a[href*="=Fall%202022"]:after { content: "Animes I watched on a weekly basis in Fall 2022" }
 
 /*------------------------E-N-D-*/
-
 
 
 /*-------------------------------*\

@@ -84,6 +84,9 @@ body.ownlist.manga .list-table .list-table-data .data.tags {
 .list-menu-float a.icon-menu.manga-list:hover {
   min-width: 140px;
 }
+.list-menu-float a.icon-menu.anime-list span.text:before {
+    content: "Your ";
+}
 .list-menu-float a.icon-menu.manga-list span.text:before {
     content: "Your ";
 }
@@ -861,7 +864,7 @@ body[data-owner="1"] #fancybox-frame { filter: none; }
 
 .data.tags span a{position:relative}
 .data.tags span a:after,
-.data.tags span a:not([href*="=Loved%20it!"]):not([href*="=Enjoyed%20it1"]):before {
+.data.tags span a:not([href*="=Loved%20it!"]):not([href*="=Enjoyed%20it!"]):before {
   position:absolute;
   z-index:5;
   display:block;

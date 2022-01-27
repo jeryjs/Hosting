@@ -1248,12 +1248,12 @@ html { scroll-behavior: smooth; }
 .list-stats:before {
     content: "";
     position: absolute;
-    width: 40%;
-    height: 500px;
+    width: 60%;
+    height: 153px;
     top: 30px;
-    left: 320px;
-    background: url(https://anime.plus/jery_js/export?settings=WzEsIjk3YjBjZCIsIjAwY2RjMCIsIjg4MTA4OSIsIjcwNzA3MCIsIjAwMDAwMCIsIjIzZmZmYSIsImZmNGVkZiIsImZmMTBkOCIsIjI4NTFmZiJd) 
-no-repeat;
+    left: 216px;
+    background: url(https://anime.plus/jery_js/WzMsIjk3YjBjZCIsIjAwY2RjMCIsIjg4MTA4OSIsIjcwNzA3MCIsIjAwMDAwMCIsIjIzZmZmYSIsImZmNGVkZiIsIjU3N2ZjMiIsIjU3N2ZjMiJd/1643273856) no-repeat;
     z-index: 10;
     background-size: contain;
+    border: darkcyan 2px groove;
 }

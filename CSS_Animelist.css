@@ -1244,15 +1244,16 @@ html { scroll-behavior: smooth; }
     background-size: 9.7%;
 }
 
-/* Anime+ Status */
-span.status { z-index:999; }
-span.status:before {
-	content: "";
-	width: 30px;
-	height: 20px;
-}
-span.status:before:hover {
-	width: 300px;
-	height: 200px;
-	background: url(https://anime.plus/jery_js/export?settings=WzEsIjk3YjBjZCIsIjAwY2RjMCIsIjg4MTA4OSIsIjcwNzA3MCIsIjAwMDAwMCIsIjIzZmZmYSIsImZmNGVkZiIsImZmMTBkOCIsIjI4NTFmZiJd) no-repeat;
+/* Anime+ Stats */
+.list-stats:before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 500px;
+    top: 30px;
+    left: 320px;
+    background: url(https://anime.plus/jery_js/export?settings=WzEsIjk3YjBjZCIsIjAwY2RjMCIsIjg4MTA4OSIsIjcwNzA3MCIsIjAwMDAwMCIsIjIzZmZmYSIsImZmNGVkZiIsImZmMTBkOCIsIjI4NTFmZiJd) 
+no-repeat;
+    z-index: 10;
+    background-size: contain;
 }

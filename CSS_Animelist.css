@@ -74,16 +74,20 @@ body.ownlist.manga .list-table .list-table-data .data.tags {
 /*------------------------------*\
 |   Switch List Btn    |
 \*------------------------------*/
-#header-menu-dropdown a.icon-menu:hover {
+#header-menu-dropdown a.icon-menu.anime-list:hover,
+#header-menu-dropdown a.icon-menu.manga-list:hover {
     min-width: 180px;
 }
-#header-menu-dropdown a.icon-menu span:before {
+#header-menu-dropdown a.icon-menu.anime-list span:before,
+#header-menu-dropdown a.icon-menu.manga-list span:before{
     content: "View Jery's ";
 }
-.list-menu-float a.icon-menu:hover {
+.list-menu-float a.icon-menu.anime-list:hover,
+.list-menu-float a.icon-menu.manga-list:hover{
   min-width: 140px;
 }
-.list-menu-float a.icon-menu span.text:before {
+.list-menu-float a.icon-menu.anime-list span.text:before,
+.list-menu-float a.icon-menu.manga-list span.text:before{
     content: "Your ";
 }
 /*------------------------------*\

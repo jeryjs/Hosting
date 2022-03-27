@@ -1,0 +1,259 @@
+/* PATCH */
+
+.status-menu-container .status-menu:after {
+	pointer-events: none;
+	position: absolute;
+	display: block;
+	content: '';
+	left: -150px;
+	top: -230px;
+	width: 300px;
+	height: 257px;
+	background: url(https://i.imgur.com/vg9BjC7.png) no-repeat;
+}
+
+.status-menu-container .status-menu .status-button {
+	position: relative;
+	display: block;
+	margin: 0;
+	width: 154px;
+	height: 54px;
+	padding: 0;
+	font-size: 0;
+	color: transparent;
+	background-image: url(https://i.imgur.com/Urarbqx.png);
+	background-repeat: no-repeat;
+}
+
+.status-menu-container .status-menu .status-button:after {
+	opacity: 0;
+	position: absolute;
+	display: block;
+	content: '';
+	left: 0;
+	top: 0;
+	width: 154px;
+	height: 54px;
+	background-color: transparent;
+	background-image: url(https://i.imgur.com/Urarbqx.png);
+	background-repeat: no-repeat;
+	-webkit-transition: opacity .5s linear;
+	transition: opacity .5s linear;
+}
+
+
+.data.title a[href$="/Black_Jack"]:before {
+	display: inline-block; 
+	content: '';
+	width: 16px; 
+	height: 12px; 
+	background-image: url(????);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+
+.header .header-menu .header-info a[href*="/login"]:before, .header .header-menu .header-info a[href*="/register"]:before, 
+.header .header-menu .header-info a[href*="/login"]:after, .header .header-menu .header-info a[href*="/register"]:after {
+	position: relative;
+	display: inline-block;
+	content: '';
+	right: 0;
+	height: 60px;
+	background-image: url(????);
+	background-repeat: no-repeat;
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	z-index: -1;
+}
+
+.header .header-menu .list-menu .icon-menu {
+	display: block;
+	width: 88px;
+	height: 61px;
+	font-size: 0;
+	color: transparent;
+	background-image: url(????);
+	background-repeat: no-repeat;
+}
+
+
+/* SVG */
+.list-menu-float .icon-menu svg.icon {
+	position: relative;
+	display: inline-block;
+	left: 0 !important;
+	top: 0 !important;
+	width: 44px;
+	height: 60px;
+	fill: transparent;
+	background-image: url(https://i.imgur.com/2yLLCgf.png);
+	background-repeat: no-repeat;
+	float: left;
+}
+
+.list-menu-float .icon-menu.profile:after {
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 0;
+	width: 44px;
+	height: 60px;
+	background-image: url(????);
+	background-position: -396px 0;
+}
+
+.list-menu-float .icon-menu .text {
+	opacity: 1;
+	position: absolute;
+	display: inline-block;
+	left: auto;
+	right: 0;
+	top: 5px;
+	width: 0;
+	height: 61px;
+	font-size: 0;
+	color: transparent;
+	background-image: url(https://i.imgur.com/2yLLCgf.png);
+	background-repeat: no-repeat;
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	z-index: -1;
+}
+
+* { cursor: url(https://i.imgur.com/RxqXxeV.png), auto !important; }
+
+body.ownlist {
+font-family: 'Monda';
+font-size: 14px;
+background-color: rgb(25, 35, 37);
+background-image: url(https://i.imgur.com/0I42v5R.jpeg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center center;
+background-size: cover;
+}
+
+.list-container:after {
+pointer-events: none;
+position: fixed;
+display: block;
+content: '';
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-image: url(https://i.imgur.com/LAvcWzD.png);
+background-repeat: no-repeat;
+background-position: left center;
+background-size: cover;
+z-index: 4;
+}
+
+.list-block {
+margin: 370px 0 0 0;
+width: 650px;
+min-height: 600px;
+padding: 25px 10px 100px 0;
+background-color: rgba(0, 0, 0, .5);
+/* Table borders */
+background-clip: padding-box;
+border-color: transparent;
+border-style: solid;
+border-width: 0 0 0 10px;
+-webkit-border-image: url(https://i.imgur.com/qpNJ8ta.png) 0 0 0 10 round; 
+-moz-border-image: url(https://i.imgur.com/qpNJ8ta.png) 0 0 0 10 round;
+border-image: url(https://i.imgur.com/qpNJ8ta.png) 0 0 0 10 round;
+}
+
+.list-table .list-table-data .data.status:before {
+display: block;
+content: '';
+margin-left: -12px;
+width: 22px;
+height: 12px;
+background-image: url(????);
+background-repeat: no-repeat;
+}
+
+/* HEADERS */
+.list-unit .list-status-title {
+position: absolute;
+display: table;
+margin: -200px 0 0 -15px;
+width: 665px;
+height: 200px;
+background-color: transparent;
+background-image: url(https://i.imgur.com/ys222V5.png);
+background-repeat: no-repeat;
+z-index: 3;
+}
+
+#copyright {
+position: relative;
+width: 675px;
+right: 29%;
+margin: -150px -20px 0 0;
+height: 150px;
+padding: 0 0 0 45px;
+line-height: 272px;
+font-size: 12px;
+color: #ffffff;
+text-shadow: 0 0 .2em #000000;
+text-align: center;
+text-transform: uppercase;
+background: url(https://i.imgur.com/B0jXlbC.png) no-repeat;
+overflow: hidden;
+float: right;
+}
+
+#advanced-options {
+opacity: 0;
+position: absolute;
+display: none;
+left: 0;
+right: 0;
+top: 24px;
+margin: 0 auto;
+width: 865px;
+height: 550px;
+padding: 55px 0 30px;
+font-family: 'Monda';
+color: #c5c5c5;
+text-shadow: 0 0 .2em #000000;
+text-align: left;
+background-color: transparent;
+background: url(https://i.imgur.com/A2YUqzh.png) no-repeat;
+border: none;
+box-shadow: none;
+z-index: 1101;
+}
+
+#advanced-options #fancybox-close:before {
+pointer-events: none;
+position: absolute;
+display: block;
+content: '';
+left: -16px;
+top: -14px;
+width: 67px;
+height: 69px;
+background: url(https://i.imgur.com/i4DPbHq.png) no-repeat;
+}
+
+#advanced-options .btn-apply,
+#advanced-options .btn-clear {
+position: relative;
+display: inline-block;
+top: -7px;
+margin: 0 4px;
+width: 151px;
+height: 44px;
+padding: 0;
+font-size: 0;
+color: 0;
+background-color: transparent;
+background-image: url(https://i.imgur.com/KXC5FYz.png);
+background-repeat: no-repeat;
+border-radius: 0;
+}

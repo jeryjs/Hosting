@@ -962,6 +962,34 @@ https://myanimelist.net/forum/?topicid=1723114
 
 /*------------------------E-N-D-*/
 
+/*-------------------------------*\
+|      Horizontal Rating         |
+\*-------------------------------*/
+body.ownlist.anime .data.rated {
+	position: absolute;
+	margin-left: 100px;
+	top: 4px;
+	z-index: 5;
+	display: -webkit-flex !important;
+	display: -moz-flex !important;
+	display: flex !important;
+	padding: 0 !important;
+	color: var(--text-dim);
+	width: auto;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	align-items: center;
+}
+.data.rated:before {
+	content: "-"; 
+	margin-top: -3px;
+	padding-right: 5px;
+	color: var(--text);
+}
+.data.rated:empty:before {
+    content: "---" !important;
+}
+/*===============================*/
 
 /*-------------------------------*\
 |      Horizontal Studio         |
@@ -973,7 +1001,7 @@ body.ownlist.anime .list-table-data {
 
 body.ownlist.anime .data.studio {
 	position: absolute;
-	margin-left: 100px;
+	margin-left: 150px;
 	top: -26px;
 	z-index: 5;
 	display: -webkit-flex !important;
@@ -1017,7 +1045,7 @@ body.ownlist.anime .list-table .list-table-data
 	color: black !important;
 	font-weight: bold !important;
 }
-.data.studio:before {content: "-"; margin-top: -3px;}
+.data.studio:before {content: "-";}
 .data.studio > span:nth-child(2) a:before {
   content: "|    "; 
   font-weight: bold; 
@@ -1038,7 +1066,7 @@ body.ownlist.anime .data.studio a.edit { right: -1060px; }
 body.ownlist.anime .data.studio textarea { right: -1060px; }
 
 .data.studio:empty:before {
-    content: "Unknown Studio" !important;
+    content: "-  Unknown Studio" !important;
 }
 /*===============================*/
 

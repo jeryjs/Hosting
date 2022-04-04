@@ -1,0 +1,120 @@
+/* PATCH */
+
+
+#mal\_control_strip:before {
+	position: fixed;
+	display: block;
+	content: '';
+	left: 450px;
+	top: 0;
+	width: calc(100% - 450px);
+	height: 96px;
+	background-image: 
+		url(https://i.imgur.com/cPnDtdH.png),
+		url(https://i.imgur.com/5Vfkuqr.png);	/* @shishio-kun  I'm not sure if the 1st url is correct. */
+	background-repeat: no-repeat, repeat-x;
+	background-position: calc(100% - 100px) top, left top;
+}
+
+#mal\_control_strip:after {
+	pointer-events: none;
+	position: fixed;
+	display: block;
+	content: '';
+	left: 15px;
+	top: 0;
+	width: 616px;
+	height: 76px;
+	background: url(https://i.imgur.com/dHp7Zvy.png) right top no-repeat !important;
+}
+
+#mal\_control_strip {
+	position: fixed;
+	display: block;
+	left: 0 !important;
+	top: 0;
+	height: 116px !important;
+	background: url(https://i.imgur.com/TSw8oBd.png) no-repeat !important;
+	z-index: 4;
+}
+
+#mal\_cs_otherlinks div a, #mal\_cs_listinfo div:last-of-type a, #mal\_cs_listinfo div:first-of-type a, 
+#mal_cs_links div a[href*="addtolist"], #mal\_cs_links div:last-of-type a:first-of-type, #mal\_cs_links div:last-of-type a:last-of-type { 
+	position: fixed;
+	display: block;
+	left: 68px;
+	top: 80px;
+	width: 63px;
+	height: 63px;
+	font-size: 0 !important;
+	color: transparent;
+	background-image: url(https://i.imgur.com/48QIXlA.png);
+	background-repeat: no-repeat;
+}
+
+
+body {
+	font-family: 'Jura', sans-serif;
+	font-size: 14px;
+	background-color: rgb(255, 255, 255);
+	background-image: url(https://i.imgur.com/UdBib2z.jpeg);
+	background-position: left bottom;
+	background-attachment: fixed;
+}
+
+td[class^='td']:first-child {
+	position: absolute;
+	display: block;
+	left: -65px;
+	top: -70px;
+	width: 72px;
+	line-height: 72px;
+	text-align: center;
+	background: url(https://i.imgur.com/1iTRNk1.png);
+}
+
+/* Headers pics */
+.header_cw span, .header_completed span, .header_onhold span, .header_dropped span, .header_ptw span {
+	position: absolute;
+	display: inline-block;
+	margin: -20px 0 0 -49px;
+	width: 800px;
+	height: 150px;
+	font-size: 0;
+	background-image: url(https://i.imgur.com/XtJsfbL.png);
+	background-repeat: no-repeat;
+}
+
+#inlineContent:before {
+	position: fixed;
+	display: block;
+	content: '';
+	width: calc(100% - 818px);
+	height: 46px;
+	right: 818px;
+	bottom: 0;
+	background: url(https://i.imgur.com/OmabBHd.png) right repeat-x;
+}
+
+#inlineContent:after {
+	pointer-events: none;
+	position: fixed;
+	display: block;
+	content: '';
+	width: 479px;
+	height: 600px;
+	left: calc(100% - 1300px);
+	bottom: 0;
+	background: url(https://i.imgur.com/NYZuxv7.png) no-repeat;
+}
+
+#inlineContent {
+	position: fixed;
+	display: block !important;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 66px;
+	background: url(https://i.imgur.com/KYytSor.png) right no-repeat;
+	z-index: 5;
+}

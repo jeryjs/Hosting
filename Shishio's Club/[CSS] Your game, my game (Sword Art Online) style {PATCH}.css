@@ -1,0 +1,120 @@
+/* PATCH */
+
+
+/* Custom cursor */
+/* Kirito version*/
+* { cursor: url(https://i.imgur.com/3v7L702.png), auto; }
+/* Asuna version*/
+* { cursor: url(https://i.imgur.com/O5zkX1d.png), auto; }
+
+body:before {
+	position: absolute;
+	display: block !important;
+	content: '';
+	left: 50%;
+	margin-left: -365px;
+	top: 6px;
+	width: 750px;
+	height: 252px;
+	background: url(https://i.imgur.com/fh7WwbG.png) no-repeat;
+}
+
+body {
+	font-family: 'Maximilien Regular';
+        color: #5b899b;
+        font-size: 12px;
+	letter-spacing: .5px;
+	background-color: rgb(0, 0, 0);
+	background-image: url(https://i.imgur.com/3LqTXVB.jpeg);
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#list_surround:before {
+	position: absolute;
+	display: block;
+	content: '';
+	margin-left: 570px;
+	margin-top: -68px;
+	width: 64px;
+	height: 36px;
+	background: url(https://i.imgur.com/6MY92Vc.png) no-repeat;
+	animation: Rotate 5s linear infinite alternate;
+        -webkit-animation: Rotate 5s linear infinite alternate;
+}
+
+.header_cw:before { background: url(https://i.imgur.com/VGk8nDw.png) no-repeat; }
+
+.header_completed:before { background: url(https://i.imgur.com/WgmUCLn.png) no-repeat; }
+
+.header_onhold:before { background: url(https://i.imgur.com/f6JK52I.png) no-repeat; }
+
+.header_dropped:before { background: url(https://i.imgur.com/hD0gNet.png) no-repeat; }
+
+.header_ptw:before { background: url(https://i.imgur.com/XRwhQzN.png) no-repeat; }
+
+.category_totals:before { 
+	position: absolute;
+	display: block;
+	content: '';
+	margin-left: -2px;
+	margin-top: -2px;
+	width: 532px;
+	height: 98px;
+	background: url(https://i.imgur.com/mQfznvn.png) no-repeat; 
+	z-index: -1;	
+} 
+
+#inlineContent:before {
+	left: 50%;
+	margin-left: -550px;
+	bottom: -60px;
+	height: 447px;
+	background-image: url(https://i.imgur.com/DkjKcXO.png);
+}
+
+#inlineContent:after {
+	left: 50%;
+	margin-left: 220px;
+	bottom: -64px;
+	height: 517px;
+	background-image: url(https://i.imgur.com/B9Effpt.png); 
+}
+
+
+#mal\_cs_links div a[href*="addtolist"]:before {
+	position: fixed;
+	display: block;
+	content: '';
+	top: 7px;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	background-image: url(https://i.imgur.com/wOj6vqp.png); 
+	background-repeat: no-repeat;
+}
+
+#mal\_cs_listinfo div:last-of-type a:before {
+	pointer-events: none;
+	position: fixed;
+	display: block;
+	content: '';
+	top: 0;
+	left: 8px;
+	width: 268px;
+	height: 40px;
+	background-image: url(https://i.imgur.com/UQXPbI0.png); 
+	background-repeat: no-repeat;
+}
+
+/* LOGIN */
+#mal\_cs_otherlinks div a[href*="login"] {
+	left: 8px;
+	top: 23px;
+	width: 144px;
+	height: 36px;
+	font-size: 0 !important;
+	color: transparent;
+	background-image: url(https://i.imgur.com/cKgM3iC.png); 
+	border-radius: 4px;
+}

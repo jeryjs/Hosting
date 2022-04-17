@@ -1,0 +1,79 @@
+/* PATCH */
+
+
+/* Cursor */
+* { cursor: url(https://i.imgur.com/uQmLGaY.png), auto; }
+
+body {
+	font-family: 'Cutive Mono', serif;
+	font-size: 12px;
+        color: #2b2f3c;
+	background-color: rgb(0, 0, 0);
+	background-image: url(https://i.imgur.com/4X6bdoz.jpeg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: left bottom;
+	background-size: cover;
+}
+
+#list_surround:before {
+	position: absolute;
+	display: block;
+	content: '';
+	left: 64px;
+	top: 77px;
+	width: 700px;
+	min-height: calc(100% + 320px);
+	height: calc(100% - 83px);
+	background: url(https://i.imgur.com/Be4NAoq.png) center center repeat;
+	z-index: -1;
+}
+
+#list_surround:after {
+	pointer-events: none;
+	position: absolute;
+	display: block;
+	content: '';
+	left: 0;
+	top: -48px;
+	width: 700px;
+	min-height: calc(100% + 265px);
+	height: calc(100% - 138px);
+	/* Table borders */
+	background-clip: padding-box;
+	border-color: transparent;
+	border-style: solid; 
+	border-width: 180px 64px 305px; 
+	border-image: url(https://i.imgur.com/7ea7TND.png) 180 64 305 round;
+	-moz-border-image: url(https://i.imgur.com/7ea7TND.png) 180 64 305 round;
+	-webkit-border-image: url(https://i.imgur.com/7ea7TND.png) 180 64 305 round;
+	z-index: 3;
+}
+
+
+#list_surround table:nth-of-type(n+4) tbody small a:first-of-type {
+	vertical-align: middle !important;
+	width: 16px;
+	height: 16px;
+	font-size: 0;
+	background: url(????) no-repeat !important;
+}
+
+
+#mal\_control_strip:before {
+	visibility: visible;
+	opacity: 1;
+	position: absolute;
+	display: block;
+	content: '';
+	margin: 44px 0px 0px 500px;
+	width: 44px;
+	height: 39px;
+	background-color: rgb(43, 47, 60);
+	background-image: url(https://i.imgur.com/CjGM0rY.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-radius: 0 0 4px 4px;
+	transition: opacity .5s linear .5s, margin-top 0s linear .5s;
+	-webkit-transition: opacity .5s linear .5s, margin-top 0s linear .5s;
+}

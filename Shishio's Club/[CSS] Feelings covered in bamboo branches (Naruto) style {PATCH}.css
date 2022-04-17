@@ -1,0 +1,69 @@
+/* PATCH */
+
+
+* { cursor: url(https://i.imgur.com/rfmGNZY.png), auto; }
+
+body {
+        font-size: 12px;
+        font-family: 'Carme', sans-serif;
+	background-color: rgb(255, 255, 255);
+	background-image: url(https://i.imgur.com/E9Hu0WK.jpeg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+}
+
+#list_surround {
+	position: relative;
+	width: 700px;
+	left: 50%;
+	margin-left: -350px;
+	margin-top: 424px;
+	margin-bottom: 136px;
+	padding-top: 200px;
+	background-color: rgba(255, 255, 255, 1);
+	background-image: url(https://i.imgur.com/0xHmipf.png), 
+		                          linear-gradient(left , rgba(162, 163, 162, .5) 25%, rgba(162, 163, 162, 1) 100%);
+	background-image: url(https://i.imgur.com/0xHmipf.png), 
+					  -moz-linear-gradient(left , rgba(162, 163, 162, .5) 25%, rgba(162, 163, 162, 1) 100%);
+	background-image: url(https://i.imgur.com/0xHmipf.png), 
+					 -webkit-gradient(
+						linear,
+						left bottom,
+						right bottom,
+						color-stop(0.25, rgba(162, 163, 162, .5)),
+						color-stop(1, rgba(162, 163, 162, 1)));
+	background-attachment: scroll, fixed;
+	background-repeat: repeat;
+	background-position: top left;
+	box-shadow: 0 0 16px rgba(0, 0, 0, .7);
+	border-radius: 0 0 8px 8px;
+}
+
+#inlineContent:before {
+	position: absolute;
+	display: block;
+	content: '';
+	margin-left: -285px;
+	margin-top: -425px;
+	width: 733px;
+	height: 800px;
+	background: url(https://i.imgur.com/9Ik2yk4.png) no-repeat;
+}
+
+
+#list_surround table:nth-of-type(n+4) tbody:hover div small a:first-of-type {
+	visibility: visible;
+	position: absolute !important;
+	display: block !important;
+	content: none !important;
+	color: transparent !important;
+	width: 24px;
+	height: 19px;
+	margin-left: -4px !important;
+	margin-top: 2px;
+	background: url(https://i.imgur.com/3s072MX.png) no-repeat !important;
+	letter-spacing: -5px !important;
+	text-shadow: none;
+}

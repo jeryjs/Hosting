@@ -3,35 +3,77 @@
         "expDataType": "V7 notes"
     },
     {
+        "id": "mapa_1649697997722_c",
+        "list": [
+            {
+                "date": 1649618469002,
+                "id": "linked_1649618469002_r",
+                "text": "Anime+ Custom Color Export\n\n[url=https://anime.plus/jery_js][img]https://anime.plus/jery_js/WzMsIjk3YjBjZCIsIjAwY2RjMCIsIjg4MTA4OSIsIjcwNzA3MCIsIjAwMDAwMCIsIjIzZmZmYSIsImZmNGVkZiIsImZmMTBkOCIsIjI4NTFmZiJd/1649618156[/img][/url]",
+                "url": "https://anime.plus/jery_js/ratings,anime?color=5"
+            },
+            {
+                "date": 1645690844566,
+                "id": "linked_1645690844566_r",
+                "text": "A/M Templates:\n\n/* [TITLE] *[DEL]/ .list-table td.data.image > a[href^=\"/[TYPE]/[ID]/\"]::after { content: \"[SCORE]\"; visibility: visible !important; }\n\n.list-table .list-table-data .data.title:hover .link[href^=\"/[TYPE]/[ID]/\"]::before { content:\"Popularity Ranking : [RANK]   |   Alt. Title : [TITLEENG] \\a \\a [DESC]\"; }",
+                "url": "https://github.com/jeryjs/Hosting/blob/main/Anime-Score.css"
+            },
+            {
+                "date": 1648976922275,
+                "id": "linked_1648976922275_r",
+                "text": "D-RPC\n\nVLC --> 957207956410212392\nmpv --> 959838100664758335\nTaiga --> 379871385176244224\nVLC Original --> 410664151334256663\n\nhttps://discordapp.com/api/oauth2/applications/[appid]/assets\nhttps://cdn.discordapp.com/app-assets/[appid]/[assetid].png",
+                "url": "chrome://startpage/"
+            },
+            {
+                "date": 1649527498303,
+                "id": "linked_1649527498303_r",
+                "text": "https://hanime.tv/videos/hentai/rinkan-club-2?playlist",
+                "url": "https://hanime.tv/videos/hentai/rinkan-club-2?playlist"
+            },
+            {
+                "id": "note_1650216515412_c",
+                "text": "A - Wotaku ni koi wa Muzukashii\nS - Blend S\nA - After the Rain\nD - Miki Okudera (Your Name)\nM - Neko Ramen\n\nR - Kiyo in Kyoto\nT - Futaba Igarashi (Sempai ga Uzai...)\nE - Fune wo Amu\nE - Neko no Massage-ya-san\nS - Soujirou Sakura (Persona 5)\n\nE - Aggressive Retsuko (ONA) 3rd Season\nE - Shigeshoushi\nI - Dearia (Dragon, Ie wo Kau)\n` - Kawaii Hito\nN - Ramune (Kai Byoui Ramune)"
+            }
+        ],
+        "text": "Otaku Life"
+    },
+    {
+        "id": "mapa_1649698046941_c",
+        "list": [
+            {
+                "id": "note_1645078451936_c",
+                "text": "ftp://192.168.66.174:1111"
+            },
+            {
+                "id": "note_1645192174843_c",
+                "text": "https://filecr.com/windows/adobe-photoshop-2022-0007/?id=1079241754\n\npwd-123"
+            },
+            {
+                "id": "note_1649084388915_c",
+                "text": "https://wordpress.com/start/setup-site/intent?siteSlug=jeshsupermarket.wordpress.com"
+            },
+            {
+                "id": "note_1649683303179_c",
+                "text": "Possible WiFi name\n\n￣ﾀﾊ￢ﾗﾏￂ﾿￢ﾗﾏ￣ﾀﾋ"
+            },
+            {
+                "date": 1649613377924,
+                "id": "linked_1649613377924_r",
+                "text": "WSA\n\nBuild 22563 | Are you in?\nThe store interface might take some time to update itself. Make sure you have turned on the Virtual Machine Platform feature in \"Turn Windows features on or off\".\n\nIn the meantime you can download and install WSA with Amazon AppStore manually. Go to this site, pick \"ProductId\" from the first drop-down box, enter 9p3395vx91nr in the next box, pick \"Slow\" from the second drop-down box, and click the ticked button. A few seconds later, a long list of files should appear; you need to click on the .msixbundle link, it ought to be the very last one.\n\nAfter downloading that file, you cannot simply install it by double-clicking. You must right click on it, copy its path, then open an admin Command Prompt or Powershell window and run the following command: Add-AppxPackage -Path <paste msixbundle path here> e.g. Add-AppxPackage -Path \"C:\\Users\\ZurichCat\\WSA-blablabla.msixbundle\" and wait for a few moments. An ASCII progress bar should appear above and the Windows Subsystem for Android along with its Amazon Appstore should be installed.",
+                "url": "https://www.reddit.com/r/windowsinsiders/comments/qefnih/windows_11_preview_this_app_will_not_work_on_your/"
+            }
+        ],
+        "text": "Techy\n"
+    },
+    {
         "date": 1645893571189,
         "id": "linked_1645893571189_r",
         "text": "Term 2 Syllabus\nhttps://byjus.com/cbse-class-12-english-syllabus/\nhttps://byjus.com/cbse/class-12-physics-syllabus/\nhttps://byjus.com/cbse/class-12-chemistry-syllabus/\nhttps://byjus.com/cbse/class-12-maths-syllabus/\nhttps://byjus.com/cbse/class-12-biology-syllabus/",
         "url": "https://byjus.com/cbse/class-12-physics-syllabus/"
     },
     {
-        "id": "note_1645078451936_c",
-        "text": "ftp://192.168.66.174:1111"
-    },
-    {
-        "id": "note_1645192174843_c",
-        "text": "https://filecr.com/windows/adobe-photoshop-2022-0007/?id=1079241754\n\npwd-123"
-    },
-    {
-        "date": 1645192428558,
-        "id": "linked_1645192428558_r",
-        "text": "27610075\n90073",
-        "url": "http://cbseresults.nic.in/CBSEResults/Page/Page?PageId=19&LangId=P"
-    },
-    {
-        "date": 1645690844566,
-        "id": "linked_1645690844566_r",
-        "text": "A/M Templates:\n\n/* [TITLE] *[DEL]/ .list-table td.data.image > a[href^=\"/[TYPE]/[ID]/\"]::after { content: \"[SCORE]\"; visibility: visible !important; }\n\n.list-table .list-table-data .data.title:hover .link[href^=\"/[TYPE]/[ID]/\"]::before { content:\"Popularity Ranking : [RANK]   |   Alt. Title : [TITLEENG] \\a \\a [DESC]\"; }",
-        "url": "https://github.com/jeryjs/Hosting/blob/main/Anime-Score.css"
-    },
-    {
         "date": 1646403234800,
         "id": "linked_1646403234800_r",
-        "text": "Jee main application number\n220310101776",
+        "text": "Jee main/NEET application number\n\nJee - 220310101776\nNEET - 220410110030",
         "url": "https://examinationservices.nic.in/jeemain22/root/Home.aspx?enc=Ei4cajBkK1gZSfgr53ImFVj34FesvYg1WX45sPjGXBr4k3BRYopUWpW/JMEseWKI"
     },
     {
@@ -41,49 +83,15 @@
         "url": "https://iisr.halerp.com/admin/forms/loadForm/2?loginSuccess=1#"
     },
     {
-        "date": 1647091248805,
-        "id": "linked_1647091248805_r",
-        "text": "Bugs\nMouryou no Nie\nInda no Himekishi Janne\n\nhttps://hanime.tv/videos/hentai/inyouchuu-1?r...chanto...",
-        "url": "https://hanime.tv/search"
+        "date": 1650108587214,
+        "id": "linked_1650108587214_r",
+        "text": "https://webstatic-sea.hoyoverse.com/genshin/event/e20190909gacha/index.html?authkey_ver=1&sign_type=2&auth_appid=webview_gacha&init_type=301&gacha_id=50eef7be3b7945930041f9f20310e0bbcb8a7a&timestamp=1648597811&lang=en&device_type=pc&ext=%7b%22loc%22%3a%7b%22x%22%3a1076.8997802734375%2c%22y%22%3a962.2445678710938%2c%22z%22%3a684.1814575195313%7d%2c%22platform%22%3a%22WinST%22%7d&game_version=OSRELWin2.6.0_R6708157_S6731353_D6731353&plat_type=pc&region=os_euro&authkey=1VG7S%2frOM2EObIU3zUHa%2fZ0lPE37wt5JkYNsesk2Qyq%2f5BaIMXsJYOVr46s3LvLoXpqmlizRuHED7AGhDkQRiI0khibCK3ETUhNyQuX5f0HY%2bqjgEYrhtZ6Uk3Xe%2fy3BTl8UDLLrh29m0urzmR1sCdWTFKKFZp%2b5bxIPegjqkumgmy3qrDOh83pMs9R7%2bU6nYygrQqkfStAzsCIoY0T4QUW78MHEmBn609ezfemE1MBtueQt%2bA1cXYMVqFoahuIC0tIuwKWlAPWBvcliHuDxrWlH73zSUJv%2bLS0BRfIvxFRZV39olvyDnWljk24CxXsGnrqjVxsV3JzkdZab%2bMUFRuvnhC28IO7g8RUTlbFhRv5PLl4DkXIXgs2ZwbNrg7fvvxSucF7NZG4dS%2bizBk%2bILf0LPyqY2Avb4DsWlK7IMykzBqCfYAhxhLbCRCOiKFbW%2ft%2b2OXZYsuPeG97L7Y68IZGkV07GbPaB8rW3PG6bg1TgIWDWqN1fTiTB2aNaMu6gQTdqnp1j3qLxVJn2adBg%2bOA6Af8r%2fTOArXW7rTDxeMXWIYYE19bhjL%2b4ocbDH2YOJ3S2071Zq3HwW9c5oZuyWo4ZRC91EOYZFJz4fo4g1SG6kM3uUZh1EnuXdxY%2bV8YlRWi%2bEPs160xWCrrdUTcFHjAnSNQoOL6fQm3bZp%2fc%2fXHazx4NyTiEvKtYOc6I1ruS%2bm1QqxmDBtoKwnkUZqZJTwB7dFwBcvbsPI3R7iw%2feEsA8BGvmvXxpbchMMrr3b70Nd5k9DBkCYZrCwSfkc%2fP1hW6O2thBnBXDOQRtZgHNW3GTc1XpMx5vzduV%2b6Q0OMdS5UHKZ09Jn%2fejHh9yoHzG3LzJQb4YQJKK7qFfVo%2fK91QMPaY8UlpUddF%2f4RnDjANV6c3VbtMD6gXtfzmHcNZFeIIPWbgj5DyZY9EA7lMSPZTWsm3s43gNdvUm%2fQx6SrlnhgqlxQxxpJ4uRUbEqsheAW7KzBlK3F%2fyQVmxstkEJfhZZcOrnQ0fg7l%2blq5AJR%2fJzHsFrzC417Gi2TR8lUiptvCImWCTPFcNH%2fSj8tUYz5SPRPwG2z%2fRCy5CWzH1GQzhu838qaarLSPz0GPsuatBDNl4BabBzxak9BoHhFvGu8GoqjE%2f9hfucpqHuJkpVBaDF%2fN0l%2fOm2mKeLeEtj2DuIDV67UCZ9S2agaZbEl26sOssh1hsgddaEZXuefUCvVlCPDOsSv1rhZ8Qbe6CIzqMFKg%2fEz%2fFzOuCMX7AtSzgJrli5FmHA9Fh0ByFCZdNWlHoA3Yvfjh8bIzC5hjIj7ppPUURBZ9UkJ6DvxVwR3aM%2baESeILOdvCjNfHS304xQYyxHpXyafP7C92%2f8PY3Rwr%2fw%3d%3d&game_biz=hk4e_global#/log",
+        "url": "https://paimon.moe/wish/import"
     },
     {
-        "date": 1647261884389,
-        "id": "linked_1647261884389_r",
-        "text": "Literary devices:\n\nrhyme scheme: aabbc (forever, never, keep, sleep, breathing)\n\nAlliteration: Use of consonant sound at the start of two words which are close in series (Sleep-Sweet)",
-        "url": "https://www.successcds.net/cce-cbse/class-xii/english/a-thing-of-beauty-ncert-explanation-summary.html"
-    },
-    {
-        "date": 1647261945884,
-        "id": "linked_1647261945884_r",
-        "text": "Literary devices:\n\nAnaphora: Use of same word in two consecutive lines (of noble natures- Of all the unhealthy)\n\nAlliteration: Use of consonant sound at the start of two words which are close in series (‘b’ in Band Bind, ‘n’ in Noble nature, ‘s’ in some shape).\n\nMetaphor: wreathing a flowery band (the beautiful things of our life bind us to the earth)\n\nImagery: creating a sensory effect of beautiful things lined up in a string ( A flowery band to bind us)\n\ninversion: normal order of words is reversed ( Are we wreathing a flowery band)",
-        "url": "https://www.successcds.net/cce-cbse/class-xii/english/a-thing-of-beauty-ncert-explanation-summary.html"
-    },
-    {
-        "date": 1647262019472,
-        "id": "linked_1647262019472_r",
-        "text": "Literary devices:\n\nAlliteration: Use of consonant sound at the start of two words which are close in series (‘s’ in Sprouting Shady, Simple sheep, ‘c’ in cooling covert)\n\nImagery: Trees giving shade (sprouting shady boon), growing process of daffodils (daffodils with the green world they live in), Clean river streams (Clear rills)\n\nAntithesis: opposite words placed together (old and young)",
-        "url": "https://www.successcds.net/cce-cbse/class-xii/english/a-thing-of-beauty-ncert-explanation-summary.html"
-    },
-    {
-        "date": 1647262054803,
-        "id": "linked_1647262054803_r",
-        "text": "Literary devices:\n\nAlliteration: Use of consonant sound at the start of two words which are close in series (‘h’ in have heard)\n\nMetaphor: Immortal drinks ( beautiful objects of nature are forever like a neverending portion of a drink)\n\nRhyme: Rhyme scheme is used in every stanza of the poem (forever; never, keep; sleep, dead; read etc.)\n\nImagery: Bushes full of musk roses (sprinkling of fair musk rose blooms), books describing valor of fighters (grandeur-..mighty dead), god providing us with best things (pouring from the heaven’s brink)",
-        "url": "https://www.successcds.net/cce-cbse/class-xii/english/a-thing-of-beauty-ncert-explanation-summary.html"
-    },
-    {
-        "date": 1648325241984,
-        "id": "linked_1648325241984_r",
-        "text": "Common:\nRating\nStorage\nPriority\nDemographics\n\nModern Only:\nLicensors",
-        "url": "https://myanimelist.net/editprofile.php?go=listpreferences"
-    },
-    {
-        "date": 1648976922275,
-        "id": "linked_1648976922275_r",
-        "text": "D-RPC\n\nVLC --> 957207956410212392\nmpv --> 959838100664758335\nTaiga --> 379871385176244224\nVLC Original --> 410664151334256663\n\nhttps://discordapp.com/api/oauth2/applications/[appid]/assets\nhttps://cdn.discordapp.com/app-assets/[appid]/[assetid].png",
-        "url": "chrome://startpage/"
-    },
-    {
-        "id": "note_1649084388915_c",
-        "text": "https://wordpress.com/start/setup-site/intent?siteSlug=jeshsupermarket.wordpress.com"
+        "date": 1650207975284,
+        "id": "linked_1650207975284_r",
+        "text": "https://jeemain.nic.in/jeemainapp/root/loginpage.aspx?enc=EiPu4N%20RhiF3r1foFct3Eg",
+        "url": "https://www.quora.com/What-is-the-procedure-to-change-exam-center-in-JEE-Mains"
     }
 ]

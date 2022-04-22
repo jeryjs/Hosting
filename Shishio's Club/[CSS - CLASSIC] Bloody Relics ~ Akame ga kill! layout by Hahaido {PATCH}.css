@@ -1,0 +1,96 @@
+/* PATCH */
+
+
+/* COVER PIC */
+.hide:before {
+display: block;
+content: '';
+margin-left: -15px;
+margin-top: -73px;
+width: 212px;
+height: 300px;
+background: url(https://i.imgur.com/IgPFZjC.png) no-repeat;
+}
+
+
+/* DOT MENU */
+#mal\_control_strip:before { background: url('https://i.imgur.com/LSSRT6X.png') no-repeat !important; }
+
+
+/* GRAPHIC MENU */
+#mal\_cs_otherlinks div a[href*="login"]:before,
+#mal\_cs_listinfo div a[href*="KimiUsot"]:before,
+#mal\_cs_listinfo div:first-of-type a:before,
+#mal_cs_links div a[href*="addtolist"]:before,
+#mal\_cs_links div:last-of-type a:last-of-type:before {
+background-image: url('https://i.imgur.com/jNvYszI.png') !important;
+}
+
+#mal\_cs_otherlinks div a[href*="login"]:before,
+#mal\_cs_listinfo div:last-of-type a:before,
+#mal\_cs_listinfo div:first-of-type a:before,
+#mal_cs_links div a[href*="addtolist"]:before,
+#mal\_cs_links div:last-of-type a:last-of-type:before,
+#mal\_cs_otherlinks div a[href*="login"]:before,
+#mal\_cs_listinfo div:last-of-type a:before,
+#mal\_cs_listinfo div:first-of-type a:before,
+#mal_cs_links div a[href*="addtolist"]:before,
+#mal\_cs_links div:last-of-type a:last-of-type:before{
+background-image: url('https://i.imgur.com/jNvYszI.png') !important;
+}
+
+
+/* WINGED MENU ICON */
+#list_surround > table:first-of-type:before { background-image: url('https://i.imgur.com/ighwa1Z.png'); }
+
+
+
+/* ARROW POINTING RIGHT */
+.status_selected a:after, .status_not_selected a:hover:after {
+background: url(https://i.imgur.com/rPzct1n.png) no-repeat;
+}
+
+
+tr:hover td[class^='td']:first-child:before {
+background: url(https://i.imgur.com/rPzct1n.png) no-repeat;
+}
+
+
+/* Custom cursor */
+a, body { cursor: url(https://i.imgur.com/9kIX8tA.png) 1 1, auto; }
+
+
+/* Headers pics */
+.header_cw span, .header_completed span, .header_onhold span, .header_dropped span, .header_ptw span {
+background-image: url(https://i.imgur.com/VoOJEyA.png);
+}
+
+/* CURRENTLY WATCHING BACKGROUND */
+.status_selected:first-child {
+background-image: url(https://i.imgur.com/9vpLW1i.jpeg);
+}
+
+/* COMPLETED BACKGROUND */
+.status_selected:nth-child(2) {
+background-image: url(https://i.imgur.com/a0lVsax.jpeg);
+}
+
+/* ON-HOLD BACKGROUND */
+.status_selected:nth-child(3) {
+background-image: url(https://i.imgur.com/VHYJc9e.jpeg);
+}
+
+/* DROPPED BACKGROUND */
+.status_selected:nth-child(4) {
+background-image: url(https://i.imgur.com/4gQt5G9.jpeg);
+}
+
+/* PLANNED BACKGROUND */
+.status_selected:nth-child(5) {
+background-image: url(https://i.imgur.com/ilpGF5E.jpeg);
+}
+
+/* ALL BACKGROUND */
+.status_selected:last-child {
+background-image: url(https://i.imgur.com/9vpLW1i.jpeg);
+}

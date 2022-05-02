@@ -31,7 +31,7 @@
             },
             {
                 "id": "note_1650216515412_c",
-                "text": "A - Wotaku ni koi wa Muzukashii\nS - Blend S\nA - After the Rain\nD - Miki Okudera (Your Name)\nM - Neko Ramen\n\nR - Kiyo in Kyoto\nT - Futaba Igarashi (Sempai ga Uzai...)\nE - Fune wo Amu\nE - Neko no Massage-ya-san\nS - Soujirou Sakura (Persona 5)\n\nE - Aggressive Retsuko (ONA) 3rd Season\nE - Shigeshoushi\nI - Dearia (Dragon, Ie wo Kau)\n` - Kawaii Hito\nN - Ramune (Kai Byoui Ramune)"
+                "text": "A - Wotaku ni koi wa Muzukashii\nS - Blend S\nA - After the Rain\nD - Miki Okudera (Your Name)\nM - Neko Ramen\n\nR - Kiyo in Kyoto\nT - Futaba Igarashi (Sempai ga Uzai...)\nE - Fune wo Amu\nE - Neko no Massage-ya-san\nS - Soujirou Sakura (Persona 5)\n\nE - Aggressive Retsuko (ONA) 3rd Season\nE - Shigeshoushi\nI - Dearia (Dragon, Ie wo Kau)\n` - Kawaii Hito\nN - Ramune (Kai Byoui Ramune)\n\nG - Ryman's Club\nT - Isekai Shokudou\nS - Shachiku-san wa Youjo Yuurei ni Iyasaretai."
             }
         ],
         "text": "Otaku Life"
@@ -54,12 +54,6 @@
             {
                 "id": "note_1649683303179_c",
                 "text": "Possible WiFi name\n\n￣ﾀﾊ￢ﾗﾏￂ﾿￢ﾗﾏ￣ﾀﾋ"
-            },
-            {
-                "date": 1649613377924,
-                "id": "linked_1649613377924_r",
-                "text": "WSA\n\nBuild 22563 | Are you in?\nThe store interface might take some time to update itself. Make sure you have turned on the Virtual Machine Platform feature in \"Turn Windows features on or off\".\n\nIn the meantime you can download and install WSA with Amazon AppStore manually. Go to this site, pick \"ProductId\" from the first drop-down box, enter 9p3395vx91nr in the next box, pick \"Slow\" from the second drop-down box, and click the ticked button. A few seconds later, a long list of files should appear; you need to click on the .msixbundle link, it ought to be the very last one.\n\nAfter downloading that file, you cannot simply install it by double-clicking. You must right click on it, copy its path, then open an admin Command Prompt or Powershell window and run the following command: Add-AppxPackage -Path <paste msixbundle path here> e.g. Add-AppxPackage -Path \"C:\\Users\\ZurichCat\\WSA-blablabla.msixbundle\" and wait for a few moments. An ASCII progress bar should appear above and the Windows Subsystem for Android along with its Amazon Appstore should be installed.",
-                "url": "https://www.reddit.com/r/windowsinsiders/comments/qefnih/windows_11_preview_this_app_will_not_work_on_your/"
             }
         ],
         "text": "Techy\n"
@@ -81,12 +75,6 @@
         "id": "linked_1646594893792_r",
         "text": "https://iisr.halerp.com\n\n27735\n",
         "url": "https://iisr.halerp.com/admin/forms/loadForm/2?loginSuccess=1#"
-    },
-    {
-        "date": 1650108587214,
-        "id": "linked_1650108587214_r",
-        "text": "https://webstatic-sea.hoyoverse.com/genshin/event/e20190909gacha/index.html?authkey_ver=1&sign_type=2&auth_appid=webview_gacha&init_type=301&gacha_id=50eef7be3b7945930041f9f20310e0bbcb8a7a&timestamp=1648597811&lang=en&device_type=pc&ext=%7b%22loc%22%3a%7b%22x%22%3a1076.8997802734375%2c%22y%22%3a962.2445678710938%2c%22z%22%3a684.1814575195313%7d%2c%22platform%22%3a%22WinST%22%7d&game_version=OSRELWin2.6.0_R6708157_S6731353_D6731353&plat_type=pc&region=os_euro&authkey=1VG7S%2frOM2EObIU3zUHa%2fZ0lPE37wt5JkYNsesk2Qyq%2f5BaIMXsJYOVr46s3LvLoXpqmlizRuHED7AGhDkQRiI0khibCK3ETUhNyQuX5f0HY%2bqjgEYrhtZ6Uk3Xe%2fy3BTl8UDLLrh29m0urzmR1sCdWTFKKFZp%2b5bxIPegjqkumgmy3qrDOh83pMs9R7%2bU6nYygrQqkfStAzsCIoY0T4QUW78MHEmBn609ezfemE1MBtueQt%2bA1cXYMVqFoahuIC0tIuwKWlAPWBvcliHuDxrWlH73zSUJv%2bLS0BRfIvxFRZV39olvyDnWljk24CxXsGnrqjVxsV3JzkdZab%2bMUFRuvnhC28IO7g8RUTlbFhRv5PLl4DkXIXgs2ZwbNrg7fvvxSucF7NZG4dS%2bizBk%2bILf0LPyqY2Avb4DsWlK7IMykzBqCfYAhxhLbCRCOiKFbW%2ft%2b2OXZYsuPeG97L7Y68IZGkV07GbPaB8rW3PG6bg1TgIWDWqN1fTiTB2aNaMu6gQTdqnp1j3qLxVJn2adBg%2bOA6Af8r%2fTOArXW7rTDxeMXWIYYE19bhjL%2b4ocbDH2YOJ3S2071Zq3HwW9c5oZuyWo4ZRC91EOYZFJz4fo4g1SG6kM3uUZh1EnuXdxY%2bV8YlRWi%2bEPs160xWCrrdUTcFHjAnSNQoOL6fQm3bZp%2fc%2fXHazx4NyTiEvKtYOc6I1ruS%2bm1QqxmDBtoKwnkUZqZJTwB7dFwBcvbsPI3R7iw%2feEsA8BGvmvXxpbchMMrr3b70Nd5k9DBkCYZrCwSfkc%2fP1hW6O2thBnBXDOQRtZgHNW3GTc1XpMx5vzduV%2b6Q0OMdS5UHKZ09Jn%2fejHh9yoHzG3LzJQb4YQJKK7qFfVo%2fK91QMPaY8UlpUddF%2f4RnDjANV6c3VbtMD6gXtfzmHcNZFeIIPWbgj5DyZY9EA7lMSPZTWsm3s43gNdvUm%2fQx6SrlnhgqlxQxxpJ4uRUbEqsheAW7KzBlK3F%2fyQVmxstkEJfhZZcOrnQ0fg7l%2blq5AJR%2fJzHsFrzC417Gi2TR8lUiptvCImWCTPFcNH%2fSj8tUYz5SPRPwG2z%2fRCy5CWzH1GQzhu838qaarLSPz0GPsuatBDNl4BabBzxak9BoHhFvGu8GoqjE%2f9hfucpqHuJkpVBaDF%2fN0l%2fOm2mKeLeEtj2DuIDV67UCZ9S2agaZbEl26sOssh1hsgddaEZXuefUCvVlCPDOsSv1rhZ8Qbe6CIzqMFKg%2fEz%2fFzOuCMX7AtSzgJrli5FmHA9Fh0ByFCZdNWlHoA3Yvfjh8bIzC5hjIj7ppPUURBZ9UkJ6DvxVwR3aM%2baESeILOdvCjNfHS304xQYyxHpXyafP7C92%2f8PY3Rwr%2fw%3d%3d&game_biz=hk4e_global#/log",
-        "url": "https://paimon.moe/wish/import"
     },
     {
         "date": 1650207975284,

@@ -24,12 +24,6 @@
                 "url": "chrome://startpage/"
             },
             {
-                "date": 1649527498303,
-                "id": "linked_1649527498303_r",
-                "text": "https://hanime.tv/videos/hentai/rinkan-club-2?playlist",
-                "url": "https://hanime.tv/videos/hentai/rinkan-club-2?playlist"
-            },
-            {
                 "id": "note_1650216515412_c",
                 "text": "A - Wotaku ni koi wa Muzukashii\nS - Blend S\nA - After the Rain\nD - Miki Okudera (Your Name)\nM - Neko Ramen\n\nR - Kiyo in Kyoto\nT - Futaba Igarashi (Sempai ga Uzai...)\nE - Fune wo Amu\nE - Neko no Massage-ya-san\nS - Soujirou Sakura (Persona 5)\n\nE - Aggressive Retsuko (ONA) 3rd Season\nE - Shigeshoushi\nI - Dearia (Dragon, Ie wo Kau)\n` - Kawaii Hito\nN - Ramune (Kai Byoui Ramune)\n\nG - Ryman's Club\nT - Isekai Shokudou\nS - Shachiku-san wa Youjo Yuurei ni Iyasaretai."
             }
@@ -54,6 +48,12 @@
             {
                 "id": "note_1649683303179_c",
                 "text": "Possible WiFi name\n\n￣ﾀﾊ￢ﾗﾏￂ﾿￢ﾗﾏ￣ﾀﾋ"
+            },
+            {
+                "date": 1651668397721,
+                "id": "linked_1651668397721_r",
+                "text": "Install Magisk and Hide Root from Apps.\nMagisk Installer gets auto-installed when you install Windows Subsystem for Android (WSA) with Play Store. And through it, you can install Magisk and Enable Zydisk. With Zydisk, you can hide root from apps that are not working due to root. Or showing this error “Your device is rooted. This application cannot run on rooted device”.",
+                "url": "https://geekbullet.com/install-wsa-with-play-store-and-magisk/"
             }
         ],
         "text": "Techy\n"

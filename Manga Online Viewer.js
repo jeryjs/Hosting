@@ -5,7 +5,7 @@
 // @downloadURL https://github.com/TagoDR/MangaOnlineViewer/raw/master/Manga_OnlineViewer.user.js
 // @namespace https://github.com/TagoDR
 // @description Shows all pages at once in online view for these sites: Asura Scans, Flame Scans, Realm Scans, Alpha-scans, Voids-Scans, Batoto, ComiCastle, Dynasty-Scans, InManga, KLManga, Leitor, LHTranslation, MangaBuddy, MangaDex, MangaFox, MangaHere, MangaFreak, Mangago, mangahosted, MangaHub, MangaKakalot, MangaNelo, MangaNato, MangaPark, MReader, Mangareader, MangaSee, Manga4life, MangaTigre, MangaTown, ManhuaScan, NineManga, PandaManga, RawDevart, ReadComicsOnline, ReadManga Today, Funmanga, MangaDoom, MangaInn, ReaperScans, SenManga(Raw), ShimadaScans, KLManga, TenManga, TuMangaOnline, UnionMangas, WebToons, Manga33, ZeroScans, FoOlSlide, Kireicake, Madara WordPress Plugin, MangaHaus, Isekai Scan, Comic Kiba, Zinmanga, mangatx, Toonily, Mngazuki, JaiminisBox, DisasterScans, ManhuaPlus
-// @version 2022.10.26
+// @version 2022.11.07
 // @license MIT
 // @grant GM_getValue
 // @grant GM_setValue
@@ -35,7 +35,7 @@
 // @include /https?:\/\/(www.)?mangago.me\/.*\/.*\/.*/
 // @include /https?:\/\/(www.)?mangahosted.com\/manga\/.+\/.+/
 // @include /https?:\/\/(www.)?(mangahub).io\/chapter\/.+\/.+/
-// @include /https?:\/\/(www.)?((manganelo|mangakakalot).com\/chapter\/.+\/.+|(manganato|readmanganato|chapmanganato).com\/manga-\w\w\d+\/chapter-\d+)/
+// @include /https?:\/\/(www.)?((manganelo|mangakakalot).com\/chapter\/.+\/.+|(manganato|readmanganato|chapmanganato|chapmanganelo).com\/manga-\w\w\d+\/chapter-\d+)/
 // @include /https?:\/\/(www.)?mangapark.(com|me|org|net)\/(manga|chapter|comic)\/.+\/.+/
 // @include /https?:\/\/(www.)?mreader.co\/reader\/.*/
 // @include /https?:\/\/(www.)?mangareader.to\/read\/.+\/.+\/.+/
@@ -56,6 +56,7 @@
 // @include /https?:\/\/(www.)?(tmofans|lectortmo|followmanga).com\/.+\/.+\/(paginated|cascade)/
 // @include /https?:\/\/(www.)?unionleitor.top\/leitor\/.+\/.+/
 // @include /https?:\/\/(www.)?webtoons.com\/.+viewer.+/
+// @include /https?:\/\/(www.)?hentaihand.com\/.+reader.+/
 // @include /https?:\/\/(www.)?(manga33).com\/manga\/.+/
 // @include /https?:\/\/(www.)?zeroscans.com\/comics\/.+/
 // @include /^(?!.*jaiminisbox).*\/read\/.+/
@@ -538,7 +539,7 @@
     // == MangaKakalot =================================================================================
     var mangakakalot = {
         name: ['MangaKakalot', 'MangaNelo', 'MangaNato'],
-        url: /https?:\/\/(www.)?((manganelo|mangakakalot).com\/chapter\/.+\/.+|(manganato|readmanganato|chapmanganato).com\/manga-\w\w\d+\/chapter-\d+)/,
+        url: /https?:\/\/(www.)?((manganelo|mangakakalot).com\/chapter\/.+\/.+|(manganato|readmanganato|chapmanganato|chapmanganelo).com\/manga-\w\w\d+\/chapter-\d+)/,
         homepage: [
             'https://mangakakalot.com/page',
             'https://www.manganelo.com/',
@@ -1068,6 +1069,29 @@
         },
     };
 
+    // == HentaiHand ====================================================================================
+    var hentaihand = {
+        name: 'HentaiHand',
+        url: /https?:\/\/(www.)?hentaihand.com\/en\/comics\/.+/,
+        homepage: 'https://hentaihand.com/',
+        language: ['English'],
+        category: 'manga',
+        run() {
+            const W = typeof unsafeWindow !== 'undefined' ? unsafeWindow : window;
+            // eslint-disable-next-line no-underscore-dangle
+            const images = [...document.querySelectorAll('.vertical-image img')];
+            const chapters = document.querySelectorAll('.v-btn--router');
+            return {
+                title: document.querySelector('.d-inline-block.comic-title.font-weight-bold.mb-0.text-truncate')?.textContent?.trim(),
+                series: document.querySelector('.d-inline-block.comic-title.font-weight-bold.mb-0.text-truncate a')?.getAttribute('href'),
+                pages: images.length,
+                // prev: document.querySelector('._prevEpisode')?.getAttribute('href'),
+                // next: document.querySelector('._nextEpisode')?.getAttribute('href'),
+                listImages: images.map((img) => img.getAttribute('data-src') || img.getAttribute('src')),
+            };
+        },
+    };
+
     // == WPManga ======================================================================================
     var wpmanga = {
         name: ['Manga33'],
@@ -1158,6 +1182,7 @@
         webtoons,
         wpmanga,
         zeroscans,
+        hentaihand,
         foolslide,
         madarawp, // Must be at the end because is a generic check
     ];

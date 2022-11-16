@@ -56,7 +56,7 @@
 // @include /https?:\/\/(www.)?(tmofans|lectortmo|followmanga).com\/.+\/.+\/(paginated|cascade)/
 // @include /https?:\/\/(www.)?unionleitor.top\/leitor\/.+\/.+/
 // @include /https?:\/\/(www.)?webtoons.com\/.+viewer.+/
-// @include /https?:\/\/(www.)?hentaihand.com\/.+reader.+/
+// @include /https?:\/\/(www.)?hentaihand.com\/.+\/reader\/\d+/
 // @include /https?:\/\/(www.)?(manga33).com\/manga\/.+/
 // @include /https?:\/\/(www.)?zeroscans.com\/comics\/.+/
 // @include /^(?!.*jaiminisbox).*\/read\/.+/
@@ -1069,25 +1069,23 @@
         },
     };
 
-    // == HentaiHand ====================================================================================
+     // == HentaiHand ==================================================================================
     var hentaihand = {
-        name: 'HentaiHand',
-        url: /https?:\/\/(www.)?hentaihand.com\/en\/comics\/.+/,
-        homepage: 'https://hentaihand.com/',
+        name: ['HentaiHand'],
+        url: /https?:\/\/(www.)?hentaihand.com\/.+\/reader\/\d+/,
+        homepage: ['https://hentaihand.com/'],
         language: ['English'],
-        category: 'manga',
+        category: 'hentai',
+        waitEle: '.vertical-image',
         run() {
-            const W = typeof unsafeWindow !== 'undefined' ? unsafeWindow : window;
-            // eslint-disable-next-line no-underscore-dangle
             const images = [...document.querySelectorAll('.vertical-image img')];
-            const chapters = document.querySelectorAll('.v-btn--router');
             return {
-                title: document.querySelector('.d-inline-block.comic-title.font-weight-bold.mb-0.text-truncate')?.textContent?.trim(),
-                series: document.querySelector('.d-inline-block.comic-title.font-weight-bold.mb-0.text-truncate a')?.getAttribute('href'),
+                title: document.querySelector('.reader-header h5')?.textContent?.trim(),
+                series: document.querySelector('.reader-header h5 a')?.getAttribute('href'),
                 pages: images.length,
-                // prev: document.querySelector('._prevEpisode')?.getAttribute('href'),
-                // next: document.querySelector('._nextEpisode')?.getAttribute('href'),
-                listImages: images.map((img) => img.getAttribute('data-src') || img.getAttribute('src')),
+                prev: '#',
+                next: '#',
+                listImages: images.map((img) => img.getAttribute('data-src')),
             };
         },
     };
@@ -3121,7 +3119,7 @@
     const themes = () => Object.values(colors);
     const themesSelector = [...Object.keys(colors).map((color) => colors[color].name)].map((theme) => `
 <span class='${theme} ThemeRadio ${useSettings().theme === theme ? 'selected' : ''}'
-      title='${theme}'      
+      title='${theme}'
 >
 ${IconCheck}
 </span>
@@ -3232,7 +3230,7 @@ ${IconCheck}
       </div>
       <!-- =========================================================================================== -->
       <div class="ControlLabel ThemeSelector">${getLocaleString('THEME')}:
-        <span class="custom ThemeRadio 
+        <span class="custom ThemeRadio
             ${useSettings().theme === 'custom' ? 'selected' : ''}"
               title="custom">
         ${IconPalette}
@@ -3241,7 +3239,7 @@ ${IconCheck}
         ${themesSelector.join('')}
       </div>
       <!-- =========================================================================================== -->
-      <div id="Hue" class="ControlLabel CustomTheme ControlLabelItem 
+      <div id="Hue" class="ControlLabel CustomTheme ControlLabelItem
           ${useSettings().theme.startsWith('custom') ? 'show' : ''}">
         ${getLocaleString('THEME_HUE')}:
         <input id="CustomThemeHue" type="color" value="${useSettings().customTheme}"
@@ -3665,7 +3663,7 @@ ${IconCheck}
     const listOptions = (times, begin) => indexList(times, begin).map((index) => `<option value="${index}">${index}</option>`);
     const app = (manga, begin = 1) => `
 <div id="MangaOnlineViewer"
-  class="${useSettings().colorScheme} 
+  class="${useSettings().colorScheme}
     ${useSettings().hidePageControls ? 'hideControls' : ''}
     ${isBookmarked() ? 'bookmarked' : ''}"
   data-theme="${useSettings().theme}">
@@ -3698,18 +3696,18 @@ ${IconCheck}
         <button id="ltrMode" title="${getLocaleString('VIEW_MODE_LEFT')}" class="ControlButton">
           ${IconArrowAutofitRight}
         </button>
-        <button id="verticalMode" 
+        <button id="verticalMode"
           title="${getLocaleString('VIEW_MODE_VERTICAL')}" class="ControlButton">
           ${IconArrowAutofitDown}
         </button>
-        <button id="webComic" 
+        <button id="webComic"
           title="${getLocaleString('VIEW_MODE_WEBCOMIC')}" class="ControlButton">
           ${IconSpacingVertical}
         </button>
         <button id="rtlMode" title="${getLocaleString('VIEW_MODE_RIGHT')}" class="ControlButton">
           ${IconArrowAutofitLeft}
         </button>
-        <button id="pageControls" 
+        <button id="pageControls"
           title="${getLocaleString('TOGGLE_CONTROLS')}" class="ControlButton">
           ${IconListNumbers}
         </button>
@@ -3746,19 +3744,19 @@ ${IconCheck}
           ${IconLoader2}
           ${getLocaleString('BUTTON_DOWNLOAD')}
         </button>
-        <button id="prev" class="NavigationControlButton ControlButton" type="button" 
+        <button id="prev" class="NavigationControlButton ControlButton" type="button"
           value="${manga.prev || ''}" title="${getLocaleString('PREVIOUS_CHAPTER')}">
           ${IconArrowBigLeft}
           ${getLocaleString('BUTTON_PREVIOUS')}
         </button>
-        <button id="next" class="NavigationControlButton ControlButton" type="button" 
+        <button id="next" class="NavigationControlButton ControlButton" type="button"
           value="${manga.next || ''}" title="${getLocaleString('NEXT_CHAPTER')}">
           ${getLocaleString('BUTTON_NEXT')}
           ${IconArrowBigRight}
         </button>
       </div>
     </nav>
-  </header>  
+  </header>
   <main id="Chapter" class="${useSettings().fitWidthIfOversize ? 'fitWidthIfOversize' : ''}
       ${useSettings().viewMode}">
     ${listPages(manga.pages, begin).join('')}
@@ -3997,7 +3995,7 @@ ${IconCheck}
         return new Promise((resolve) => {
             logScript('Fetching page: ', url);
             fetch(url)
-                .then((response) => 
+                .then((response) =>
             // When the page is loaded convert it to text
             response.text())
                 .then((html) => {

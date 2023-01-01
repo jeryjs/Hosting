@@ -941,6 +941,14 @@ https://myanimelist.net/forum/?topicid=1723114
 .anime .data.tags span a[href*="=Most%20Fav"]:after {
   content: "This Is One Of My Most Fav Animes Ever !"
 }
+/*  TAG - Best Girl!! */  
+.anime .data.tags span a[href*="=Best%20Girl!!"]:after {
+  content: "What's wrong with calling the best girl a BEST GIRL?!"
+}
+/*  TAG - Worst Anime Ever! */  
+.anime .data.tags span a[href*="=Worst%20Anime%20Ever!"]:after {
+  content: "I wish I could Un-See everything I just saw :("
+}
 /*-----TAG - Seasons-----*/  
 /* Winter 2021*/ 
 .data.tags span a[href*="=Winter%202021"]:after { content: "Animes I watched on a weekly basis in Winter 2021" }
@@ -959,6 +967,15 @@ https://myanimelist.net/forum/?topicid=1723114
 .data.tags span a[href*="=Summer%202022"]:after { content: "Animes I watched on a weekly basis in Summer 2022" }
 /* Fall 2022*/ 
 .data.tags span a[href*="=Fall%202022"]:after { content: "Animes I watched on a weekly basis in Fall 2022" }
+
+/* Winter 2023*/ 
+.data.tags span a[href*="=Winter%202023"]:after { content: "Animes I watched on a weekly basis in Winter 2023" }
+/* Spring 2023*/ 
+.data.tags span a[href*="=Spring%202023"]:after { content: "Animes I watched on a weekly basis in Spring 2023" }
+/* Summer 2023*/ 
+.data.tags span a[href*="=Summer%202023"]:after { content: "Animes I watched on a weekly basis in Summer 2023" }
+/* Fall 2023*/ 
+.data.tags span a[href*="=Fall%202023"]:after { content: "Animes I watched on a weekly basis in Fall 2023" }
 
 /*------------------------E-N-D-*/
 

@@ -942,7 +942,7 @@ https://myanimelist.net/forum/?topicid=1723114
   content: "This Is One Of My Most Fav Animes Ever !"
 }
 /*  TAG - Best Girl!! */  
-.anime .data.tags span a[href*="=Best%20Girl!!"]:after {
+.anime .data.tags span a[href*="Best%20Girl"]:after {
   content: "What's wrong with calling the best girl a BEST GIRL?!"
 }
 /*  TAG - Worst Anime Ever! */  

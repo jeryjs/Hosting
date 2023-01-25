@@ -4,8 +4,8 @@
 // @updateURL https://github.com/TagoDR/MangaOnlineViewer/raw/master/Manga_OnlineViewer.meta.js
 // @downloadURL https://github.com/TagoDR/MangaOnlineViewer/raw/master/Manga_OnlineViewer.user.js
 // @namespace https://github.com/TagoDR
-// @description Shows all pages at once in online view for these sites: Asura Scans, Batoto, ComiCastle, Dynasty-Scans, Asura Scans, Flame Scans, Realm Scans, Voids-Scans, Luminous Scans, InManga, KLManga, Leitor, LHTranslation, MangaBuddy, MangaDex, MangaFox, MangaHere, MangaFreak, Mangago, mangahosted, MangaHub, MangaKakalot, MangaNelo, MangaNato, MangaPark, MReader, Mangareader, MangaSee, Manga4life, MangaTigre, MangaTown, ManhuaScan, NineManga, PandaManga, RawDevart, ReadComicsOnline, ReadManga Today, Funmanga, MangaDoom, MangaInn, ReaperScans, SenManga(Raw), ShimadaScans, KLManga, TenManga, TuMangaOnline, UnionMangas, WebToons, Manga33, ZeroScans, FoOlSlide, Kireicake, Madara WordPress Plugin, MangaHaus, Isekai Scan, Comic Kiba, Zinmanga, mangatx, Toonily, Mngazuki, JaiminisBox, DisasterScans, ManhuaPlus, TopManhua
-// @version 2022.12.10
+// @description Shows all pages at once in online view for these sites: Asura Scans, Batoto, ComiCastle, Dynasty-Scans, Asura Scans, Flame Scans, Realm Scans, Voids-Scans, Luminous Scans, InManga, KLManga, Leitor, LHTranslation, LynxScans, MangaBuddy, MangaDex, MangaFox, MangaHere, MangaFreak, mangahosted, MangaHub, MangaKakalot, MangaNelo, MangaNato, MReader, Mangareader, MangaSee, Manga4life, MangaTigre, MangaTown, ManhuaScan, NaniScans, NineManga, PandaManga, RawDevart, ReadComicsOnline, ReadManga Today, Funmanga, MangaDoom, MangaInn, ReaperScans, SenManga(Raw), ShimadaScans, KLManga, TenManga, TuMangaOnline, UnionMangas, WebToons, Manga33, ZeroScans, FoOlSlide, Kireicake, Madara WordPress Plugin, MangaHaus, Isekai Scan, Comic Kiba, Zinmanga, mangatx, Toonily, Mngazuki, JaiminisBox, DisasterScans, ManhuaPlus, TopManhua, LeviatanScans
+// @version 2023.01.21
 // @license MIT
 // @grant GM_getValue
 // @grant GM_setValue
@@ -14,37 +14,37 @@
 // @grant GM_xmlhttpRequest
 // @noframes on
 // @connect *
-// @require https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js
+// @require https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.5.2/tinycolor.min.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/jszip/3.9.1/jszip.min.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js
-// @require https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.15/sweetalert2.min.js
+// @require https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.8/sweetalert2.min.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js
 // @include /https?:\/\/beta.asurascans.com\/read\/.+\/.+/
 // @include /https?:\/\/(www.)?bato.to\/chapter.*/
 // @include /https?:\/\/(www.)?comicastle.org\/read\/.+\/[0-9]+.*/
 // @include /https?:\/\/(www.)?dynasty-scans.com\/chapters\/.+/
-// @include /https?:\/\/(www.)?(asura|flamescans|realmscans|void-scans|luminousscans).(com|org|gg)\/.+/
+// @include /https?:\/\/(www.)?(asurascans|flamescans|realmscans|void-scans|luminousscans).(com|org|gg)\/.+/
 // @include /https?:\/\/(www.)?inmanga.com\/ver\/manga\/.+\/.+/
 // @include /https?:\/\/(www.)?klmanga.com\/.+chapter.+/
 // @include /https?:\/\/(www.)?leitor.net\/manga\/.+\/.+\/.+/
 // @include /https?:\/\/(www.)?lhtranslation.net\/read.+/
+// @include /https?:\/\/(www.)?lynxscans.com\/comics\/.+/
 // @include /https?:\/\/(www.)?mangabuddy.com\/.+\/chapter.+/
 // @include /https?:\/\/(www.)?mangadex.org\/chapter\/.+(\/.+)?/
 // @include /https?:\/\/(www.)?(fanfox.net|mangahere.cc)\/manga\/.+\/.+\//
 // @include /https?:\/\/.{3,4}?(mangafreak).net\/Read.+/
-// @include /https?:\/\/(www.)?mangago.me\/.*\/.*\/.*/
 // @include /https?:\/\/(www.)?mangahosted.com\/manga\/.+\/.+/
 // @include /https?:\/\/(www.)?(mangahub).io\/chapter\/.+\/.+/
 // @include /https?:\/\/(www.)?((manganelo|mangakakalot).com\/chapter\/.+\/.+|(manganato|readmanganato|chapmanganato).com\/manga-\w\w\d+\/chapter-\d+)/
-// @include /https?:\/\/(www.)?mangapark.(com|me|org|net)\/(manga|chapter|comic)\/.+\/.+/
 // @include /https?:\/\/(www.)?mreader.co\/reader\/.*/
 // @include /https?:\/\/(www.)?mangareader.to\/read\/.+\/.+\/.+/
 // @include /https?:\/\/(www.)?(mangasee123|manga4life).com\/read-online\/.+/
 // @include /https?:\/\/(www.)?mangatigre.net\/.+\/.+\/.+/
 // @include /https?:\/\/(www.|m.)?mangatown.com\/manga\/.+\/.+/
 // @include /https?:\/\/(www.)?manhuascan.io\/.+chapter.+/
+// @include /https?:\/\/(www.)?(naniscans).com\/chapters\/.+\/read/
 // @include /https?:\/\/(www.)?ninemanga.com\/chapter\/.+\/.+\.html/
 // @include /https?:\/\/(www.)?pandamanga.xyz\/.+\/.+\/.+/
 // @include /https?:\/\/(www.)?rawdevart.com\/comic\/.+\/.+\//
@@ -153,7 +153,7 @@
 
   const flamecans = {
     name: ["Asura Scans", "Flame Scans", "Realm Scans", "Voids-Scans", "Luminous Scans"],
-    url: /https?:\/\/(www.)?(asura|flamescans|realmscans|void-scans|luminousscans).(com|org|gg)\/.+/,
+    url: /https?:\/\/(www.)?(asurascans|flamescans|realmscans|void-scans|luminousscans).(com|org|gg)\/.+/,
     homepage: [
       "https://www.asura.gg/",
       "https://flamescans.org/",
@@ -301,6 +301,26 @@
     }
   };
 
+  const lynxscans = {
+    name: "LynxScans",
+    url: /https?:\/\/(www.)?lynxscans.com\/comics\/.+/,
+    homepage: "https://lynxscans.com/home",
+    language: ["English"],
+    category: "manga",
+    waitVar: "chapterPages",
+    run() {
+      const W = typeof unsafeWindow !== "undefined" ? unsafeWindow : window;
+      return {
+        title: document.querySelector("title")?.textContent?.trim(),
+        series: document.querySelector(".fa-home-alt")?.parentElement?.getAttribute("href"),
+        pages: W.chapterPages.length,
+        prev: W.previousChapter.number,
+        next: W.nextChapter.number,
+        listImages: W.chapterPages
+      };
+    }
+  };
+
   const madarawp = {
     name: [
       "Madara WordPress Plugin",
@@ -314,7 +334,8 @@
       "JaiminisBox",
       "DisasterScans",
       "ManhuaPlus",
-      "TopManhua"
+      "TopManhua",
+      "LeviatanScans"
     ],
     url: /https?:\/\/.+\/(manga|series|manhua)\/.+\/.+/,
     homepage: [
@@ -329,7 +350,8 @@
       "https://jaiminisbox.net",
       "https://disasterscans.com/",
       "https://manhuaplus.com/",
-      "https://www.topmanhua.com/"
+      "https://www.topmanhua.com/",
+      "https://en.leviatanscans.com/home/"
     ],
     language: ["English"],
     obs: "Any Site that uses Madara Wordpress Plugin",
@@ -383,14 +405,14 @@
     homepage: "https://mangadex.org/",
     language: ["English"],
     category: "manga",
-    waitEle: "a[href^='/chapter/']",
+    waitEle: ".md--reader-menu a[href^='/chapter/']",
     async run() {
       const W = typeof unsafeWindow !== "undefined" ? unsafeWindow : window;
       const chapterId = W.location.pathname.match(/\/chapter\/([^/]+)(\/\d+)?/)[1];
       const home = `https://api.mangadex.org/at-home/server/${chapterId}`;
       const server = await fetch(home).then((res) => res.json());
       const images = server.chapter.data;
-      const chapters = [...document.querySelectorAll("a[href^='/chapter/']")].map(
+      const chapters = [...document.querySelectorAll(".md--reader-menu a[href^='/chapter/']")].map(
         (a) => a.getAttribute("href")
       );
       return {
@@ -456,30 +478,6 @@
         prev: chapter?.previousElementSibling?.getAttribute("value"),
         next: chapter?.nextElementSibling?.getAttribute("value"),
         listImages: images.map((img) => img.getAttribute("src"))
-      };
-    }
-  };
-
-  const mangago = {
-    name: "Mangago",
-    url: /https?:\/\/(www.)?mangago.me\/.*\/.*\/.*/,
-    homepage: "https://www.mangago.me/",
-    language: ["English"],
-    category: "manga",
-    waitVar: "imgsrcs",
-    run() {
-      const W = typeof unsafeWindow !== "undefined" ? unsafeWindow : window;
-      const key = CryptoJS.enc.Hex.parse("e11adc3949ba59abbe56e057f20f883e");
-      const iv = CryptoJS.enc.Hex.parse("1234567890abcdef1234567890abcdef");
-      const opinion = { iv, padding: CryptoJS.pad.ZeroPadding };
-      const images = CryptoJS.AES.decrypt(W.imgsrcs, key, opinion).toString(CryptoJS.enc.Utf8).split(",");
-      return {
-        title: `${W.manga_name} ${W.chapter_name}`,
-        series: W.mid,
-        pages: W.total_pages,
-        prev: document.querySelector(".recom p:nth-child(5) a")?.getAttribute("href"),
-        next: W.next_c_url,
-        listImages: images
       };
     }
   };
@@ -565,26 +563,6 @@
         prev: document.querySelector(".navi-change-chapter-btn-prev, .next")?.getAttribute("href"),
         next: document.querySelector(".navi-change-chapter-btn-next, .back")?.getAttribute("href"),
         listImages: images.map((img) => img.getAttribute("src"))
-      };
-    }
-  };
-
-  const mangapark = {
-    name: "MangaPark",
-    url: /https?:\/\/(www.)?mangapark.(com|me|org|net)\/(manga|chapter|comic)\/.+\/.+/,
-    homepage: "https://mangapark.net/",
-    language: ["English"],
-    category: "manga",
-    waitVar: "CryptoJS",
-    run() {
-      const pass = JSON.parse(CryptoJS.AES.decrypt(amWord, amPass).toString(CryptoJS.enc.Utf8));
-      return {
-        title: document.querySelector("title")?.textContent?.trim(),
-        series: document.querySelector(".nav-title a")?.getAttribute("href"),
-        pages: imgPathLis.length,
-        prev: document.querySelector(".nav-prev a")?.getAttribute("href"),
-        next: document.querySelector(".nav-next a")?.getAttribute("href"),
-        listImages: imgPathLis.map((i, index) => `${imgCdnHost + i}?${pass[index]}`)
       };
     }
   };
@@ -756,6 +734,27 @@
         prev: document.querySelector(".chnav.prev")?.getAttribute("href"),
         next: document.querySelector(".chnav.next")?.getAttribute("href"),
         listImages: images.map((img) => img.getAttribute("src"))
+      };
+    }
+  };
+
+  const naniscans = {
+    name: "NaniScans",
+    url: /https?:\/\/(www.)?(naniscans).com\/chapters\/.+\/read/,
+    homepage: "https://naniscans.com/",
+    language: ["English"],
+    category: "manga",
+    waitVar: "chapterListRoute",
+    async run() {
+      const W = typeof unsafeWindow !== "undefined" ? unsafeWindow : window;
+      const api = await fetch(W.location.href.replace("read", "json")).then((res) => res.json());
+      return {
+        title: document.querySelector("title")?.textContent?.trim(),
+        series: document.querySelector('a[href^="/titles/"]')?.getAttribute("href"),
+        pages: api.pages.length,
+        prev: W.previousChapterRoute,
+        next: W.nextChapterRoute,
+        listImages: api.pages.map((i) => i.address)
       };
     }
   };
@@ -1102,22 +1101,25 @@
     inmanga,
     klmanga,
     leitor,
+    // leviatanscans, depricated
     lhtranslation,
+    lynxscans,
     mangabuddy,
     mangadex,
     mangafox,
     mangafreak,
-    mangago,
+    // mangago, fixme
     mangahosted,
     mangahub,
     mangakakalot,
-    mangapark,
+    // mangapark, fixme
     mreader,
     mangareader,
     mangasee,
     mangatigre,
     mangatown,
     manhuascan,
+    naniscans,
     ninemanga,
     pandamanga,
     rawdevart,
@@ -1134,8 +1136,28 @@
     wpmanga,
     zeroscans,
     foolslide,
+    // Must be at the end because is a generic check
     madarawp
+    // Must be at the end because is a generic check
   ];
+
+  var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+  function getDefaultExportFromCjs (x) {
+  	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+  }
+
+  var libExports = {};
+  var lib = {
+    get exports(){ return libExports; },
+    set exports(v){ libExports = v; },
+  };
+
+  (function (module, exports) {
+  	!function(e,t){module.exports=t();}(commonjsGlobal,function(){return function(e){function t(s){if(n[s])return n[s].exports;var i=n[s]={i:s,l:!1,exports:{}};return e[s].call(i.exports,i,i.exports,t),i.l=!0,i.exports}var n={};return t.m=e,t.c=n,t.i=function(e){return e},t.d=function(e,n,s){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:s});},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=8)}([function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.controlInformation={MIN:1,MAX:2,UNKNOWN:0};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(){}return e.optionsValidate=function(e){if(e.min>e.max)throw new Error("Min must be less then max");e.minPoint<e.min&&(e.minPoint=e.min),e.maxPoint>e.max&&(e.maxPoint=e.max);},e.positionValidation=function(e){return e<0&&(e=0),e>100&&(e=100),e},e}();t.default=s;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0});var s=n(0),i=n(9),o=n(1),r=n(10);n(7);var a=function(){function e(e,t){this.step=0,this.options=t,this.options.element=e,this.renderer=new r.default(e,t.cssClasses,t.min,t.max,t.serifs),this.mouseDown=this.onMouseDown.bind(this),this.mouseMove=this.onMouseMove.bind(this),this.mouseUp=this.onMouseUp.bind(this);}return e.prototype.init=function(){o.default.optionsValidate(this.options),this.renderer.render(),this.step=this.renderer.getStep(this.options.step);var e=this.calculateControlPostionByValue(this.options.minPoint),t=this.calculateControlPostionByValue(this.options.maxPoint);this.renderer.setMinControlPosition(e),this.renderer.setMaxControlPosition(t),this.renderer.setActiveRangePosition(e,t),this.options.element&&this.options.element.addEventListener(i.MOUSE_EVENTS.mousedown,this.mouseDown);},e.prototype.calculateControlPostionByValue=function(e){return 100*(e-this.options.min)/(this.options.max-this.options.min)},e.prototype.calculateValuesByPosition=function(e){var t=Math.round(e*(this.options.max-this.options.min)/100)+this.options.min;return this.step&&t%this.step!=1&&t>this.options.min&&t<this.options.max&&(t=Math.round(t/this.step)*this.step),t},e.prototype.onMouseDown=function(e){document.body.style.userSelect="none",document.body.style.webkitUserSelect="none",document.body.style.MozUserSelect="none",document.body.setAttribute("unselectable","on"),this.activeControl=this.renderer.getControlByTarget(e.target),this.activeControl&&(document.documentElement.addEventListener(i.MOUSE_EVENTS.mouseup,this.mouseUp),document.documentElement.addEventListener(i.MOUSE_EVENTS.mousemove,this.mouseMove));},e.prototype.onMouseMove=function(e){var t=this.renderer.getSliderLeftAndRightPositions(),n=i.isTouchSupported?e.changedTouches[e.changedTouches.length-1].pageX:e.pageX,r=o.default.positionValidation(100*(n-t.left)/(t.right-t.left));if(this.activeControl===s.controlInformation.MIN?(this.renderer.setMinControlPosition(r),this.renderer.setActiveRangePosition(r)):(this.renderer.setMaxControlPosition(r),this.renderer.setActiveRangePosition(null,r)),"onValueChange"in this.options&&this.options.onValueChange){var a=this.renderer.getControlsPositions(),l=void 0,u=void 0;this.activeControl===s.controlInformation.MIN?(l=this.calculateValuesByPosition(r),u=this.calculateValuesByPosition(a.max)):(l=this.calculateValuesByPosition(a.min),u=this.calculateValuesByPosition(r)),this.options.onValueChange({min:l,max:u});}},e.prototype.onMouseUp=function(e){document.documentElement.removeEventListener(i.MOUSE_EVENTS.mouseup,this.mouseUp),document.documentElement.removeEventListener(i.MOUSE_EVENTS.mousemove,this.mouseMove);var t=this.renderer.getControlsPositions(),n=this.calculateValuesByPosition(t.min),o=this.calculateValuesByPosition(t.max),r=this.calculateControlPostionByValue(n),a=this.calculateControlPostionByValue(o);this.activeControl===s.controlInformation.MIN?this.renderer.setMinControlPosition(r):this.renderer.setMaxControlPosition(a),this.renderer.setActiveRangePosition(r,a),this.options.onValueChangeStop({min:n,max:o}),this.activeControl=s.controlInformation.UNKNOWN;},e}();t.default=a;},function(e,t,n){(e.exports=n(4)(!1)).push([e.i,".input-range-slider{position:relative;height:20px;width:200px;padding:20px 5px 0}.input-range-slider__line-wrapper{display:flex;height:20px;width:200px;position:relative;align-items:center}.input-range-slider__line{height:5px;width:200px;background:#fff;border:1px solid gray}.input-range-slider__control{position:absolute;width:14px;height:14px;background:#fff;border:1px solid gray;border-radius:50%;z-index:1;cursor:pointer}.input-range-slider__control_max,.input-range-slider__control_min{left:-10000px;margin-left:-7px}.input-range-slider__active-range{position:absolute;height:5px;width:auto;left:-10000px;right:-10000px;background:#969696}.input-range-slider__serifs{position:absolute;top:0;left:3px;right:0}.input-range-slider__serifs-item{position:absolute;display:inline-block;top:0;width:40px;margin-left:-20px;text-align:center}",""]);},function(e,t){e.exports=function(e){var t=[];return t.toString=function(){return this.map(function(t){var n=function(e,t){var n=e[1]||"",s=e[3];if(!s)return n;if(t&&"function"==typeof btoa){var i=(o=s,"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */");return [n].concat(s.sources.map(function(e){return "/*# sourceURL="+s.sourceRoot+e+" */"})).concat([i]).join("\n")}var o;return [n].join("\n")}(t,e);return t[2]?"@media "+t[2]+"{"+n+"}":n}).join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var s={},i=0;i<this.length;i++){var o=this[i][0];"number"==typeof o&&(s[o]=!0);}for(i=0;i<e.length;i++){var r=e[i];"number"==typeof r[0]&&s[r[0]]||(n&&!r[2]?r[2]=n:n&&(r[2]="("+r[2]+") and ("+n+")"),t.push(r));}},t};},function(e,t,n){function s(e,t){for(var n=0;n<e.length;n++){var s=e[n],i=h[s.id];if(i){i.refs++;for(var o=0;o<i.parts.length;o++)i.parts[o](s.parts[o]);for(;o<s.parts.length;o++)i.parts.push(u(s.parts[o],t));}else {var r=[];for(o=0;o<s.parts.length;o++)r.push(u(s.parts[o],t));h[s.id]={id:s.id,refs:1,parts:r};}}}function i(e,t){for(var n=[],s={},i=0;i<e.length;i++){var o=e[i],r=t.base?o[0]+t.base:o[0],a={css:o[1],media:o[2],sourceMap:o[3]};s[r]?s[r].parts.push(a):n.push(s[r]={id:r,parts:[a]});}return n}function o(e,t){var n=m(e.insertInto);if(!n)throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var s=y[y.length-1];if("top"===e.insertAt)s?s.nextSibling?n.insertBefore(t,s.nextSibling):n.appendChild(t):n.insertBefore(t,n.firstChild),y.push(t);else if("bottom"===e.insertAt)n.appendChild(t);else {if("object"!=typeof e.insertAt||!e.insertAt.before)throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");var i=m(e.insertInto+" "+e.insertAt.before);n.insertBefore(t,i);}}function r(e){if(null===e.parentNode)return !1;e.parentNode.removeChild(e);var t=y.indexOf(e);t>=0&&y.splice(t,1);}function a(e){var t=document.createElement("style");return e.attrs.type="text/css",l(t,e.attrs),o(e,t),t}function l(e,t){Object.keys(t).forEach(function(n){e.setAttribute(n,t[n]);});}function u(e,t){var n,s,i,u;if(t.transform&&e.css){if(!(u=t.transform(e.css)))return function(){};e.css=u;}if(t.singleton){var p=g++;n=v||(v=a(t)),s=c.bind(null,n,p,!1),i=c.bind(null,n,p,!0);}else e.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(n=function(e){var t=document.createElement("link");return e.attrs.type="text/css",e.attrs.rel="stylesheet",l(t,e.attrs),o(e,t),t}(t),s=function(e,t,n){var s=n.css,i=n.sourceMap,o=void 0===t.convertToAbsoluteUrls&&i;(t.convertToAbsoluteUrls||o)&&(s=C(s)),i&&(s+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */");var r=new Blob([s],{type:"text/css"}),a=e.href;e.href=URL.createObjectURL(r),a&&URL.revokeObjectURL(a);}.bind(null,n,t),i=function(){r(n),n.href&&URL.revokeObjectURL(n.href);}):(n=a(t),s=function(e,t){var n=t.css,s=t.media;if(s&&e.setAttribute("media",s),e.styleSheet)e.styleSheet.cssText=n;else {for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(n));}}.bind(null,n),i=function(){r(n);});return s(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap)return;s(e=t);}else i();}}function c(e,t,n,s){var i=n?"":s.css;if(e.styleSheet)e.styleSheet.cssText=x(t,i);else {var o=document.createTextNode(i),r=e.childNodes;r[t]&&e.removeChild(r[t]),r.length?e.insertBefore(o,r[t]):e.appendChild(o);}}var p,d,h={},f=(p=function(){return window&&document&&document.all&&!window.atob},function(){return void 0===d&&(d=p.apply(this,arguments)),d}),m=function(e){var t={};return function(e){if(void 0===t[e]){var n=function(e){return document.querySelector(e)}.call(this,e);if(n instanceof window.HTMLIFrameElement)try{n=n.contentDocument.head;}catch(e){n=null;}t[e]=n;}return t[e]}}(),v=null,g=0,y=[],C=n(6);e.exports=function(e,t){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");(t=t||{}).attrs="object"==typeof t.attrs?t.attrs:{},t.singleton||"boolean"==typeof t.singleton||(t.singleton=f()),t.insertInto||(t.insertInto="head"),t.insertAt||(t.insertAt="bottom");var n=i(e,t);return s(n,t),function(e){for(var o=[],r=0;r<n.length;r++){var a=n[r];(l=h[a.id]).refs--,o.push(l);}for(e&&s(i(e,t),t),r=0;r<o.length;r++){var l;if(0===(l=o[r]).refs){for(var u=0;u<l.parts.length;u++)l.parts[u]();delete h[l.id];}}}};var b,x=(b=[],function(e,t){return b[e]=t,b.filter(Boolean).join("\n")});},function(e,t){e.exports=function(e){var t="undefined"!=typeof window&&window.location;if(!t)throw new Error("fixUrls requires window.location");if(!e||"string"!=typeof e)return e;var n=t.protocol+"//"+t.host,s=n+t.pathname.replace(/\/[^\/]*$/,"/");return e.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,function(e,t){var i,o=t.trim().replace(/^"(.*)"$/,function(e,t){return t}).replace(/^'(.*)'$/,function(e,t){return t});return /^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(o)?e:(i=0===o.indexOf("//")?o:0===o.indexOf("/")?n+o:s+o.replace(/^\.\//,""),"url("+JSON.stringify(i)+")")})};},function(e,t,n){var s=n(3);"string"==typeof s&&(s=[[e.i,s,""]]);var i={hmr:!0,transform:void 0};n(5)(s,i),s.locals&&(e.exports=s.locals);},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0});var s=n(2);t.default=s.default;},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0}),t.isTouchSupported=window&&"ontouchstart"in window,t.MOUSE_EVENTS={mousedown:t.isTouchSupported?"touchstart":"mousedown",mouseup:t.isTouchSupported?"touchend":"mouseup",mousemove:t.isTouchSupported?"touchmove":"mousemove"};},function(e,t,n){Object.defineProperty(t,"__esModule",{value:!0});var s=n(0),i=n(1),o="input-range-slider__control",r="input-range-slider__control_min",a="input-range-slider__control_max",l=[1,5,10,50,100,500,1e3,1e4,1e5],u=function(){function e(e,t,n,s,i){this.elements={wrapper:HTMLElement,lineWrapper:HTMLElement,line:HTMLElement,minControl:HTMLElement,maxControl:HTMLElement,activeRange:HTMLElement},this.element=e,this.cssClasses=t,this.min=n,this.max=s,this.serifs=i;}return e.safeJs=function(e){return e.replace(/<script[^>]*>[\S\s]*?<\/script[^>]*>/gi,"")},e.prototype.getControlByTarget=function(e){var t=e.classList;if(t.contains(o)){if(t.contains(r))return s.controlInformation.MIN;if(t.contains(a))return s.controlInformation.MAX}return s.controlInformation.UNKNOWN},e.prototype.setMinControlPosition=function(e){e=i.default.positionValidation(e);var t=parseInt(this.elements.maxControl.style.left,10)||100;this.element&&e<=t&&(this.elements.minControl.style.left=e+"%");},e.prototype.setMaxControlPosition=function(e){e=i.default.positionValidation(e);var t=parseInt(this.elements.minControl.style.left,10)||0;this.element&&e>=t&&(this.elements.maxControl.style.left=e+"%");},e.prototype.setActiveRangePosition=function(e,t){if(this.element){var n=this.elements.activeRange;e="number"==typeof e?i.default.positionValidation(e):parseInt(String(n.style.left),10),t="number"==typeof t?100-i.default.positionValidation(t):parseInt(String(n.style.right),10),n.style.left=e+"%",n.style.right=t+"%";}},e.prototype.getSliderLeftAndRightPositions=function(){return {left:this.elements.wrapper.getBoundingClientRect().left,right:this.elements.wrapper.getBoundingClientRect().left+this.elements.wrapper.clientWidth}},e.prototype.getStep=function(e){var t=this.elements.wrapper.clientWidth,n=(this.max-this.min)/t;if(e&&e>=n)return e;n<=1&&(n=1);for(var s=1;s<l.length;s++)if(n>l[s-1]&&n<=l[s]){n=l[s];break}return e&&console.warn("WARNING! Step value "+e+" can't be applied. Step has modified to nearest correct value "+n+"."),n},e.prototype.getControlsPositions=function(){return {min:parseInt(this.elements.minControl.style.left,10),max:parseInt(this.elements.maxControl.style.left,10)}},e.prototype.render=function(){var t=document.createDocumentFragment();if(this.elements.wrapper=document.createElement("div"),this.elements.wrapper.classList.add("input-range-slider"),this.cssClasses&&this.cssClasses.wrapper&&this.elements.wrapper.classList.add(this.cssClasses.wrapper),this.elements.lineWrapper=document.createElement("div"),this.elements.lineWrapper.classList.add("input-range-slider__line-wrapper"),this.cssClasses&&this.cssClasses.lineWrapper&&this.elements.lineWrapper.classList.add(this.cssClasses.lineWrapper),this.elements.line=document.createElement("div"),this.elements.line.classList.add("input-range-slider__line"),this.cssClasses&&this.cssClasses.line&&this.elements.line.classList.add(this.cssClasses.line),this.elements.minControl=document.createElement("div"),this.elements.minControl.classList.add(o,r),this.elements.maxControl=document.createElement("div"),this.elements.maxControl.classList.add(o,a),this.cssClasses&&this.cssClasses.control&&(this.elements.minControl.classList.add(this.cssClasses.control),this.elements.maxControl.classList.add(this.cssClasses.control)),this.elements.activeRange=document.createElement("div"),this.elements.activeRange.classList.add("input-range-slider__active-range"),this.cssClasses&&this.cssClasses.activeRange&&this.elements.activeRange.classList.add(this.cssClasses.activeRange),this.elements.lineWrapper.appendChild(this.elements.minControl),this.elements.lineWrapper.appendChild(this.elements.maxControl),this.elements.lineWrapper.appendChild(this.elements.activeRange),this.elements.lineWrapper.appendChild(this.elements.line),this.elements.wrapper.appendChild(this.elements.lineWrapper),this.serifs){var n=document.createElement("div");n.classList.add("input-range-slider__serifs"),this.cssClasses&&this.cssClasses.serifs&&n.classList.add(this.cssClasses.serifs);for(var s=0;s<this.serifs.length;s++){var i=document.createElement("div");"html"in this.serifs[s]&&(i.innerHTML=e.safeJs(this.serifs[s].html)),"position"in this.serifs[s]&&(i.style.left=this.serifs[s].position+"%"),i.classList.add("input-range-slider__serifs-item"),this.cssClasses&&this.cssClasses.serif&&i.classList.add(this.cssClasses.serif),n.appendChild(i);}this.elements.wrapper.appendChild(n);}t.appendChild(this.elements.wrapper),this.element&&this.element.appendChild(t);},e}();t.default=u;}])});
+  } (lib));
+
+  const RangeInputSlider = /*@__PURE__*/getDefaultExportFromCjs(libExports);
 
   function logScript(...text) {
     console.log("MangaOnlineViewer: ", ...text);
@@ -1212,7 +1234,11 @@
   const isMobile = window.matchMedia("screen and (max-width: 768px)").matches;
 
   function isEmpty(value) {
-    return value === null || typeof value === "undefined" || value === void 0 || typeof value === "string" && value === "" || Array.isArray(value) && value.length === 0 || typeof value === "object" && Object.keys(value).length === 0;
+    return value === null || // check for null
+    typeof value === "undefined" || value === void 0 || // check for undefined
+    typeof value === "string" && value === "" || // check for empty string
+    Array.isArray(value) && value.length === 0 || // check for empty array
+    typeof value === "object" && Object.keys(value).length === 0;
   }
   function isNothing(value) {
     const isEmptyObject = (a) => {
@@ -1222,9 +1248,13 @@
       }
       return !a.some(
         (element) => !isNothing(element)
+        //
       );
     };
-    return value == false || value === 0 || isEmpty(value) || typeof value === "object" && isEmptyObject(value);
+    return (
+      // eslint-disable-next-line eqeqeq
+      value == false || value === 0 || isEmpty(value) || typeof value === "object" && isEmptyObject(value)
+    );
   }
 
   const colors = {
@@ -1437,279 +1467,279 @@
   }
 
   function svgToUrl(str) {
-    const cleaned = str.replace(/[\t\n\r]/gim, "").replace(/\s\s+/g, " ").replace(/'/gim, "\\i");
+    const cleaned = str.replace(/[\t\n\r]/gim, "").replace(/\s\s+/g, " ");
     const encoded = encodeURIComponent(cleaned).replace(/\(/g, "%28").replace(/\)/g, "%29");
     return `data:image/svg+xml;charset=UTF-8,${encoded}`;
   }
   Object.values(colors).map((i) => i["900"]);
 
   const IconArrowBigRight = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 9h8v-3.586a1 1 0 0 1 1.707 -.707l6.586 6.586a1 1 0 0 1 0 1.414l-6.586 6.586a1 1 0 0 1 -1.707 -.707v-3.586h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1z" />
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-big-right' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+  <path stroke='none' d='M0 0h24v24H0z' fill='none'/>
+  <path d='M4 9h8v-3.586a1 1 0 0 1 1.707 -.707l6.586 6.586a1 1 0 0 1 0 1.414l-6.586 6.586a1 1 0 0 1 -1.707 -.707v-3.586h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1z' />
 </svg>`;
   const IconArrowBigLeft = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-big-left' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M20 15h-8v3.586a1 1 0 0 1 -1.707 .707l-6.586 -6.586a1 1 0 0 1 0 -1.414l6.586 -6.586a1 1 0 0 1 1.707 .707v3.586h8a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1z'></path>
 </svg>`;
   const IconFileDownload = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-download" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-   <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-   <path color="gold" d="M12 17v-6"></path>
-   <path color="gold" d="M9.5 14.5l2.5 2.5l2.5 -2.5"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-file-download' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M14 3v4a1 1 0 0 0 1 1h4'></path>
+   <path d='M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z'></path>
+   <path color='gold' d='M12 17v-6'></path>
+   <path color='gold' d='M9.5 14.5l2.5 2.5l2.5 -2.5'></path>
 </svg>`;
   const IconLoader2 = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-loader-2 inverse animate-spin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M12 3a9 9 0 1 0 9 9"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-loader-2 inverse animate-spin' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M12 3a9 9 0 1 0 9 9'></path>
 </svg>`;
   const IconCategory = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-category" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M4 4h6v6h-6z"></path>
-   <path d="M14 4h6v6h-6z"></path>
-   <path d="M4 14h6v6h-6z"></path>
-   <circle cx="17" cy="17" r="3"></circle>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-category' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M4 4h6v6h-6z'></path>
+   <path d='M14 4h6v6h-6z'></path>
+   <path d='M4 14h6v6h-6z'></path>
+   <circle cx='17' cy='17' r='3'></circle>
 </svg>`;
   const IconX = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <line x1="18" y1="6" x2="6" y2="18"></line>
-   <line x1="6" y1="6" x2="18" y2="18"></line>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-x' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <line x1='18' y1='6' x2='6' y2='18'></line>
+   <line x1='6' y1='6' x2='18' y2='18'></line>
 </svg>`;
   const IconMenu2 = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <line x1="4" y1="6" x2="20" y2="6"></line>
-   <line x1="4" y1="12" x2="20" y2="12"></line>
-   <line x1="4" y1="18" x2="20" y2="18"></line>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-menu-2' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <line x1='4' y1='6' x2='20' y2='6'></line>
+   <line x1='4' y1='12' x2='20' y2='12'></line>
+   <line x1='4' y1='18' x2='20' y2='18'></line>
 </svg>`;
   const IconArrowAutofitWidth = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-autofit-width" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M4 12v-6a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v6"></path>
-   <path color="yellow" d="M10 18h-7"></path>
-   <path color="yellow" d="M21 18h-7"></path>
-   <path color="yellow" d="M6 15l-3 3l3 3"></path>
-   <path color="yellow" d="M18 15l3 3l-3 3"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-autofit-width' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M4 12v-6a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v6'></path>
+   <path color='yellow' d='M10 18h-7'></path>
+   <path color='yellow' d='M21 18h-7'></path>
+   <path color='yellow' d='M6 15l-3 3l3 3'></path>
+   <path color='yellow' d='M18 15l3 3l-3 3'></path>
 </svg>`;
   const IconArrowAutofitHeight = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-autofit-height" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M12 20h-6a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h6"></path>
-   <path color="yellow" d="M18 14v7"></path>
-   <path color="yellow" d="M18 3v7"></path>
-   <path color="yellow" d="M15 18l3 3l3 -3"></path>
-   <path color="yellow" d="M15 6l3 -3l3 3"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-autofit-height' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M12 20h-6a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h6'></path>
+   <path color='yellow' d='M18 14v7'></path>
+   <path color='yellow' d='M18 3v7'></path>
+   <path color='yellow' d='M15 18l3 3l3 -3'></path>
+   <path color='yellow' d='M15 6l3 -3l3 3'></path>
 </svg>`;
   const IconZoomInArea = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in-area" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path color="lime" d="M15 13v4"></path>
-   <path color="lime" d="M13 15h4"></path>
-   <circle cx="15" cy="15" r="5"></circle>
-   <path d="M22 22l-3 -3"></path>
-   <path d="M6 18h-1a2 2 0 0 1 -2 -2v-1"></path>
-   <path d="M3 11v-1"></path>
-   <path d="M3 6v-1a2 2 0 0 1 2 -2h1"></path>
-   <path d="M10 3h1"></path>
-   <path d="M15 3h1a2 2 0 0 1 2 2v1"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-zoom-in-area' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path color='lime' d='M15 13v4'></path>
+   <path color='lime' d='M13 15h4'></path>
+   <circle cx='15' cy='15' r='5'></circle>
+   <path d='M22 22l-3 -3'></path>
+   <path d='M6 18h-1a2 2 0 0 1 -2 -2v-1'></path>
+   <path d='M3 11v-1'></path>
+   <path d='M3 6v-1a2 2 0 0 1 2 -2h1'></path>
+   <path d='M10 3h1'></path>
+   <path d='M15 3h1a2 2 0 0 1 2 2v1'></path>
 </svg>`;
   const IconZoomOutArea = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-out-area" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path color="red" d="M13 15h4"></path>
-   <circle cx="15" cy="15" r="5"></circle>
-   <path d="M22 22l-3 -3"></path>
-   <path d="M6 18h-1a2 2 0 0 1 -2 -2v-1"></path>
-   <path d="M3 11v-1"></path>
-   <path d="M3 6v-1a2 2 0 0 1 2 -2h1"></path>
-   <path d="M10 3h1"></path>
-   <path d="M15 3h1a2 2 0 0 1 2 2v1"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-zoom-out-area' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path color='red' d='M13 15h4'></path>
+   <circle cx='15' cy='15' r='5'></circle>
+   <path d='M22 22l-3 -3'></path>
+   <path d='M6 18h-1a2 2 0 0 1 -2 -2v-1'></path>
+   <path d='M3 11v-1'></path>
+   <path d='M3 6v-1a2 2 0 0 1 2 -2h1'></path>
+   <path d='M10 3h1'></path>
+   <path d='M15 3h1a2 2 0 0 1 2 2v1'></path>
 </svg>`;
   const IconZoomPan = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-pan" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <circle cx="12" cy="12" r="3"></circle>
-   <path d="M17 17l-2.5 -2.5"></path>
-   <path color="#9966FF" d="M10 5l2 -2l2 2"></path>
-   <path color="#9966FF" d="M19 10l2 2l-2 2"></path>
-   <path color="#9966FF" d="M5 10l-2 2l2 2"></path>
-   <path color="#9966FF" d="M10 19l2 2l2 -2"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-zoom-pan' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <circle cx='12' cy='12' r='3'></circle>
+   <path d='M17 17l-2.5 -2.5'></path>
+   <path color='#9966FF' d='M10 5l2 -2l2 2'></path>
+   <path color='#9966FF' d='M19 10l2 2l-2 2'></path>
+   <path color='#9966FF' d='M5 10l-2 2l2 2'></path>
+   <path color='#9966FF' d='M10 19l2 2l2 -2'></path>
 </svg>`;
   const IconArrowAutofitDown = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-autofit-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M12 20h-6a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h8"></path>
-   <path color="#28FFBF" d="M18 4v17"></path>
-   <path color="#28FFBF" d="M15 18l3 3l3 -3"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-autofit-down' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M12 20h-6a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h8'></path>
+   <path color='#28FFBF' d='M18 4v17'></path>
+   <path color='#28FFBF' d='M15 18l3 3l3 -3'></path>
 </svg>`;
   const IconArrowAutofitLeft = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-autofit-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M4 12v-6a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v8"></path>
-   <path color="#28FFBF" d="M20 18h-17"></path>
-   <path color="#28FFBF" d="M6 15l-3 3l3 3"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-autofit-left' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M4 12v-6a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v8'></path>
+   <path color='#28FFBF' d='M20 18h-17'></path>
+   <path color='#28FFBF' d='M6 15l-3 3l3 3'></path>
 </svg>`;
   const IconArrowAutofitRight = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-autofit-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M20 12v-6a2 2 0 0 0 -2 -2h-12a2 2 0 0 0 -2 2v8"></path>
-   <path color="#28FFBF" d="M4 18h17"></path>
-   <path color="#28FFBF" d="M18 15l3 3l-3 3"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-autofit-right' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M20 12v-6a2 2 0 0 0 -2 -2h-12a2 2 0 0 0 -2 2v8'></path>
+   <path color='#28FFBF' d='M4 18h17'></path>
+   <path color='#28FFBF' d='M18 15l3 3l-3 3'></path>
 </svg>`;
   const IconSpacingVertical = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-spacing-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M4 20v-2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v2"></path>
-   <path d="M4 4v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
-   <path color="fuchsia" d="M16 12h-8"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-spacing-vertical' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M4 20v-2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v2'></path>
+   <path d='M4 4v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2'></path>
+   <path color='fuchsia' d='M16 12h-8'></path>
 </svg>`;
   const IconSettings = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"></path>
-   <circle cx="12" cy="12" r="3"></circle>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-settings' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z'></path>
+   <circle cx='12' cy='12' r='3'></circle>
 </svg>`;
   const IconKeyboard = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-keyboard" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-   <line x1="6" y1="10" x2="6" y2="10"></line>
-   <line x1="10" y1="10" x2="10" y2="10"></line>
-   <line x1="14" y1="10" x2="14" y2="10"></line>
-   <line x1="18" y1="10" x2="18" y2="10"></line>
-   <line x1="6" y1="14" x2="6" y2="14.01"></line>
-   <line x1="18" y1="14" x2="18" y2="14.01"></line>
-   <line x1="10" y1="14" x2="14" y2="14"></line>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-keyboard' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <rect x='2' y='6' width='20' height='12' rx='2'></rect>
+   <line x1='6' y1='10' x2='6' y2='10'></line>
+   <line x1='10' y1='10' x2='10' y2='10'></line>
+   <line x1='14' y1='10' x2='14' y2='10'></line>
+   <line x1='18' y1='10' x2='18' y2='10'></line>
+   <line x1='6' y1='14' x2='6' y2='14.01'></line>
+   <line x1='18' y1='14' x2='18' y2='14.01'></line>
+   <line x1='10' y1='14' x2='14' y2='14'></line>
 </svg>`;
   const IconListNumbers = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list-numbers" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M11 6h9"></path>
-   <path d="M11 12h9"></path>
-   <path d="M12 18h8"></path>
-   <path color="#E48900" d="M4 16a2 2 0 1 1 4 0c0 .591 -.5 1 -1 1.5l-3 2.5h4"></path>
-   <path color="#E48900" d="M6 10v-6l-2 2"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-list-numbers' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M11 6h9'></path>
+   <path d='M11 12h9'></path>
+   <path d='M12 18h8'></path>
+   <path color='#E48900' d='M4 16a2 2 0 1 1 4 0c0 .591 -.5 1 -1 1.5l-3 2.5h4'></path>
+   <path color='#E48900' d='M6 10v-6l-2 2'></path>
 </svg>`;
   const IconBookmarks = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bookmarks" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path color="orange" d="M13 7a2 2 0 0 1 2 2v12l-5 -3l-5 3v-12a2 2 0 0 1 2 -2h6z"></path>
-   <path color="orange" d="M9.265 4a2 2 0 0 1 1.735 -1h6a2 2 0 0 1 2 2v12l-1 -.6"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-bookmarks' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path color='orange' d='M13 7a2 2 0 0 1 2 2v12l-5 -3l-5 3v-12a2 2 0 0 1 2 -2h6z'></path>
+   <path color='orange' d='M9.265 4a2 2 0 0 1 1.735 -1h6a2 2 0 0 1 2 2v12l-1 -.6'></path>
 </svg>`;
   const IconExternalLink = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-   <line x1="10" y1="14" x2="20" y2="4"></line>
-   <polyline points="15 4 20 4 20 9"></polyline>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-external-link' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5'></path>
+   <line x1='10' y1='14' x2='20' y2='4'></line>
+   <polyline points='15 4 20 4 20 9'></polyline>
 </svg>`;
   const IconTrash = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <line x1="4" y1="7" x2="20" y2="7"></line>
-   <line x1="10" y1="11" x2="10" y2="17"></line>
-   <line x1="14" y1="11" x2="14" y2="17"></line>
-   <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-   <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-trash' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <line x1='4' y1='7' x2='20' y2='7'></line>
+   <line x1='10' y1='11' x2='10' y2='17'></line>
+   <line x1='14' y1='11' x2='14' y2='17'></line>
+   <path d='M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12'></path>
+   <path d='M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3'></path>
 </svg>`;
   const IconSun = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <circle cx="12" cy="12" r="4"></circle>
-   <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-sun' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <circle cx='12' cy='12' r='4'></circle>
+   <path d='M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7'></path>
 </svg>`;
   const IconMoon = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon inverse" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-moon inverse' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z'></path>
 </svg>`;
   const IconCheck = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M5 12l5 5l10 -10"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-check' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M5 12l5 5l10 -10'></path>
 </svg>`;
   const IconPalette = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-palette" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M12 21a9 9 0 1 1 0 -18a9 8 0 0 1 9 8a4.5 4 0 0 1 -4.5 4h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25"></path>
-   <circle cx="7.5" cy="10.5" r=".5" fill="currentColor"></circle>
-   <circle cx="12" cy="7.5" r=".5" fill="currentColor"></circle>
-   <circle cx="16.5" cy="10.5" r=".5" fill="currentColor"></circle>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-palette' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path d='M12 21a9 9 0 1 1 0 -18a9 8 0 0 1 9 8a4.5 4 0 0 1 -4.5 4h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25'></path>
+   <circle cx='7.5' cy='10.5' r='.5' fill='currentColor'></circle>
+   <circle cx='12' cy='7.5' r='.5' fill='currentColor'></circle>
+   <circle cx='16.5' cy='10.5' r='.5' fill='currentColor'></circle>
 </svg>`;
   const IconBookmark = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bookmark" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path color="orange" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path color="orange" d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-bookmark' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path color='orange' stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path color='orange' d='M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2'></path>
 </svg>`;
   const IconBookmarkOff = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bookmark-off inverse" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path color="orange" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <line color="red" x1="3" y1="3" x2="21" y2="21"></line>
-   <path color="orange" d="M17 17v3l-5 -3l-5 3v-13m1.178 -2.818c.252 -.113 .53 -.176 .822 -.176h6a2 2 0 0 1 2 2v7"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-bookmark-off inverse' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path color='orange' stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <line color='red' x1='3' y1='3' x2='21' y2='21'></line>
+   <path color='orange' d='M17 17v3l-5 -3l-5 3v-13m1.178 -2.818c.252 -.113 .53 -.176 .822 -.176h6a2 2 0 0 1 2 2v7'></path>
 </svg>`;
   const IconEye = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <circle cx="12" cy="12" r="2"></circle>
-   <path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-eye' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <circle cx='12' cy='12' r='2'></circle>
+   <path d='M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7'></path>
 </svg>`;
   const IconEyeOff = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye-off inverse" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <line color="red" x1="3" y1="3" x2="21" y2="21"></line>
-   <path d="M10.584 10.587a2 2 0 0 0 2.828 2.83"></path>
-   <path d="M9.363 5.365a9.466 9.466 0 0 1 2.637 -.365c4 0 7.333 2.333 10 7c-.778 1.361 -1.612 2.524 -2.503 3.488m-2.14 1.861c-1.631 1.1 -3.415 1.651 -5.357 1.651c-4 0 -7.333 -2.333 -10 -7c1.369 -2.395 2.913 -4.175 4.632 -5.341"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-eye-off inverse' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <line color='red' x1='3' y1='3' x2='21' y2='21'></line>
+   <path d='M10.584 10.587a2 2 0 0 0 2.828 2.83'></path>
+   <path d='M9.363 5.365a9.466 9.466 0 0 1 2.637 -.365c4 0 7.333 2.333 10 7c-.778 1.361 -1.612 2.524 -2.503 3.488m-2.14 1.861c-1.631 1.1 -3.415 1.651 -5.357 1.651c-4 0 -7.333 -2.333 -10 -7c1.369 -2.395 2.913 -4.175 4.632 -5.341'></path>
 </svg>`;
   const IconZoomCancel = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-cancel" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <circle cx="10" cy="10" r="7"></circle>
-   <line color="#9966FF" x1="8" y1="8" x2="12" y2="12"></line>
-   <line color="#9966FF" x1="12" y1="8" x2="8" y2="12"></line>
-   <line x1="21" y1="21" x2="15" y2="15"></line>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-zoom-cancel' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <circle cx='10' cy='10' r='7'></circle>
+   <line color='#9966FF' x1='8' y1='8' x2='12' y2='12'></line>
+   <line color='#9966FF' x1='12' y1='8' x2='8' y2='12'></line>
+   <line x1='21' y1='21' x2='15' y2='15'></line>
 </svg>`;
   const IconZoomIn = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <circle cx="10" cy="10" r="7"></circle>
-   <line color="lime" x1="7" y1="10" x2="13" y2="10"></line>
-   <line color="lime" x1="10" y1="7" x2="10" y2="13"></line>
-   <line x1="21" y1="21" x2="15" y2="15"></line>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-zoom-in' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <circle cx='10' cy='10' r='7'></circle>
+   <line color='lime' x1='7' y1='10' x2='13' y2='10'></line>
+   <line color='lime' x1='10' y1='7' x2='10' y2='13'></line>
+   <line x1='21' y1='21' x2='15' y2='15'></line>
 </svg>`;
   const IconZoomOut = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-out" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <circle cx="10" cy="10" r="7"></circle>
-   <line color="red" x1="7" y1="10" x2="13" y2="10"></line>
-   <line x1="21" y1="21" x2="15" y2="15"></line>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-zoom-out' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <circle cx='10' cy='10' r='7'></circle>
+   <line color='red' x1='7' y1='10' x2='13' y2='10'></line>
+   <line x1='21' y1='21' x2='15' y2='15'></line>
 </svg>`;
   const IconRefresh = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-refresh" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path color="cyan" d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4"></path>
-   <path color="cyan" d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-refresh' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <path color='cyan' d='M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4'></path>
+   <path color='cyan' d='M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4'></path>
 </svg>`;
   const IconPhoto = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path color="silver" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <line color="silver" x1="15" y1="8" x2="15.01" y2="8"></line>
-   <rect color="silver" x="4" y="4" width="16" height="16" rx="3"></rect>
-   <path color="silver" d="M4 15l4 -4a3 5 0 0 1 3 0l5 5"></path>
-   <path color="silver" d="M14 14l1 -1a3 5 0 0 1 3 0l2 2"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-photo' width='24' height='24' viewBox='0 0 24 24' stroke-width='1.25' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path color='silver' stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <line color='silver' x1='15' y1='8' x2='15.01' y2='8'></line>
+   <rect color='silver' x='4' y='4' width='16' height='16' rx='3'></rect>
+   <path color='silver' d='M4 15l4 -4a3 5 0 0 1 3 0l5 5'></path>
+   <path color='silver' d='M14 14l1 -1a3 5 0 0 1 3 0l2 2'></path>
 </svg>`;
   const IconPhotoOff = `
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo-off" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path color="silver" stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <line color="silver" x1="15" y1="8" x2="15.01" y2="8"></line>
-   <path color="silver" d="M19.121 19.122a3 3 0 0 1 -2.121 .878h-10a3 3 0 0 1 -3 -3v-10c0 -.833 .34 -1.587 .888 -2.131m3.112 -.869h9a3 3 0 0 1 3 3v9"></path>
-   <path color="silver" d="M4 15l4 -4c.928 -.893 2.072 -.893 3 0l5 5"></path>
-   <line color="orange" x1="3" y1="3" x2="21" y2="21"></line>
-   <path color="silver" d="M16.32 12.34c.577 -.059 1.162 .162 1.68 .66l2 2"></path>
+<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-photo-off' width='24' height='24' viewBox='0 0 24 24' stroke-width='1.25' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+   <path color='silver' stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+   <line color='silver' x1='15' y1='8' x2='15.01' y2='8'></line>
+   <path color='silver' d='M19.121 19.122a3 3 0 0 1 -2.121 .878h-10a3 3 0 0 1 -3 -3v-10c0 -.833 .34 -1.587 .888 -2.131m3.112 -.869h9a3 3 0 0 1 3 3v9'></path>
+   <path color='silver' d='M4 15l4 -4c.928 -.893 2.072 -.893 3 0l5 5'></path>
+   <line color='orange' x1='3' y1='3' x2='21' y2='21'></line>
+   <path color='silver' d='M16.32 12.34c.577 -.059 1.162 .162 1.68 .66l2 2'></path>
 </svg>`;
 
   const cssStyles = `
@@ -2676,6 +2706,7 @@
           }
         }
       }
+      /* omit accumulator */
     );
     return changes(changed, original);
   };
@@ -3021,17 +3052,17 @@
     appendStyleSheet(id, content);
   }
   function wrapStyle(id, css) {
-    return `<style type="text/css" id="${id}">${css}</style>`;
+    return `<style type='text/css' id='${id}'>${css}</style>`;
   }
 
   function generateThemeCSS(name, primary, text) {
     return `
-.${name},
-[data-theme='${name}'] {
-  --theme-primary-color: ${primary};
-  --theme-primary-text-color: ${text};
-}
-`;
+    .${name},
+    [data-theme='${name}'] {
+      --theme-primary-color: ${primary};
+      --theme-primary-text-color: ${text};
+    }
+  `;
   }
   function getNormalThemeCSS(theme) {
     return generateThemeCSS(
@@ -3065,1652 +3096,1942 @@ ${IconCheck}
   }
   const themesCSS = themes().map(addTheme).join("") + wrapStyle("custom", getCustomThemeCSS(useSettings().customTheme));
 
-  const sweetalert = `
-  .swal2-popup.swal2-toast {
-    box-sizing: border-box;
-    grid-column: 1/4 !important;
-    grid-row: 1/4 !important;
-    grid-template-columns: min-content auto min-content;
-    padding: 1em;
-    overflow-y: hidden;
-    background: #fff;
-    box-shadow: 0 0 1px hsla(0deg, 0%, 0%, 0.075), 0 1px 2px hsla(0deg, 0%, 0%, 0.075), 1px 2px 4px hsla(0deg, 0%, 0%, 0.075), 1px 3px 8px hsla(0deg, 0%, 0%, 0.075), 2px 4px 16px hsla(0deg, 0%, 0%, 0.075);
-    pointer-events: all;
-  }
-
-  .swal2-popup.swal2-toast > * {
-    grid-column: 2;
-  }
-
-  .swal2-popup.swal2-toast .swal2-title {
-    margin: 0.5em 1em;
-    padding: 0;
-    font-size: 1em;
-    text-align: initial;
-  }
-
-  .swal2-popup.swal2-toast .swal2-loading {
-    justify-content: center;
-  }
-
-  .swal2-popup.swal2-toast .swal2-input {
-    height: 2em;
-    margin: 0.5em;
-    font-size: 1em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-validation-message {
-    font-size: 1em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-footer {
-    margin: 0.5em 0 0;
-    padding: 0.5em 0 0;
-    font-size: 0.8em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-close {
-    grid-column: 3/3;
-    grid-row: 1/99;
-    align-self: center;
-    width: 0.8em;
-    height: 0.8em;
-    margin: 0;
-    font-size: 2em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-html-container {
-    margin: 0.5em 1em;
-    padding: 0;
-    overflow: initial;
-    font-size: 1em;
-    text-align: initial;
-  }
-
-  .swal2-popup.swal2-toast .swal2-html-container:empty {
-    padding: 0;
-  }
-
-  .swal2-popup.swal2-toast .swal2-loader {
-    grid-column: 1;
-    grid-row: 1/99;
-    align-self: center;
-    width: 2em;
-    height: 2em;
-    margin: 0.25em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-icon {
-    grid-column: 1;
-    grid-row: 1/99;
-    align-self: center;
-    width: 2em;
-    min-width: 2em;
-    height: 2em;
-    margin: 0 0.5em 0 0;
-  }
-
-  .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
-    display: flex;
-    align-items: center;
-    font-size: 1.8em;
-    font-weight: bold;
-  }
-
-  .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
-    width: 2em;
-    height: 2em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
-    top: 0.875em;
-    width: 1.375em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {
-    left: 0.3125em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {
-    right: 0.3125em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-actions {
-    justify-content: flex-start;
-    height: auto;
-    margin: 0;
-    margin-top: 0.5em;
-    padding: 0 0.5em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-styled {
-    margin: 0.25em 0.5em;
-    padding: 0.4em 0.6em;
-    font-size: 1em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-success {
-    border-color: #a5dc86;
-  }
-
-  .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line] {
-    position: absolute;
-    width: 1.6em;
-    height: 3em;
-    transform: rotate(45deg);
-    border-radius: 50%;
-  }
-
-  .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left] {
-    top: -0.8em;
-    left: -0.5em;
-    transform: rotate(-45deg);
-    transform-origin: 2em 2em;
-    border-radius: 4em 0 0 4em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right] {
-    top: -0.25em;
-    left: 0.9375em;
-    transform-origin: 0 1.5em;
-    border-radius: 0 4em 4em 0;
-  }
-
-  .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
-    width: 2em;
-    height: 2em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
-    top: 0;
-    left: 0.4375em;
-    width: 0.4375em;
-    height: 2.6875em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line] {
-    height: 0.3125em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip] {
-    top: 1.125em;
-    left: 0.1875em;
-    width: 0.75em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long] {
-    top: 0.9375em;
-    right: 0.1875em;
-    width: 1.375em;
-  }
-
-  .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip {
-    animation: swal2-toast-animate-success-line-tip 0.75s;
-  }
-
-  .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long {
-    animation: swal2-toast-animate-success-line-long 0.75s;
-  }
-
-  .swal2-popup.swal2-toast.swal2-show {
-    animation: swal2-toast-show 0.5s;
-  }
-
-  .swal2-popup.swal2-toast.swal2-hide {
-    animation: swal2-toast-hide 0.1s forwards;
-  }
-
-  .swal2-container {
-    display: grid;
-    position: fixed;
-    z-index: 1060;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    box-sizing: border-box;
-    grid-template-areas: "top-start     top            top-end" "center-start  center         center-end" "bottom-start  bottom-center  bottom-end";
-    grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);
-    height: 100%;
-    padding: 0.625em;
-    overflow-x: hidden;
-    transition: background-color 0.1s;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
-    background: rgba(0, 0, 0, 0.4);
-  }
-
-  .swal2-container.swal2-backdrop-hide {
-    background: transparent !important;
-  }
-
-  .swal2-container.swal2-top-start, .swal2-container.swal2-center-start, .swal2-container.swal2-bottom-start {
-    grid-template-columns: minmax(0, 1fr) auto auto;
-  }
-
-  .swal2-container.swal2-top, .swal2-container.swal2-center, .swal2-container.swal2-bottom {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-  }
-
-  .swal2-container.swal2-top-end, .swal2-container.swal2-center-end, .swal2-container.swal2-bottom-end {
-    grid-template-columns: auto auto minmax(0, 1fr);
-  }
-
-  .swal2-container.swal2-top-start > .swal2-popup {
-    align-self: start;
-  }
-
-  .swal2-container.swal2-top > .swal2-popup {
-    grid-column: 2;
-    align-self: start;
-    justify-self: center;
-  }
-
-  .swal2-container.swal2-top-end > .swal2-popup, .swal2-container.swal2-top-right > .swal2-popup {
-    grid-column: 3;
-    align-self: start;
-    justify-self: end;
-  }
-
-  .swal2-container.swal2-center-start > .swal2-popup, .swal2-container.swal2-center-left > .swal2-popup {
-    grid-row: 2;
-    align-self: center;
-  }
-
-  .swal2-container.swal2-center > .swal2-popup {
-    grid-column: 2;
-    grid-row: 2;
-    align-self: center;
-    justify-self: center;
-  }
-
-  .swal2-container.swal2-center-end > .swal2-popup, .swal2-container.swal2-center-right > .swal2-popup {
-    grid-column: 3;
-    grid-row: 2;
-    align-self: center;
-    justify-self: end;
-  }
-
-  .swal2-container.swal2-bottom-start > .swal2-popup, .swal2-container.swal2-bottom-left > .swal2-popup {
-    grid-column: 1;
-    grid-row: 3;
-    align-self: end;
-  }
-
-  .swal2-container.swal2-bottom > .swal2-popup {
-    grid-column: 2;
-    grid-row: 3;
-    justify-self: center;
-    align-self: end;
-  }
-
-  .swal2-container.swal2-bottom-end > .swal2-popup, .swal2-container.swal2-bottom-right > .swal2-popup {
-    grid-column: 3;
-    grid-row: 3;
-    align-self: end;
-    justify-self: end;
-  }
-
-  .swal2-container.swal2-grow-row > .swal2-popup, .swal2-container.swal2-grow-fullscreen > .swal2-popup {
-    grid-column: 1/4;
-    width: 100%;
-  }
-
-  .swal2-container.swal2-grow-column > .swal2-popup, .swal2-container.swal2-grow-fullscreen > .swal2-popup {
-    grid-row: 1/4;
-    align-self: stretch;
-  }
-
-  .swal2-container.swal2-no-transition {
-    transition: none !important;
-  }
-
-  .swal2-popup {
-    display: none;
-    position: relative;
-    box-sizing: border-box;
-    grid-template-columns: minmax(0, 100%);
-    width: 32em;
-    max-width: 100%;
-    padding: 0 0 1.25em;
-    border: none;
-    border-radius: 5px;
-    background: #fff;
-    color: #545454;
-    font-family: inherit;
-    font-size: 1rem;
-  }
-
-  .swal2-popup:focus {
-    outline: none;
-  }
-
-  .swal2-popup.swal2-loading {
-    overflow-y: hidden;
-  }
-
-  .swal2-title {
-    position: relative;
-    max-width: 100%;
-    margin: 0;
-    padding: 0.8em 1em 0;
-    color: inherit;
-    font-size: 1.875em;
-    font-weight: 600;
-    text-align: center;
-    text-transform: none;
-    word-wrap: break-word;
-  }
-
-  .swal2-actions {
-    display: flex;
-    z-index: 1;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    margin: 1.25em auto 0;
-    padding: 0;
-  }
-
-  .swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
-    opacity: 0.4;
-  }
-
-  .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
-  }
-
-  .swal2-actions:not(.swal2-loading) .swal2-styled:active {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-  }
-
-  .swal2-loader {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 2.2em;
-    height: 2.2em;
-    margin: 0 1.875em;
-    animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
-    border-width: 0.25em;
-    border-style: solid;
-    border-radius: 100%;
-    border-color: #2778c4 transparent #2778c4 transparent;
-  }
-
-  .swal2-styled {
-    margin: 0.3125em;
-    padding: 0.625em 1.1em;
-    transition: box-shadow 0.1s;
-    box-shadow: 0 0 0 3px transparent;
-    font-weight: 500;
-  }
-
-  .swal2-styled:not([disabled]) {
-    cursor: pointer;
-  }
-
-  .swal2-styled.swal2-confirm {
-    border: 0;
-    border-radius: 0.25em;
-    background: initial;
-    background-color: #7066e0;
-    color: #fff;
-    font-size: 1em;
-  }
-
-  .swal2-styled.swal2-confirm:focus {
-    box-shadow: 0 0 0 3px rgba(112, 102, 224, 0.5);
-  }
-
-  .swal2-styled.swal2-deny {
-    border: 0;
-    border-radius: 0.25em;
-    background: initial;
-    background-color: #dc3741;
-    color: #fff;
-    font-size: 1em;
-  }
-
-  .swal2-styled.swal2-deny:focus {
-    box-shadow: 0 0 0 3px rgba(220, 55, 65, 0.5);
-  }
-
-  .swal2-styled.swal2-cancel {
-    border: 0;
-    border-radius: 0.25em;
-    background: initial;
-    background-color: #6e7881;
-    color: #fff;
-    font-size: 1em;
-  }
-
-  .swal2-styled.swal2-cancel:focus {
-    box-shadow: 0 0 0 3px rgba(110, 120, 129, 0.5);
-  }
-
-  .swal2-styled.swal2-default-outline:focus {
-    box-shadow: 0 0 0 3px rgba(100, 150, 200, 0.5);
-  }
-
-  .swal2-styled:focus {
-    outline: none;
-  }
-
-  .swal2-styled::-moz-focus-inner {
-    border: 0;
-  }
-
-  .swal2-footer {
-    justify-content: center;
-    margin: 1em 0 0;
-    padding: 1em 1em 0;
-    border-top: 1px solid #eee;
-    color: inherit;
-    font-size: 1em;
-  }
-
-  .swal2-timer-progress-bar-container {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    grid-column: auto !important;
-    overflow: hidden;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-
-  .swal2-timer-progress-bar {
-    width: 100%;
-    height: 0.25em;
-    background: rgba(0, 0, 0, 0.2);
-  }
-
-  .swal2-image {
-    max-width: 100%;
-    margin: 2em auto 1em;
-  }
-
-  .swal2-close {
-    z-index: 2;
-    align-items: center;
-    justify-content: center;
-    width: 1.2em;
-    height: 1.2em;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: -1.2em;
-    padding: 0;
-    overflow: hidden;
-    transition: color 0.1s, box-shadow 0.1s;
-    border: none;
-    border-radius: 5px;
-    background: transparent;
-    color: #ccc;
-    font-family: serif;
-    font-family: monospace;
-    font-size: 2.5em;
-    cursor: pointer;
-    justify-self: end;
-  }
-
-  .swal2-close:hover {
-    transform: none;
-    background: transparent;
-    color: #f27474;
-  }
-
-  .swal2-close:focus {
-    outline: none;
-    box-shadow: inset 0 0 0 3px rgba(100, 150, 200, 0.5);
-  }
-
-  .swal2-close::-moz-focus-inner {
-    border: 0;
-  }
-
-  .swal2-html-container {
-    z-index: 1;
-    justify-content: center;
-    margin: 1em 1.6em 0.3em;
-    padding: 0;
-    overflow: auto;
-    color: inherit;
-    font-size: 1.125em;
-    font-weight: normal;
-    line-height: normal;
-    text-align: center;
-    word-wrap: break-word;
-    word-break: break-word;
-  }
-
-  .swal2-input,
-  .swal2-file,
-  .swal2-textarea,
-  .swal2-select,
-  .swal2-radio,
-  .swal2-checkbox {
-    margin: 1em 2em 3px;
-  }
-
-  .swal2-input,
-  .swal2-file,
-  .swal2-textarea {
-    box-sizing: border-box;
-    width: auto;
-    transition: border-color 0.1s, box-shadow 0.1s;
-    border: 1px solid #d9d9d9;
-    border-radius: 0.1875em;
-    background: transparent;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px transparent;
-    color: inherit;
-    font-size: 1.125em;
-  }
-
-  .swal2-input.swal2-inputerror,
-  .swal2-file.swal2-inputerror,
-  .swal2-textarea.swal2-inputerror {
-    border-color: #f27474 !important;
-    box-shadow: 0 0 2px #f27474 !important;
-  }
-
-  .swal2-input:focus,
-  .swal2-file:focus,
-  .swal2-textarea:focus {
-    border: 1px solid #b4dbed;
-    outline: none;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px rgba(100, 150, 200, 0.5);
-  }
-
-  .swal2-input::placeholder,
-  .swal2-file::placeholder,
-  .swal2-textarea::placeholder {
-    color: #ccc;
-  }
-
-  .swal2-range {
-    margin: 1em 2em 3px;
-    background: #fff;
-  }
-
-  .swal2-range input {
-    width: 80%;
-  }
-
-  .swal2-range output {
-    width: 20%;
-    color: inherit;
-    font-weight: 600;
-    text-align: center;
-  }
-
-  .swal2-range input,
-  .swal2-range output {
-    height: 2.625em;
-    padding: 0;
-    font-size: 1.125em;
-    line-height: 2.625em;
-  }
-
-  .swal2-input {
-    height: 2.625em;
-    padding: 0 0.75em;
-  }
-
-  .swal2-file {
-    width: 75%;
-    margin-right: auto;
-    margin-left: auto;
-    background: transparent;
-    font-size: 1.125em;
-  }
-
-  .swal2-textarea {
-    height: 6.75em;
-    padding: 0.75em;
-  }
-
-  .swal2-select {
-    min-width: 50%;
-    max-width: 100%;
-    padding: 0.375em 0.625em;
-    background: transparent;
-    color: inherit;
-    font-size: 1.125em;
-  }
-
-  .swal2-radio,
-  .swal2-checkbox {
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    color: inherit;
-  }
-
-  .swal2-radio label,
-  .swal2-checkbox label {
-    margin: 0 0.6em;
-    font-size: 1.125em;
-  }
-
-  .swal2-radio input,
-  .swal2-checkbox input {
-    flex-shrink: 0;
-    margin: 0 0.4em;
-  }
-
-  .swal2-input-label {
-    display: flex;
-    justify-content: center;
-    margin: 1em auto 0;
-  }
-
-  .swal2-validation-message {
-    align-items: center;
-    justify-content: center;
-    margin: 1em 0 0;
-    padding: 0.625em;
-    overflow: hidden;
-    background: #f0f0f0;
-    color: #666666;
-    font-size: 1em;
-    font-weight: 300;
-  }
-
-  .swal2-validation-message::before {
-    content: "!";
-    display: inline-block;
-    width: 1.5em;
-    min-width: 1.5em;
-    height: 1.5em;
-    margin: 0 0.625em;
-    border-radius: 50%;
-    background-color: #f27474;
-    color: #fff;
-    font-weight: 600;
-    line-height: 1.5em;
-    text-align: center;
-  }
-
-  .swal2-icon {
-    position: relative;
-    box-sizing: content-box;
-    justify-content: center;
-    width: 5em;
-    height: 5em;
-    margin: 2.5em auto 0.6em;
-    border: 0.25em solid transparent;
-    border-radius: 50%;
-    border-color: #000;
-    font-family: inherit;
-    line-height: 5em;
-    cursor: default;
-    user-select: none;
-  }
-
-  .swal2-icon .swal2-icon-content {
-    display: flex;
-    align-items: center;
-    font-size: 3.75em;
-  }
-
-  .swal2-icon.swal2-error {
-    border-color: #f27474;
-    color: #f27474;
-  }
-
-  .swal2-icon.swal2-error .swal2-x-mark {
-    position: relative;
-    flex-grow: 1;
-  }
-
-  .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
-    display: block;
-    position: absolute;
-    top: 2.3125em;
-    width: 2.9375em;
-    height: 0.3125em;
-    border-radius: 0.125em;
-    background-color: #f27474;
-  }
-
-  .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {
-    left: 1.0625em;
-    transform: rotate(45deg);
-  }
-
-  .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {
-    right: 1em;
-    transform: rotate(-45deg);
-  }
-
-  .swal2-icon.swal2-error.swal2-icon-show {
-    animation: swal2-animate-error-icon 0.5s;
-  }
-
-  .swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark {
-    animation: swal2-animate-error-x-mark 0.5s;
-  }
-
-  .swal2-icon.swal2-warning {
-    border-color: #facea8;
-    color: #f8bb86;
-  }
-
-  .swal2-icon.swal2-warning.swal2-icon-show {
-    animation: swal2-animate-error-icon 0.5s;
-  }
-
-  .swal2-icon.swal2-warning.swal2-icon-show .swal2-icon-content {
-    animation: swal2-animate-i-mark 0.5s;
-  }
-
-  .swal2-icon.swal2-info {
-    border-color: #9de0f6;
-    color: #3fc3ee;
-  }
-
-  .swal2-icon.swal2-info.swal2-icon-show {
-    animation: swal2-animate-error-icon 0.5s;
-  }
-
-  .swal2-icon.swal2-info.swal2-icon-show .swal2-icon-content {
-    animation: swal2-animate-i-mark 0.8s;
-  }
-
-  .swal2-icon.swal2-question {
-    border-color: #c9dae1;
-    color: #87adbd;
-  }
-
-  .swal2-icon.swal2-question.swal2-icon-show {
-    animation: swal2-animate-error-icon 0.5s;
-  }
-
-  .swal2-icon.swal2-question.swal2-icon-show .swal2-icon-content {
-    animation: swal2-animate-question-mark 0.8s;
-  }
-
-  .swal2-icon.swal2-success {
-    border-color: #a5dc86;
-    color: #a5dc86;
-  }
-
-  .swal2-icon.swal2-success [class^=swal2-success-circular-line] {
-    position: absolute;
-    width: 3.75em;
-    height: 7.5em;
-    transform: rotate(45deg);
-    border-radius: 50%;
-  }
-
-  .swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left] {
-    top: -0.4375em;
-    left: -2.0635em;
-    transform: rotate(-45deg);
-    transform-origin: 3.75em 3.75em;
-    border-radius: 7.5em 0 0 7.5em;
-  }
-
-  .swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right] {
-    top: -0.6875em;
-    left: 1.875em;
-    transform: rotate(-45deg);
-    transform-origin: 0 3.75em;
-    border-radius: 0 7.5em 7.5em 0;
-  }
-
-  .swal2-icon.swal2-success .swal2-success-ring {
-    position: absolute;
-    z-index: 2;
-    top: -0.25em;
-    left: -0.25em;
-    box-sizing: content-box;
-    width: 100%;
-    height: 100%;
-    border: 0.25em solid rgba(165, 220, 134, 0.3);
-    border-radius: 50%;
-  }
-
-  .swal2-icon.swal2-success .swal2-success-fix {
-    position: absolute;
-    z-index: 1;
-    top: 0.5em;
-    left: 1.625em;
-    width: 0.4375em;
-    height: 5.625em;
-    transform: rotate(-45deg);
-  }
-
-  .swal2-icon.swal2-success [class^=swal2-success-line] {
-    display: block;
-    position: absolute;
-    z-index: 2;
-    height: 0.3125em;
-    border-radius: 0.125em;
-    background-color: #a5dc86;
-  }
-
-  .swal2-icon.swal2-success [class^=swal2-success-line][class$=tip] {
-    top: 2.875em;
-    left: 0.8125em;
-    width: 1.5625em;
-    transform: rotate(45deg);
-  }
-
-  .swal2-icon.swal2-success [class^=swal2-success-line][class$=long] {
-    top: 2.375em;
-    right: 0.5em;
-    width: 2.9375em;
-    transform: rotate(-45deg);
-  }
-
-  .swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip {
-    animation: swal2-animate-success-line-tip 0.75s;
-  }
-
-  .swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long {
-    animation: swal2-animate-success-line-long 0.75s;
-  }
-
-  .swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right {
-    animation: swal2-rotate-success-circular-line 4.25s ease-in;
-  }
-
-  .swal2-progress-steps {
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 100%;
-    margin: 1.25em auto;
-    padding: 0;
-    background: transparent;
-    font-weight: 600;
-  }
-
-  .swal2-progress-steps li {
-    display: inline-block;
-    position: relative;
-  }
-
-  .swal2-progress-steps .swal2-progress-step {
-    z-index: 20;
-    flex-shrink: 0;
-    width: 2em;
-    height: 2em;
-    border-radius: 2em;
-    background: #2778c4;
-    color: #fff;
-    line-height: 2em;
-    text-align: center;
-  }
-
-  .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
-    background: #2778c4;
-  }
-
-  .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step {
-    background: #add8e6;
-    color: #fff;
-  }
-
-  .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step-line {
-    background: #add8e6;
-  }
-
-  .swal2-progress-steps .swal2-progress-step-line {
-    z-index: 10;
-    flex-shrink: 0;
-    width: 2.5em;
-    height: 0.4em;
-    margin: 0 -1px;
-    background: #2778c4;
-  }
-
-  [class^=swal2] {
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .swal2-show {
-    animation: swal2-show 0.3s;
-  }
-
-  .swal2-hide {
-    animation: swal2-hide 0.15s forwards;
-  }
-
-  .swal2-noanimation {
-    transition: none;
-  }
-
-  .swal2-scrollbar-measure {
-    position: absolute;
-    top: -9999px;
-    width: 50px;
-    height: 50px;
-    overflow: scroll;
-  }
-
-  .swal2-rtl .swal2-close {
-    margin-right: initial;
-    margin-left: 0;
-  }
-
-  .swal2-rtl .swal2-timer-progress-bar {
-    right: 0;
-    left: auto;
-  }
-
-  @keyframes swal2-toast-show {
-    0% {
-      transform: translateY(-0.625em) rotateZ(2deg);
-    }
-    33% {
-      transform: translateY(0) rotateZ(-2deg);
-    }
-    66% {
-      transform: translateY(0.3125em) rotateZ(2deg);
-    }
-    100% {
-      transform: translateY(0) rotateZ(0deg);
-    }
-  }
-
-  @keyframes swal2-toast-hide {
-    100% {
-      transform: rotateZ(1deg);
-      opacity: 0;
-    }
-  }
-
-  @keyframes swal2-toast-animate-success-line-tip {
-    0% {
-      top: 0.5625em;
-      left: 0.0625em;
-      width: 0;
-    }
-    54% {
-      top: 0.125em;
-      left: 0.125em;
-      width: 0;
-    }
-    70% {
-      top: 0.625em;
-      left: -0.25em;
-      width: 1.625em;
-    }
-    84% {
-      top: 1.0625em;
-      left: 0.75em;
-      width: 0.5em;
-    }
-    100% {
-      top: 1.125em;
-      left: 0.1875em;
-      width: 0.75em;
-    }
-  }
-
-  @keyframes swal2-toast-animate-success-line-long {
-    0% {
-      top: 1.625em;
-      right: 1.375em;
-      width: 0;
-    }
-    65% {
-      top: 1.25em;
-      right: 0.9375em;
-      width: 0;
-    }
-    84% {
-      top: 0.9375em;
-      right: 0;
-      width: 1.125em;
-    }
-    100% {
-      top: 0.9375em;
-      right: 0.1875em;
-      width: 1.375em;
-    }
-  }
-
-  @keyframes swal2-show {
-    0% {
-      transform: scale(0.7);
-    }
-    45% {
-      transform: scale(1.05);
-    }
-    80% {
-      transform: scale(0.95);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  @keyframes swal2-hide {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0.5);
-      opacity: 0;
-    }
-  }
-
-  @keyframes swal2-animate-success-line-tip {
-    0% {
-      top: 1.1875em;
-      left: 0.0625em;
-      width: 0;
-    }
-    54% {
-      top: 1.0625em;
-      left: 0.125em;
-      width: 0;
-    }
-    70% {
-      top: 2.1875em;
-      left: -0.375em;
-      width: 3.125em;
-    }
-    84% {
-      top: 3em;
-      left: 1.3125em;
-      width: 1.0625em;
-    }
-    100% {
-      top: 2.8125em;
-      left: 0.8125em;
-      width: 1.5625em;
-    }
-  }
-
-  @keyframes swal2-animate-success-line-long {
-    0% {
-      top: 3.375em;
-      right: 2.875em;
-      width: 0;
-    }
-    65% {
-      top: 3.375em;
-      right: 2.875em;
-      width: 0;
-    }
-    84% {
-      top: 2.1875em;
-      right: 0;
-      width: 3.4375em;
-    }
-    100% {
-      top: 2.375em;
-      right: 0.5em;
-      width: 2.9375em;
-    }
-  }
-
-  @keyframes swal2-rotate-success-circular-line {
-    0% {
-      transform: rotate(-45deg);
-    }
-    5% {
-      transform: rotate(-45deg);
-    }
-    12% {
-      transform: rotate(-405deg);
-    }
-    100% {
-      transform: rotate(-405deg);
-    }
-  }
-
-  @keyframes swal2-animate-error-x-mark {
-    0% {
-      margin-top: 1.625em;
-      transform: scale(0.4);
-      opacity: 0;
-    }
-    50% {
-      margin-top: 1.625em;
-      transform: scale(0.4);
-      opacity: 0;
-    }
-    80% {
-      margin-top: -0.375em;
-      transform: scale(1.15);
-    }
-    100% {
-      margin-top: 0;
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-
-  @keyframes swal2-animate-error-icon {
-    0% {
-      transform: rotateX(100deg);
-      opacity: 0;
-    }
-    100% {
-      transform: rotateX(0deg);
-      opacity: 1;
-    }
-  }
-
-  @keyframes swal2-rotate-loading {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes swal2-animate-question-mark {
-    0% {
-      transform: rotateY(-360deg);
-    }
-    100% {
-      transform: rotateY(0);
-    }
-  }
-
-  @keyframes swal2-animate-i-mark {
-    0% {
-      transform: rotateZ(45deg);
-      opacity: 0;
-    }
-    25% {
-      transform: rotateZ(-25deg);
-      opacity: 0.4;
-    }
-    50% {
-      transform: rotateZ(15deg);
-      opacity: 0.8;
-    }
-    75% {
-      transform: rotateZ(-5deg);
-      opacity: 1;
-    }
-    100% {
-      transform: rotateX(0);
-      opacity: 1;
-    }
-  }
-
-  body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
-    overflow: hidden;
-  }
-
-  body.swal2-height-auto {
-    height: auto !important;
-  }
-
-  body.swal2-no-backdrop .swal2-container {
-    background-color: transparent !important;
-    pointer-events: none;
-  }
-
-  body.swal2-no-backdrop .swal2-container .swal2-popup {
-    pointer-events: all;
-  }
-
-  body.swal2-no-backdrop .swal2-container .swal2-modal {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  }
-
-  @media print {
-    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
-      overflow-y: scroll !important;
+  const fix = `
+    #pagesSlider {
+        min-height: 40px;
     }
 
-    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) > [aria-hidden=true] {
-      display: none;
+    #swal2-title {
+        color: navy;
     }
 
-    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {
-      position: static !important;
+    button.swal2-styled {
+        position: inherit;
+        transform: inherit;
     }
-  }
-
-  body.swal2-toast-shown .swal2-container {
-    box-sizing: border-box;
-    width: 360px;
-    max-width: 100%;
-    background-color: transparent;
-    pointer-events: none;
-  }
-
-  body.swal2-toast-shown .swal2-container.swal2-top {
-    top: 0;
-    right: auto;
-    bottom: auto;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  body.swal2-toast-shown .swal2-container.swal2-top-end, body.swal2-toast-shown .swal2-container.swal2-top-right {
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: auto;
-  }
-
-  body.swal2-toast-shown .swal2-container.swal2-top-start, body.swal2-toast-shown .swal2-container.swal2-top-left {
-    top: 0;
-    right: auto;
-    bottom: auto;
-    left: 0;
-  }
-
-  body.swal2-toast-shown .swal2-container.swal2-center-start, body.swal2-toast-shown .swal2-container.swal2-center-left {
-    top: 50%;
-    right: auto;
-    bottom: auto;
-    left: 0;
-    transform: translateY(-50%);
-  }
-
-  body.swal2-toast-shown .swal2-container.swal2-center {
-    top: 50%;
-    right: auto;
-    bottom: auto;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  body.swal2-toast-shown .swal2-container.swal2-center-end, body.swal2-toast-shown .swal2-container.swal2-center-right {
-    top: 50%;
-    right: 0;
-    bottom: auto;
-    left: auto;
-    transform: translateY(-50%);
-  }
-
-  body.swal2-toast-shown .swal2-container.swal2-bottom-start, body.swal2-toast-shown .swal2-container.swal2-bottom-left {
-    top: auto;
-    right: auto;
-    bottom: 0;
-    left: 0;
-  }
-
-  body.swal2-toast-shown .swal2-container.swal2-bottom {
-    top: auto;
-    right: auto;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  body.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown .swal2-container.swal2-bottom-right {
-    top: auto;
-    right: 0;
-    bottom: 0;
-    left: auto;
-  }
 `;
-  const normalize = `/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%
-}
+  const sweetalert = `
+    ${fix}
+    .swal2-popup.swal2-toast {
+        box-sizing: border-box;
+        grid-column: 1/4 !important;
+        grid-row: 1/4 !important;
+        grid-template-columns: 1fr 99fr 1fr;
+        padding: 1em;
+        overflow-y: hidden;
+        background: #fff;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.075), 0 1px 2px rgba(0, 0, 0, 0.075), 1px 2px 4px rgba(0, 0, 0, 0.075), 1px 3px 8px rgba(0, 0, 0, 0.075), 2px 4px 16px rgba(0, 0, 0, 0.075);
+        pointer-events: all;
+    }
 
-body {
-  margin: 0
-}
+    .swal2-popup.swal2-toast > * {
+        grid-column: 2;
+    }
 
-main {
-  display: block
-}
+    .swal2-popup.swal2-toast .swal2-title {
+        margin: 0.5em 1em;
+        padding: 0;
+        font-size: 1em;
+        text-align: initial;
+    }
 
-h1 {
-  font-size: 2em;
-  margin: .67em 0
-}
+    .swal2-popup.swal2-toast .swal2-loading {
+        justify-content: center;
+    }
 
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible
-}
+    .swal2-popup.swal2-toast .swal2-input {
+        height: 2em;
+        margin: 0.5em;
+        font-size: 1em;
+    }
 
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em
-}
+    .swal2-popup.swal2-toast .swal2-validation-message {
+        font-size: 1em;
+    }
 
-a {
-  background-color: transparent
-}
+    .swal2-popup.swal2-toast .swal2-footer {
+        margin: 0.5em 0 0;
+        padding: 0.5em 0 0;
+        font-size: 0.8em;
+    }
 
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted
-}
+    .swal2-popup.swal2-toast .swal2-close {
+        grid-column: 3/3;
+        grid-row: 1/99;
+        align-self: center;
+        width: 0.8em;
+        height: 0.8em;
+        margin: 0;
+        font-size: 2em;
+    }
 
-b, strong {
-  font-weight: bolder
-}
+    .swal2-popup.swal2-toast .swal2-html-container {
+        margin: 0.5em 1em;
+        padding: 0;
+        font-size: 1em;
+        text-align: initial;
+    }
 
-code, kbd, samp {
-  font-family: monospace, monospace;
-  font-size: 1em
-}
+    .swal2-popup.swal2-toast .swal2-html-container:empty {
+        padding: 0;
+    }
 
-small {
-  font-size: 80%
-}
+    .swal2-popup.swal2-toast .swal2-loader {
+        grid-column: 1;
+        grid-row: 1/99;
+        align-self: center;
+        width: 2em;
+        height: 2em;
+        margin: 0.25em;
+    }
 
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline
-}
+    .swal2-popup.swal2-toast .swal2-icon {
+        grid-column: 1;
+        grid-row: 1/99;
+        align-self: center;
+        width: 2em;
+        min-width: 2em;
+        height: 2em;
+        margin: 0 0.5em 0 0;
+    }
 
-sub {
-  bottom: -.25em
-}
+    .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
+        display: flex;
+        align-items: center;
+        font-size: 1.8em;
+        font-weight: bold;
+    }
 
-sup {
-  top: -.5em
-}
+    .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+        width: 2em;
+        height: 2em;
+    }
 
-img {
-  border-style: none
-}
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+        top: 0.875em;
+        width: 1.375em;
+    }
 
-button, input, optgroup, select, textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0
-}
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {
+        left: 0.3125em;
+    }
 
-button, input {
-  overflow: visible
-}
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {
+        right: 0.3125em;
+    }
 
-button, select {
-  text-transform: none
-}
+    .swal2-popup.swal2-toast .swal2-actions {
+        justify-content: flex-start;
+        height: auto;
+        margin: 0;
+        margin-top: 0.5em;
+        padding: 0 0.5em;
+    }
 
-[type=button], [type=reset], [type=submit], button {
-  -webkit-appearance: button
-}
+    .swal2-popup.swal2-toast .swal2-styled {
+        margin: 0.25em 0.5em;
+        padding: 0.4em 0.6em;
+        font-size: 1em;
+    }
 
-[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
-  border-style: none;
-  padding: 0
-}
+    .swal2-popup.swal2-toast .swal2-success {
+        border-color: #a5dc86;
+    }
 
-[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
-  outline: 1px dotted ButtonText
-}
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line] {
+        position: absolute;
+        width: 1.6em;
+        height: 3em;
+        transform: rotate(45deg);
+        border-radius: 50%;
+    }
 
-fieldset {
-  padding: .35em .75em .625em
-}
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left] {
+        top: -0.8em;
+        left: -0.5em;
+        transform: rotate(-45deg);
+        transform-origin: 2em 2em;
+        border-radius: 4em 0 0 4em;
+    }
 
-legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal
-}
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right] {
+        top: -0.25em;
+        left: 0.9375em;
+        transform-origin: 0 1.5em;
+        border-radius: 0 4em 4em 0;
+    }
 
-progress {
-  vertical-align: baseline
-}
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+        width: 2em;
+        height: 2em;
+    }
 
-textarea {
-  overflow: auto
-}
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+        top: 0;
+        left: 0.4375em;
+        width: 0.4375em;
+        height: 2.6875em;
+    }
 
-[type=checkbox], [type=radio] {
-  box-sizing: border-box;
-  padding: 0
-}
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line] {
+        height: 0.3125em;
+    }
 
-[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
-  height: auto
-}
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip] {
+        top: 1.125em;
+        left: 0.1875em;
+        width: 0.75em;
+    }
 
-[type=search] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px
-}
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long] {
+        top: 0.9375em;
+        right: 0.1875em;
+        width: 1.375em;
+    }
 
-[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none
-}
+    .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip {
+        -webkit-animation: swal2-toast-animate-success-line-tip 0.75s;
+        animation: swal2-toast-animate-success-line-tip 0.75s;
+    }
 
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit
-}
+    .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long {
+        -webkit-animation: swal2-toast-animate-success-line-long 0.75s;
+        animation: swal2-toast-animate-success-line-long 0.75s;
+    }
 
-details {
-  display: block
-}
+    .swal2-popup.swal2-toast.swal2-show {
+        -webkit-animation: swal2-toast-show 0.5s;
+        animation: swal2-toast-show 0.5s;
+    }
 
-summary {
-  display: list-item
-}
+    .swal2-popup.swal2-toast.swal2-hide {
+        -webkit-animation: swal2-toast-hide 0.1s forwards;
+        animation: swal2-toast-hide 0.1s forwards;
+    }
 
-template {
-  display: none
-}
+    .swal2-container {
+        display: grid;
+        position: fixed;
+        z-index: 1060;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        grid-template-areas: "top-start     top            top-end" "center-start  center         center-end" "bottom-start  bottom-center  bottom-end";
+        grid-template-rows: minmax(-webkit-min-content, auto) minmax(-webkit-min-content, auto) minmax(-webkit-min-content, auto);
+        grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);
+        height: 100%;
+        padding: 0.625em;
+        overflow-x: hidden;
+        transition: background-color 0.1s;
+        -webkit-overflow-scrolling: touch;
+    }
 
-[hidden] {
-  display: none
-}`;
-  const nprogress = `#nprogress {
-  pointer-events: none
-}
+    .swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
+        background: rgba(0, 0, 0, 0.4);
+    }
 
-#nprogress .bar {
-  background: #29d;
-  position: fixed;
-  z-index: 1031;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px
-}
+    .swal2-container.swal2-backdrop-hide {
+        background: transparent !important;
+    }
 
-#nprogress .peg {
-  display: block;
-  position: absolute;
-  right: 0;
-  width: 100px;
-  height: 100%;
-  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
-  opacity: 1;
-  -webkit-transform: rotate(3deg) translate(0, -4px);
-  -ms-transform: rotate(3deg) translate(0, -4px);
-  transform: rotate(3deg) translate(0, -4px)
-}
+    .swal2-container.swal2-top-start, .swal2-container.swal2-center-start, .swal2-container.swal2-bottom-start {
+        grid-template-columns: minmax(0, 1fr) auto auto;
+    }
 
-#nprogress .spinner {
-  display: block;
-  position: fixed;
-  z-index: 1031;
-  top: 15px;
-  right: 15px
-}
+    .swal2-container.swal2-top, .swal2-container.swal2-center, .swal2-container.swal2-bottom {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+    }
 
-#nprogress .spinner-icon {
-  width: 18px;
-  height: 18px;
-  box-sizing: border-box;
-  border: 2px solid transparent;
-  border-top-color: #29d;
-  border-left-color: #29d;
-  border-radius: 50%;
-  -webkit-animation: nprogress-spinner 400ms linear infinite;
-  animation: nprogress-spinner 400ms linear infinite
-}
+    .swal2-container.swal2-top-end, .swal2-container.swal2-center-end, .swal2-container.swal2-bottom-end {
+        grid-template-columns: auto auto minmax(0, 1fr);
+    }
 
-.nprogress-custom-parent {
-  overflow: hidden;
-  position: relative
-}
+    .swal2-container.swal2-top-start > .swal2-popup {
+        align-self: start;
+    }
 
-.nprogress-custom-parent #nprogress .bar, .nprogress-custom-parent #nprogress .spinner {
-  position: absolute
-}
+    .swal2-container.swal2-top > .swal2-popup {
+        grid-column: 2;
+        align-self: start;
+        justify-self: center;
+    }
 
-@-webkit-keyframes nprogress-spinner {
-  0% {
-    -webkit-transform: rotate(0deg)
-  }
-  100% {
-    -webkit-transform: rotate(360deg)
-  }
-}
+    .swal2-container.swal2-top-end > .swal2-popup, .swal2-container.swal2-top-right > .swal2-popup {
+        grid-column: 3;
+        align-self: start;
+        justify-self: end;
+    }
 
-@keyframes nprogress-spinner {
-  0% {
-    transform: rotate(0deg)
-  }
-  100% {
-    transform: rotate(360deg)
-  }
-}`;
-  const keycss = `.key, kbd {
-  display: inline;
-  display: inline-block;
-  white-space: nowrap;
-  min-width: 1em;
-  padding: 0.3em 0.4em 0.2em 0.3em;
-  font-style: normal;
-  font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 0.3em;
-  border: none;
-  background-color: #505050;
-  background-color: gradient(linear, left top, left bottom, from(#3c3c3c), to(#505050));
-  color: #fafafa;
-  text-shadow: -1px -1px 0 #464646;
-  -webkit-box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0, 0, 0, 0.3);
-  font-size: 0.85em;
-  line-height: 1;
-  cursor: default;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none
-}
+    .swal2-container.swal2-center-start > .swal2-popup, .swal2-container.swal2-center-left > .swal2-popup {
+        grid-row: 2;
+        align-self: center;
+    }
 
-.key[title], kbd[title] {
-  cursor: help
-}
+    .swal2-container.swal2-center > .swal2-popup {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: center;
+        justify-self: center;
+    }
 
-.dark-keys .key, .dark-keys kbd, .key.dark, kbd.dark {
-  display: inline;
-  display: inline-block;
-  white-space: nowrap;
-  min-width: 1em;
-  padding: 0.3em 0.4em 0.2em 0.3em;
-  font-style: normal;
-  font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 0.3em;
-  border: none;
-  background-color: #505050;
-  background-color: gradient(linear, left top, left bottom, from(#3c3c3c), to(#505050));
-  color: #fafafa;
-  text-shadow: -1px -1px 0 #464646;
-  -webkit-box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0, 0, 0, 0.3)
-}
+    .swal2-container.swal2-center-end > .swal2-popup, .swal2-container.swal2-center-right > .swal2-popup {
+        grid-column: 3;
+        grid-row: 2;
+        align-self: center;
+        justify-self: end;
+    }
 
-.key.light, .light-keys .key, .light-keys kbd, kbd.light {
-  display: inline;
-  display: inline-block;
-  white-space: nowrap;
-  min-width: 1em;
-  padding: 0.3em 0.4em 0.2em 0.3em;
-  font-style: normal;
-  font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 0.3em;
-  border: none;
-  background-color: #fafafa;
-  background-color: gradient(linear, left top, left bottom, from(#d2d2d2), to(#ffffff));
-  color: #323232;
-  text-shadow: 0 0 2px #ffffff;
-  -webkit-box-shadow: inset 0 0 1px #ffffff, inset 0 0 0.4em #c8c8c8, 0 0.1em 0 #828282, 0 0.11em 0 rgba(0, 0, 0, 0.4), 0 0.1em 0.11em rgba(0, 0, 0, 0.9);
-  box-shadow: inset 0 0 1px #ffffff, inset 0 0 0.4em #c8c8c8, 0 0.1em 0 #828282, 0 0.11em 0 rgba(0, 0, 0, 0.4), 0 0.1em 0.11em rgba(0, 0, 0, 0.9)
-}
+    .swal2-container.swal2-bottom-start > .swal2-popup, .swal2-container.swal2-bottom-left > .swal2-popup {
+        grid-column: 1;
+        grid-row: 3;
+        align-self: end;
+    }
 
-.key.so, .so-keys .key, .so-keys kbd, kbd.so {
-  display: inline;
-  display: inline-block;
-  white-space: nowrap;
-  min-width: 1em;
-  padding: 0.3em 0.4em 0.2em 0.3em;
-  font-style: normal;
-  font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 0.3em;
-  border: none;
-  margin: 0 0.1em;
-  padding: 0.1em 0.6em;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  line-height: 1.4;
-  color: #242729;
-  text-shadow: 0 1px 0 #FFF;
-  background-color: #e1e3e5;
-  border: 1px solid #adb3b9;
-  border-radius: 0.27272727em;
-  -webkit-box-shadow: 0 1px 0 rgba(12, 13, 14, 0.2), 0 0 0 2px #FFF inset;
-  box-shadow: 0 1px 0 rgba(12, 13, 14, 0.2), 0 0 0 2px #FFF inset
-}
+    .swal2-container.swal2-bottom > .swal2-popup {
+        grid-column: 2;
+        grid-row: 3;
+        justify-self: center;
+        align-self: end;
+    }
 
-.github-keys .key, .github-keys kbd, .key.github, kbd.github {
-  display: inline;
-  display: inline-block;
-  white-space: nowrap;
-  min-width: 1em;
-  padding: 0.3em 0.4em 0.2em 0.3em;
-  font-style: normal;
-  font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 0.3em;
-  border: none;
-  padding: 0.27272727em 0.45454545em;
-  font-size: 68.75%;
-  line-height: 0.90909091;
-  color: #444d56;
-  vertical-align: middle;
-  background-color: #fafbfc;
-  border: solid 1px #c6cbd1;
-  border-bottom-color: #959da5;
-  border-radius: 0.27272727em;
-  -webkit-box-shadow: inset 0 -1px 0 #959da5;
-  box-shadow: inset 0 -1px 0 #959da5;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  text-shadow: none
-}`;
+    .swal2-container.swal2-bottom-end > .swal2-popup, .swal2-container.swal2-bottom-right > .swal2-popup {
+        grid-column: 3;
+        grid-row: 3;
+        align-self: end;
+        justify-self: end;
+    }
+
+    .swal2-container.swal2-grow-row > .swal2-popup, .swal2-container.swal2-grow-fullscreen > .swal2-popup {
+        grid-column: 1/4;
+        width: 100%;
+    }
+
+    .swal2-container.swal2-grow-column > .swal2-popup, .swal2-container.swal2-grow-fullscreen > .swal2-popup {
+        grid-row: 1/4;
+        align-self: stretch;
+    }
+
+    .swal2-container.swal2-no-transition {
+        transition: none !important;
+    }
+
+    .swal2-popup {
+        display: none;
+        position: relative;
+        box-sizing: border-box;
+        grid-template-columns: minmax(0, 100%);
+        width: 32em;
+        max-width: 100%;
+        padding: 0 0 1.25em;
+        border: none;
+        border-radius: 5px;
+        background: #fff;
+        color: #545454;
+        font-family: inherit;
+        font-size: 1rem;
+    }
+
+    .swal2-popup:focus {
+        outline: none;
+    }
+
+    .swal2-popup.swal2-loading {
+        overflow-y: hidden;
+    }
+
+    .swal2-title {
+        position: relative;
+        max-width: 100%;
+        margin: 0;
+        padding: 0.8em 1em 0;
+        color: inherit;
+        font-size: 1.875em;
+        font-weight: 600;
+        text-align: center;
+        text-transform: none;
+        word-wrap: break-word;
+    }
+
+    .swal2-actions {
+        display: flex;
+        z-index: 1;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        margin: 1.25em auto 0;
+        padding: 0;
+    }
+
+    .swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
+        opacity: 0.4;
+    }
+
+    .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    }
+
+    .swal2-actions:not(.swal2-loading) .swal2-styled:active {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    }
+
+    .swal2-loader {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 2.2em;
+        height: 2.2em;
+        margin: 0 1.875em;
+        -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+        animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+        border-width: 0.25em;
+        border-style: solid;
+        border-radius: 100%;
+        border-color: #2778c4 transparent #2778c4 transparent;
+    }
+
+    .swal2-styled {
+        margin: 0.3125em;
+        padding: 0.625em 1.1em;
+        transition: box-shadow 0.1s;
+        box-shadow: 0 0 0 3px transparent;
+        font-weight: 500;
+    }
+
+    .swal2-styled:not([disabled]) {
+        cursor: pointer;
+    }
+
+    .swal2-styled.swal2-confirm {
+        border: 0;
+        border-radius: 0.25em;
+        background: initial;
+        background-color: #7066e0;
+        color: #fff;
+        font-size: 1em;
+    }
+
+    .swal2-styled.swal2-confirm:focus {
+        box-shadow: 0 0 0 3px rgba(112, 102, 224, 0.5);
+    }
+
+    .swal2-styled.swal2-deny {
+        border: 0;
+        border-radius: 0.25em;
+        background: initial;
+        background-color: #dc3741;
+        color: #fff;
+        font-size: 1em;
+    }
+
+    .swal2-styled.swal2-deny:focus {
+        box-shadow: 0 0 0 3px rgba(220, 55, 65, 0.5);
+    }
+
+    .swal2-styled.swal2-cancel {
+        border: 0;
+        border-radius: 0.25em;
+        background: initial;
+        background-color: #6e7881;
+        color: #fff;
+        font-size: 1em;
+    }
+
+    .swal2-styled.swal2-cancel:focus {
+        box-shadow: 0 0 0 3px rgba(110, 120, 129, 0.5);
+    }
+
+    .swal2-styled.swal2-default-outline:focus {
+        box-shadow: 0 0 0 3px rgba(100, 150, 200, 0.5);
+    }
+
+    .swal2-styled:focus {
+        outline: none;
+    }
+
+    .swal2-styled::-moz-focus-inner {
+        border: 0;
+    }
+
+    .swal2-footer {
+        justify-content: center;
+        margin: 1em 0 0;
+        padding: 1em 1em 0;
+        border-top: 1px solid #eee;
+        color: inherit;
+        font-size: 1em;
+    }
+
+    .swal2-timer-progress-bar-container {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        grid-column: auto !important;
+        overflow: hidden;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .swal2-timer-progress-bar {
+        width: 100%;
+        height: 0.25em;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .swal2-image {
+        max-width: 100%;
+        margin: 2em auto 1em;
+    }
+
+    .swal2-close {
+        z-index: 2;
+        align-items: center;
+        justify-content: center;
+        width: 1.2em;
+        height: 1.2em;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: -1.2em;
+        padding: 0;
+        overflow: hidden;
+        transition: color 0.1s, box-shadow 0.1s;
+        border: none;
+        border-radius: 5px;
+        background: transparent;
+        color: #ccc;
+        font-family: serif;
+        font-family: monospace;
+        font-size: 2.5em;
+        cursor: pointer;
+        justify-self: end;
+    }
+
+    .swal2-close:hover {
+        transform: none;
+        background: transparent;
+        color: #f27474;
+    }
+
+    .swal2-close:focus {
+        outline: none;
+        box-shadow: inset 0 0 0 3px rgba(100, 150, 200, 0.5);
+    }
+
+    .swal2-close::-moz-focus-inner {
+        border: 0;
+    }
+
+    .swal2-html-container {
+        z-index: 1;
+        justify-content: center;
+        margin: 1em 1.6em 0.3em;
+        padding: 0;
+        overflow: auto;
+        color: inherit;
+        font-size: 1.125em;
+        font-weight: normal;
+        line-height: normal;
+        text-align: center;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .swal2-input,
+    .swal2-file,
+    .swal2-textarea,
+    .swal2-select,
+    .swal2-radio,
+    .swal2-checkbox {
+        margin: 1em 2em 3px;
+    }
+
+    .swal2-input,
+    .swal2-file,
+    .swal2-textarea {
+        box-sizing: border-box;
+        width: auto;
+        transition: border-color 0.1s, box-shadow 0.1s;
+        border: 1px solid #d9d9d9;
+        border-radius: 0.1875em;
+        background: inherit;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px transparent;
+        color: inherit;
+        font-size: 1.125em;
+    }
+
+    .swal2-input.swal2-inputerror,
+    .swal2-file.swal2-inputerror,
+    .swal2-textarea.swal2-inputerror {
+        border-color: #f27474 !important;
+        box-shadow: 0 0 2px #f27474 !important;
+    }
+
+    .swal2-input:focus,
+    .swal2-file:focus,
+    .swal2-textarea:focus {
+        border: 1px solid #b4dbed;
+        outline: none;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px rgba(100, 150, 200, 0.5);
+    }
+
+    .swal2-input::-moz-placeholder, .swal2-file::-moz-placeholder, .swal2-textarea::-moz-placeholder {
+        color: #ccc;
+    }
+
+    .swal2-input:-ms-input-placeholder, .swal2-file:-ms-input-placeholder, .swal2-textarea:-ms-input-placeholder {
+        color: #ccc;
+    }
+
+    .swal2-input::placeholder,
+    .swal2-file::placeholder,
+    .swal2-textarea::placeholder {
+        color: #ccc;
+    }
+
+    .swal2-range {
+        margin: 1em 2em 3px;
+        background: #fff;
+    }
+
+    .swal2-range input {
+        width: 80%;
+    }
+
+    .swal2-range output {
+        width: 20%;
+        color: inherit;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .swal2-range input,
+    .swal2-range output {
+        height: 2.625em;
+        padding: 0;
+        font-size: 1.125em;
+        line-height: 2.625em;
+    }
+
+    .swal2-input {
+        height: 2.625em;
+        padding: 0 0.75em;
+    }
+
+    .swal2-file {
+        width: 75%;
+        margin-right: auto;
+        margin-left: auto;
+        background: inherit;
+        font-size: 1.125em;
+    }
+
+    .swal2-textarea {
+        height: 6.75em;
+        padding: 0.75em;
+    }
+
+    .swal2-select {
+        min-width: 50%;
+        max-width: 100%;
+        padding: 0.375em 0.625em;
+        background: inherit;
+        color: inherit;
+        font-size: 1.125em;
+    }
+
+    .swal2-radio,
+    .swal2-checkbox {
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        color: inherit;
+    }
+
+    .swal2-radio label,
+    .swal2-checkbox label {
+        margin: 0 0.6em;
+        font-size: 1.125em;
+    }
+
+    .swal2-radio input,
+    .swal2-checkbox input {
+        flex-shrink: 0;
+        margin: 0 0.4em;
+    }
+
+    .swal2-input-label {
+        display: flex;
+        justify-content: center;
+        margin: 1em auto 0;
+    }
+
+    .swal2-validation-message {
+        align-items: center;
+        justify-content: center;
+        margin: 1em 0 0;
+        padding: 0.625em;
+        overflow: hidden;
+        background: #f0f0f0;
+        color: #666666;
+        font-size: 1em;
+        font-weight: 300;
+    }
+
+    .swal2-validation-message::before {
+        content: "!";
+        display: inline-block;
+        width: 1.5em;
+        min-width: 1.5em;
+        height: 1.5em;
+        margin: 0 0.625em;
+        border-radius: 50%;
+        background-color: #f27474;
+        color: #fff;
+        font-weight: 600;
+        line-height: 1.5em;
+        text-align: center;
+    }
+
+    .swal2-icon {
+        position: relative;
+        box-sizing: content-box;
+        justify-content: center;
+        width: 5em;
+        height: 5em;
+        margin: 2.5em auto 0.6em;
+        border: 0.25em solid transparent;
+        border-radius: 50%;
+        border-color: #000;
+        font-family: inherit;
+        line-height: 5em;
+        cursor: default;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .swal2-icon .swal2-icon-content {
+        display: flex;
+        align-items: center;
+        font-size: 3.75em;
+    }
+
+    .swal2-icon.swal2-error {
+        border-color: #f27474;
+        color: #f27474;
+    }
+
+    .swal2-icon.swal2-error .swal2-x-mark {
+        position: relative;
+        flex-grow: 1;
+    }
+
+    .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+        display: block;
+        position: absolute;
+        top: 2.3125em;
+        width: 2.9375em;
+        height: 0.3125em;
+        border-radius: 0.125em;
+        background-color: #f27474;
+    }
+
+    .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {
+        left: 1.0625em;
+        transform: rotate(45deg);
+    }
+
+    .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {
+        right: 1em;
+        transform: rotate(-45deg);
+    }
+
+    .swal2-icon.swal2-error.swal2-icon-show {
+        -webkit-animation: swal2-animate-error-icon 0.5s;
+        animation: swal2-animate-error-icon 0.5s;
+    }
+
+    .swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark {
+        -webkit-animation: swal2-animate-error-x-mark 0.5s;
+        animation: swal2-animate-error-x-mark 0.5s;
+    }
+
+    .swal2-icon.swal2-warning {
+        border-color: #facea8;
+        color: #f8bb86;
+    }
+
+    .swal2-icon.swal2-warning.swal2-icon-show {
+        -webkit-animation: swal2-animate-error-icon 0.5s;
+        animation: swal2-animate-error-icon 0.5s;
+    }
+
+    .swal2-icon.swal2-warning.swal2-icon-show .swal2-icon-content {
+        -webkit-animation: swal2-animate-i-mark 0.5s;
+        animation: swal2-animate-i-mark 0.5s;
+    }
+
+    .swal2-icon.swal2-info {
+        border-color: #9de0f6;
+        color: #3fc3ee;
+    }
+
+    .swal2-icon.swal2-info.swal2-icon-show {
+        -webkit-animation: swal2-animate-error-icon 0.5s;
+        animation: swal2-animate-error-icon 0.5s;
+    }
+
+    .swal2-icon.swal2-info.swal2-icon-show .swal2-icon-content {
+        -webkit-animation: swal2-animate-i-mark 0.8s;
+        animation: swal2-animate-i-mark 0.8s;
+    }
+
+    .swal2-icon.swal2-question {
+        border-color: #c9dae1;
+        color: #87adbd;
+    }
+
+    .swal2-icon.swal2-question.swal2-icon-show {
+        -webkit-animation: swal2-animate-error-icon 0.5s;
+        animation: swal2-animate-error-icon 0.5s;
+    }
+
+    .swal2-icon.swal2-question.swal2-icon-show .swal2-icon-content {
+        -webkit-animation: swal2-animate-question-mark 0.8s;
+        animation: swal2-animate-question-mark 0.8s;
+    }
+
+    .swal2-icon.swal2-success {
+        border-color: #a5dc86;
+        color: #a5dc86;
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-circular-line] {
+        position: absolute;
+        width: 3.75em;
+        height: 7.5em;
+        transform: rotate(45deg);
+        border-radius: 50%;
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left] {
+        top: -0.4375em;
+        left: -2.0635em;
+        transform: rotate(-45deg);
+        transform-origin: 3.75em 3.75em;
+        border-radius: 7.5em 0 0 7.5em;
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right] {
+        top: -0.6875em;
+        left: 1.875em;
+        transform: rotate(-45deg);
+        transform-origin: 0 3.75em;
+        border-radius: 0 7.5em 7.5em 0;
+    }
+
+    .swal2-icon.swal2-success .swal2-success-ring {
+        position: absolute;
+        z-index: 2;
+        top: -0.25em;
+        left: -0.25em;
+        box-sizing: content-box;
+        width: 100%;
+        height: 100%;
+        border: 0.25em solid rgba(165, 220, 134, 0.3);
+        border-radius: 50%;
+    }
+
+    .swal2-icon.swal2-success .swal2-success-fix {
+        position: absolute;
+        z-index: 1;
+        top: 0.5em;
+        left: 1.625em;
+        width: 0.4375em;
+        height: 5.625em;
+        transform: rotate(-45deg);
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-line] {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        height: 0.3125em;
+        border-radius: 0.125em;
+        background-color: #a5dc86;
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-line][class$=tip] {
+        top: 2.875em;
+        left: 0.8125em;
+        width: 1.5625em;
+        transform: rotate(45deg);
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-line][class$=long] {
+        top: 2.375em;
+        right: 0.5em;
+        width: 2.9375em;
+        transform: rotate(-45deg);
+    }
+
+    .swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip {
+        -webkit-animation: swal2-animate-success-line-tip 0.75s;
+        animation: swal2-animate-success-line-tip 0.75s;
+    }
+
+    .swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long {
+        -webkit-animation: swal2-animate-success-line-long 0.75s;
+        animation: swal2-animate-success-line-long 0.75s;
+    }
+
+    .swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right {
+        -webkit-animation: swal2-rotate-success-circular-line 4.25s ease-in;
+        animation: swal2-rotate-success-circular-line 4.25s ease-in;
+    }
+
+    .swal2-progress-steps {
+        flex-wrap: wrap;
+        align-items: center;
+        max-width: 100%;
+        margin: 1.25em auto;
+        padding: 0;
+        background: inherit;
+        font-weight: 600;
+    }
+
+    .swal2-progress-steps li {
+        display: inline-block;
+        position: relative;
+    }
+
+    .swal2-progress-steps .swal2-progress-step {
+        z-index: 20;
+        flex-shrink: 0;
+        width: 2em;
+        height: 2em;
+        border-radius: 2em;
+        background: #2778c4;
+        color: #fff;
+        line-height: 2em;
+        text-align: center;
+    }
+
+    .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
+        background: #2778c4;
+    }
+
+    .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step {
+        background: #add8e6;
+        color: #fff;
+    }
+
+    .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step-line {
+        background: #add8e6;
+    }
+
+    .swal2-progress-steps .swal2-progress-step-line {
+        z-index: 10;
+        flex-shrink: 0;
+        width: 2.5em;
+        height: 0.4em;
+        margin: 0 -1px;
+        background: #2778c4;
+    }
+
+    [class^=swal2] {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .swal2-show {
+        -webkit-animation: swal2-show 0.3s;
+        animation: swal2-show 0.3s;
+    }
+
+    .swal2-hide {
+        -webkit-animation: swal2-hide 0.15s forwards;
+        animation: swal2-hide 0.15s forwards;
+    }
+
+    .swal2-noanimation {
+        transition: none;
+    }
+
+    .swal2-scrollbar-measure {
+        position: absolute;
+        top: -9999px;
+        width: 50px;
+        height: 50px;
+        overflow: scroll;
+    }
+
+    .swal2-rtl .swal2-close {
+        margin-right: initial;
+        margin-left: 0;
+    }
+
+    .swal2-rtl .swal2-timer-progress-bar {
+        right: 0;
+        left: auto;
+    }
+
+    @-webkit-keyframes swal2-toast-show {
+        0% {
+            transform: translateY(-0.625em) rotateZ(2deg);
+        }
+        33% {
+            transform: translateY(0) rotateZ(-2deg);
+        }
+        66% {
+            transform: translateY(0.3125em) rotateZ(2deg);
+        }
+        100% {
+            transform: translateY(0) rotateZ(0deg);
+        }
+    }
+
+    @keyframes swal2-toast-show {
+        0% {
+            transform: translateY(-0.625em) rotateZ(2deg);
+        }
+        33% {
+            transform: translateY(0) rotateZ(-2deg);
+        }
+        66% {
+            transform: translateY(0.3125em) rotateZ(2deg);
+        }
+        100% {
+            transform: translateY(0) rotateZ(0deg);
+        }
+    }
+
+    @-webkit-keyframes swal2-toast-hide {
+        100% {
+            transform: rotateZ(1deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes swal2-toast-hide {
+        100% {
+            transform: rotateZ(1deg);
+            opacity: 0;
+        }
+    }
+
+    @-webkit-keyframes swal2-toast-animate-success-line-tip {
+        0% {
+            top: 0.5625em;
+            left: 0.0625em;
+            width: 0;
+        }
+        54% {
+            top: 0.125em;
+            left: 0.125em;
+            width: 0;
+        }
+        70% {
+            top: 0.625em;
+            left: -0.25em;
+            width: 1.625em;
+        }
+        84% {
+            top: 1.0625em;
+            left: 0.75em;
+            width: 0.5em;
+        }
+        100% {
+            top: 1.125em;
+            left: 0.1875em;
+            width: 0.75em;
+        }
+    }
+
+    @keyframes swal2-toast-animate-success-line-tip {
+        0% {
+            top: 0.5625em;
+            left: 0.0625em;
+            width: 0;
+        }
+        54% {
+            top: 0.125em;
+            left: 0.125em;
+            width: 0;
+        }
+        70% {
+            top: 0.625em;
+            left: -0.25em;
+            width: 1.625em;
+        }
+        84% {
+            top: 1.0625em;
+            left: 0.75em;
+            width: 0.5em;
+        }
+        100% {
+            top: 1.125em;
+            left: 0.1875em;
+            width: 0.75em;
+        }
+    }
+
+    @-webkit-keyframes swal2-toast-animate-success-line-long {
+        0% {
+            top: 1.625em;
+            right: 1.375em;
+            width: 0;
+        }
+        65% {
+            top: 1.25em;
+            right: 0.9375em;
+            width: 0;
+        }
+        84% {
+            top: 0.9375em;
+            right: 0;
+            width: 1.125em;
+        }
+        100% {
+            top: 0.9375em;
+            right: 0.1875em;
+            width: 1.375em;
+        }
+    }
+
+    @keyframes swal2-toast-animate-success-line-long {
+        0% {
+            top: 1.625em;
+            right: 1.375em;
+            width: 0;
+        }
+        65% {
+            top: 1.25em;
+            right: 0.9375em;
+            width: 0;
+        }
+        84% {
+            top: 0.9375em;
+            right: 0;
+            width: 1.125em;
+        }
+        100% {
+            top: 0.9375em;
+            right: 0.1875em;
+            width: 1.375em;
+        }
+    }
+
+    @-webkit-keyframes swal2-show {
+        0% {
+            transform: scale(0.7);
+        }
+        45% {
+            transform: scale(1.05);
+        }
+        80% {
+            transform: scale(0.95);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes swal2-show {
+        0% {
+            transform: scale(0.7);
+        }
+        45% {
+            transform: scale(1.05);
+        }
+        80% {
+            transform: scale(0.95);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @-webkit-keyframes swal2-hide {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+    }
+
+    @keyframes swal2-hide {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+    }
+
+    @-webkit-keyframes swal2-animate-success-line-tip {
+        0% {
+            top: 1.1875em;
+            left: 0.0625em;
+            width: 0;
+        }
+        54% {
+            top: 1.0625em;
+            left: 0.125em;
+            width: 0;
+        }
+        70% {
+            top: 2.1875em;
+            left: -0.375em;
+            width: 3.125em;
+        }
+        84% {
+            top: 3em;
+            left: 1.3125em;
+            width: 1.0625em;
+        }
+        100% {
+            top: 2.8125em;
+            left: 0.8125em;
+            width: 1.5625em;
+        }
+    }
+
+    @keyframes swal2-animate-success-line-tip {
+        0% {
+            top: 1.1875em;
+            left: 0.0625em;
+            width: 0;
+        }
+        54% {
+            top: 1.0625em;
+            left: 0.125em;
+            width: 0;
+        }
+        70% {
+            top: 2.1875em;
+            left: -0.375em;
+            width: 3.125em;
+        }
+        84% {
+            top: 3em;
+            left: 1.3125em;
+            width: 1.0625em;
+        }
+        100% {
+            top: 2.8125em;
+            left: 0.8125em;
+            width: 1.5625em;
+        }
+    }
+
+    @-webkit-keyframes swal2-animate-success-line-long {
+        0% {
+            top: 3.375em;
+            right: 2.875em;
+            width: 0;
+        }
+        65% {
+            top: 3.375em;
+            right: 2.875em;
+            width: 0;
+        }
+        84% {
+            top: 2.1875em;
+            right: 0;
+            width: 3.4375em;
+        }
+        100% {
+            top: 2.375em;
+            right: 0.5em;
+            width: 2.9375em;
+        }
+    }
+
+    @keyframes swal2-animate-success-line-long {
+        0% {
+            top: 3.375em;
+            right: 2.875em;
+            width: 0;
+        }
+        65% {
+            top: 3.375em;
+            right: 2.875em;
+            width: 0;
+        }
+        84% {
+            top: 2.1875em;
+            right: 0;
+            width: 3.4375em;
+        }
+        100% {
+            top: 2.375em;
+            right: 0.5em;
+            width: 2.9375em;
+        }
+    }
+
+    @-webkit-keyframes swal2-rotate-success-circular-line {
+        0% {
+            transform: rotate(-45deg);
+        }
+        5% {
+            transform: rotate(-45deg);
+        }
+        12% {
+            transform: rotate(-405deg);
+        }
+        100% {
+            transform: rotate(-405deg);
+        }
+    }
+
+    @keyframes swal2-rotate-success-circular-line {
+        0% {
+            transform: rotate(-45deg);
+        }
+        5% {
+            transform: rotate(-45deg);
+        }
+        12% {
+            transform: rotate(-405deg);
+        }
+        100% {
+            transform: rotate(-405deg);
+        }
+    }
+
+    @-webkit-keyframes swal2-animate-error-x-mark {
+        0% {
+            margin-top: 1.625em;
+            transform: scale(0.4);
+            opacity: 0;
+        }
+        50% {
+            margin-top: 1.625em;
+            transform: scale(0.4);
+            opacity: 0;
+        }
+        80% {
+            margin-top: -0.375em;
+            transform: scale(1.15);
+        }
+        100% {
+            margin-top: 0;
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes swal2-animate-error-x-mark {
+        0% {
+            margin-top: 1.625em;
+            transform: scale(0.4);
+            opacity: 0;
+        }
+        50% {
+            margin-top: 1.625em;
+            transform: scale(0.4);
+            opacity: 0;
+        }
+        80% {
+            margin-top: -0.375em;
+            transform: scale(1.15);
+        }
+        100% {
+            margin-top: 0;
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes swal2-animate-error-icon {
+        0% {
+            transform: rotateX(100deg);
+            opacity: 0;
+        }
+        100% {
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+    }
+
+    @keyframes swal2-animate-error-icon {
+        0% {
+            transform: rotateX(100deg);
+            opacity: 0;
+        }
+        100% {
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes swal2-rotate-loading {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes swal2-rotate-loading {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @-webkit-keyframes swal2-animate-question-mark {
+        0% {
+            transform: rotateY(-360deg);
+        }
+        100% {
+            transform: rotateY(0);
+        }
+    }
+
+    @keyframes swal2-animate-question-mark {
+        0% {
+            transform: rotateY(-360deg);
+        }
+        100% {
+            transform: rotateY(0);
+        }
+    }
+
+    @-webkit-keyframes swal2-animate-i-mark {
+        0% {
+            transform: rotateZ(45deg);
+            opacity: 0;
+        }
+        25% {
+            transform: rotateZ(-25deg);
+            opacity: 0.4;
+        }
+        50% {
+            transform: rotateZ(15deg);
+            opacity: 0.8;
+        }
+        75% {
+            transform: rotateZ(-5deg);
+            opacity: 1;
+        }
+        100% {
+            transform: rotateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes swal2-animate-i-mark {
+        0% {
+            transform: rotateZ(45deg);
+            opacity: 0;
+        }
+        25% {
+            transform: rotateZ(-25deg);
+            opacity: 0.4;
+        }
+        50% {
+            transform: rotateZ(15deg);
+            opacity: 0.8;
+        }
+        75% {
+            transform: rotateZ(-5deg);
+            opacity: 1;
+        }
+        100% {
+            transform: rotateX(0);
+            opacity: 1;
+        }
+    }
+
+    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+        overflow: hidden;
+    }
+
+    body.swal2-height-auto {
+        height: auto !important;
+    }
+
+    body.swal2-no-backdrop .swal2-container {
+        background-color: transparent !important;
+        pointer-events: none;
+    }
+
+    body.swal2-no-backdrop .swal2-container .swal2-popup {
+        pointer-events: all;
+    }
+
+    body.swal2-no-backdrop .swal2-container .swal2-modal {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    @media print {
+        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+            overflow-y: scroll !important;
+        }
+
+        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) > [aria-hidden=true] {
+            display: none;
+        }
+
+        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {
+            position: static !important;
+        }
+    }
+
+    body.swal2-toast-shown .swal2-container {
+        box-sizing: border-box;
+        width: 360px;
+        max-width: 100%;
+        background-color: transparent;
+        pointer-events: none;
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-top {
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-top-end, body.swal2-toast-shown .swal2-container.swal2-top-right {
+        top: 0;
+        right: 0;
+        bottom: auto;
+        left: auto;
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-top-start, body.swal2-toast-shown .swal2-container.swal2-top-left {
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-center-start, body.swal2-toast-shown .swal2-container.swal2-center-left {
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-center {
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-center-end, body.swal2-toast-shown .swal2-container.swal2-center-right {
+        top: 50%;
+        right: 0;
+        bottom: auto;
+        left: auto;
+        transform: translateY(-50%);
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-bottom-start, body.swal2-toast-shown .swal2-container.swal2-bottom-left {
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0;
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-bottom {
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown .swal2-container.swal2-bottom-right {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: auto;
+    }
+
+`;
+  const normalize = `
+    /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+    html {
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%
+    }
+
+    body {
+        margin: 0
+    }
+
+    main {
+        display: block
+    }
+
+    h1 {
+        font-size: 2em;
+        margin: .67em 0
+    }
+
+    hr {
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible
+    }
+
+    pre {
+        font-family: monospace, monospace;
+        font-size: 1em
+    }
+
+    a {
+        background-color: transparent
+    }
+
+    abbr[title] {
+        border-bottom: none;
+        text-decoration: underline;
+        text-decoration: underline dotted
+    }
+
+    b, strong {
+        font-weight: bolder
+    }
+
+    code, kbd, samp {
+        font-family: monospace, monospace;
+        font-size: 1em
+    }
+
+    small {
+        font-size: 80%
+    }
+
+    sub, sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline
+    }
+
+    sub {
+        bottom: -.25em
+    }
+
+    sup {
+        top: -.5em
+    }
+
+    img {
+        border-style: none
+    }
+
+    button, input, optgroup, select, textarea {
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0
+    }
+
+    button, input {
+        overflow: visible
+    }
+
+    button, select {
+        text-transform: none
+    }
+
+    [type=button], [type=reset], [type=submit], button {
+        -webkit-appearance: button
+    }
+
+    [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+        border-style: none;
+        padding: 0
+    }
+
+    [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
+        outline: 1px dotted ButtonText
+    }
+
+    fieldset {
+        padding: .35em .75em .625em
+    }
+
+    legend {
+        box-sizing: border-box;
+        color: inherit;
+        display: table;
+        max-width: 100%;
+        padding: 0;
+        white-space: normal
+    }
+
+    progress {
+        vertical-align: baseline
+    }
+
+    textarea {
+        overflow: auto
+    }
+
+    [type=checkbox], [type=radio] {
+        box-sizing: border-box;
+        padding: 0
+    }
+
+    [type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+        height: auto
+    }
+
+    [type=search] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px
+    }
+
+    [type=search]::-webkit-search-decoration {
+        -webkit-appearance: none
+    }
+
+    ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit
+    }
+
+    details {
+        display: block
+    }
+
+    summary {
+        display: list-item
+    }
+
+    template {
+        display: none
+    }
+
+    [hidden] {
+        display: none
+    }
+`;
+  const nprogress = `
+    #nprogress {
+        pointer-events: none
+    }
+
+    #nprogress .bar {
+        background: #29d;
+        position: fixed;
+        z-index: 1031;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px
+    }
+
+    #nprogress .peg {
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 100px;
+        height: 100%;
+        box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+        opacity: 1;
+        -webkit-transform: rotate(3deg) translate(0, -4px);
+        -ms-transform: rotate(3deg) translate(0, -4px);
+        transform: rotate(3deg) translate(0, -4px)
+    }
+
+    #nprogress .spinner {
+        display: block;
+        position: fixed;
+        z-index: 1031;
+        top: 15px;
+        right: 15px
+    }
+
+    #nprogress .spinner-icon {
+        width: 18px;
+        height: 18px;
+        box-sizing: border-box;
+        border: 2px solid transparent;
+        border-top-color: #29d;
+        border-left-color: #29d;
+        border-radius: 50%;
+        -webkit-animation: nprogress-spinner 400ms linear infinite;
+        animation: nprogress-spinner 400ms linear infinite
+    }
+
+    .nprogress-custom-parent {
+        overflow: hidden;
+        position: relative
+    }
+
+    .nprogress-custom-parent #nprogress .bar, .nprogress-custom-parent #nprogress .spinner {
+        position: absolute
+    }
+
+    @-webkit-keyframes nprogress-spinner {
+        0% {
+            -webkit-transform: rotate(0deg)
+        }
+        100% {
+            -webkit-transform: rotate(360deg)
+        }
+    }
+
+    @keyframes nprogress-spinner {
+        0% {
+            transform: rotate(0deg)
+        }
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+`;
+  const keycss = `
+    .key, kbd {
+        display: inline;
+        display: inline-block;
+        white-space: nowrap;
+        min-width: 1em;
+        padding: 0.3em 0.4em 0.2em 0.3em;
+        font-style: normal;
+        font-family: "Lucida Grande", Lucida, Arial, sans-serif;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 0.3em;
+        border: none;
+        background-color: #505050;
+        background-color: gradient(linear, left top, left bottom, from(#3c3c3c), to(#505050));
+        color: #fafafa;
+        text-shadow: -1px -1px 0 #464646;
+        -webkit-box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0, 0, 0, 0.3);
+        font-size: 0.85em;
+        line-height: 1;
+        cursor: default;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none
+    }
+
+    .key[title], kbd[title] {
+        cursor: help
+    }
+
+    .dark-keys .key, .dark-keys kbd, .key.dark, kbd.dark {
+        display: inline;
+        display: inline-block;
+        white-space: nowrap;
+        min-width: 1em;
+        padding: 0.3em 0.4em 0.2em 0.3em;
+        font-style: normal;
+        font-family: "Lucida Grande", Lucida, Arial, sans-serif;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 0.3em;
+        border: none;
+        background-color: #505050;
+        background-color: gradient(linear, left top, left bottom, from(#3c3c3c), to(#505050));
+        color: #fafafa;
+        text-shadow: -1px -1px 0 #464646;
+        -webkit-box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 1px #969696, inset 0 -0.05em 0.4em #505050, 0 0.1em 0 #1e1e1e, 0 0.1em 0.1em rgba(0, 0, 0, 0.3)
+    }
+
+    .key.light, .light-keys .key, .light-keys kbd, kbd.light {
+        display: inline;
+        display: inline-block;
+        white-space: nowrap;
+        min-width: 1em;
+        padding: 0.3em 0.4em 0.2em 0.3em;
+        font-style: normal;
+        font-family: "Lucida Grande", Lucida, Arial, sans-serif;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 0.3em;
+        border: none;
+        background-color: #fafafa;
+        background-color: gradient(linear, left top, left bottom, from(#d2d2d2), to(#ffffff));
+        color: #323232;
+        text-shadow: 0 0 2px #ffffff;
+        -webkit-box-shadow: inset 0 0 1px #ffffff, inset 0 0 0.4em #c8c8c8, 0 0.1em 0 #828282, 0 0.11em 0 rgba(0, 0, 0, 0.4), 0 0.1em 0.11em rgba(0, 0, 0, 0.9);
+        box-shadow: inset 0 0 1px #ffffff, inset 0 0 0.4em #c8c8c8, 0 0.1em 0 #828282, 0 0.11em 0 rgba(0, 0, 0, 0.4), 0 0.1em 0.11em rgba(0, 0, 0, 0.9)
+    }
+
+    .key.so, .so-keys .key, .so-keys kbd, kbd.so {
+        display: inline;
+        display: inline-block;
+        white-space: nowrap;
+        min-width: 1em;
+        padding: 0.3em 0.4em 0.2em 0.3em;
+        font-style: normal;
+        font-family: "Lucida Grande", Lucida, Arial, sans-serif;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 0.3em;
+        border: none;
+        margin: 0 0.1em;
+        padding: 0.1em 0.6em;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 1.4;
+        color: #242729;
+        text-shadow: 0 1px 0 #FFF;
+        background-color: #e1e3e5;
+        border: 1px solid #adb3b9;
+        border-radius: 0.27272727em;
+        -webkit-box-shadow: 0 1px 0 rgba(12, 13, 14, 0.2), 0 0 0 2px #FFF inset;
+        box-shadow: 0 1px 0 rgba(12, 13, 14, 0.2), 0 0 0 2px #FFF inset
+    }
+
+    .github-keys .key, .github-keys kbd, .key.github, kbd.github {
+        display: inline;
+        display: inline-block;
+        white-space: nowrap;
+        min-width: 1em;
+        padding: 0.3em 0.4em 0.2em 0.3em;
+        font-style: normal;
+        font-family: "Lucida Grande", Lucida, Arial, sans-serif;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 0.3em;
+        border: none;
+        padding: 0.27272727em 0.45454545em;
+        font-size: 68.75%;
+        line-height: 0.90909091;
+        color: #444d56;
+        vertical-align: middle;
+        background-color: #fafbfc;
+        border: solid 1px #c6cbd1;
+        border-bottom-color: #959da5;
+        border-radius: 0.27272727em;
+        -webkit-box-shadow: inset 0 -1px 0 #959da5;
+        box-shadow: inset 0 -1px 0 #959da5;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        text-shadow: none
+    }
+`;
   const sweetalertStyle = [normalize, sweetalert, nprogress, keycss].join("\n");
 
   function head(manga) {
@@ -4733,44 +5054,44 @@ ${wrapStyle(
 
   const listPages = (times, begin) => indexList(times, begin).map(
     (index) => `
-<div id="Page${index}" class="MangaPage">
-  <div class="PageFunctions">
-    <button class="Bookmark ControlButton" title="${getLocaleString("BOOKMARK")}">
+<div id='Page${index}' class='MangaPage'>
+  <div class='PageFunctions'>
+    <button class='Bookmark ControlButton' title='${getLocaleString("BOOKMARK")}'>
       ${IconBookmark}
       ${IconBookmarkOff}
     </button>
-    <button class="ZoomIn ControlButton" title="${getLocaleString("ZOOM_IN")}">
+    <button class='ZoomIn ControlButton' title='${getLocaleString("ZOOM_IN")}'>
       ${IconZoomIn}
     </button>
-    <button class="ZoomRestore ControlButton" title="${getLocaleString("ZOOM_RESET")}">
+    <button class='ZoomRestore ControlButton' title='${getLocaleString("ZOOM_RESET")}'>
       ${IconZoomCancel}
     </button>
-    <button class="ZoomOut ControlButton" title="${getLocaleString("ZOOM_OUT")}">
+    <button class='ZoomOut ControlButton' title='${getLocaleString("ZOOM_OUT")}'>
       ${IconZoomOut}
     </button>
-    <button class="ZoomWidth ControlButton" title="${getLocaleString("ZOOM_WIDTH")}">
+    <button class='ZoomWidth ControlButton' title='${getLocaleString("ZOOM_WIDTH")}'>
       ${IconArrowAutofitWidth}
     </button>
-    <button class="ZoomHeight ControlButton" title="${getLocaleString("ZOOM_HEIGHT")}">
+    <button class='ZoomHeight ControlButton' title='${getLocaleString("ZOOM_HEIGHT")}'>
       ${IconArrowAutofitHeight}
     </button>
-    <button class="Hide ControlButton" title="${getLocaleString("HIDE")}">
+    <button class='Hide ControlButton' title='${getLocaleString("HIDE")}'>
       ${IconEye}
       ${IconEyeOff}
     </button>
-    <button class="Reload ControlButton" title="${getLocaleString("RELOAD")}">
+    <button class='Reload ControlButton' title='${getLocaleString("RELOAD")}'>
       ${IconRefresh}
     </button>
-    <span class="PageIndex">${index}</span>
+    <span class='PageIndex'>${index}</span>
   </div>
-  <div class="PageContent">
-    <img id="PageImg${index}" alt="" class="PageImg" />
+  <div class='PageContent'>
+    <img id='PageImg${index}' alt='' class='PageImg' />
   </div>
 </div>`
   );
 
   const localeSelector = locales.map(
-    (locale) => `<option value="${locale.ID}" ${useSettings().locale === locale.ID ? "selected" : ""}>${locale.NAME}</option>`
+    (locale) => `<option value='${locale.ID}' ${useSettings().locale === locale.ID ? "selected" : ""}>${locale.NAME}</option>`
   );
   const SettingsPanel = `
   <div id='SettingsOverlay' class='overlay'></div>
@@ -5156,7 +5477,13 @@ ${wrapStyle(
     e.stopPropagation();
     e.stopImmediatePropagation();
     const keyBindings = keybinds.find((kb) => kb.keys.some((key) => key === e.code));
-    logScript("Keyboard:", e.code, "Entry", keyBindings);
+    logScript(
+      "Keyboard:",
+      e.code,
+      /* ' Event:', e, */
+      "Entry",
+      keyBindings
+    );
     keyBindings?.action();
     return false;
   }
@@ -5193,13 +5520,13 @@ ${wrapStyle(
     return formatted;
   }
   const keybindings = keybinds.map((kb) => {
-    const keys = kb.keys.map((key) => `<kbd class="dark">${formatKeyName(key)}</kbd>`).join(" / ");
+    const keys = kb.keys.map((key) => `<kbd class='dark'>${formatKeyName(key)}</kbd>`).join(" / ");
     return `${keys}: ${getLocaleString(kb.name)}<br/>`;
   }).join("\n");
   const KeybindingsPanel = `
-<div id="KeybindingsPanel" class="panel">
+<div id='KeybindingsPanel' class='panel'>
     <h2>${getLocaleString("KEYBINDINGS")}</h2>
-    <button id="CloseKeybindings" class="closeButton" title="${getLocaleString("CLOSE")}">
+    <button id='CloseKeybindings' class='closeButton' title='${getLocaleString("CLOSE")}'>
       ${IconX}
     </button>
     ${keybindings}
@@ -5218,21 +5545,21 @@ ${wrapStyle(
       return [getLocaleString("LIST_EMPTY")];
     return useSettings().bookmarks.map(
       (mark, index) => `
-<div id="Bookmark${index + 1}" class="BookmarkItem">
-  <span class="bookmarkData bookmarkDate">
+<div id='Bookmark${index + 1}' class='BookmarkItem'>
+  <span class='bookmarkData bookmarkDate'>
     ${new Date(mark.date).toLocaleDateString()}
   </span>
-  <span class="bookmarkData bookmarkURl"
-    title="${mark.url}">
+  <span class='bookmarkData bookmarkURl'
+    title='${mark.url}'>
     ${mark.url}
   </span>
-  <span class="bookmarkData bookmarkPage">Page: ${mark.page}</span>
-  <span class="bookmarkData bookmarkFunctions">
-    <button class="ControlButton open" title="Open Bookmark" type="button"
+  <span class='bookmarkData bookmarkPage'>Page: ${mark.page}</span>
+  <span class='bookmarkData bookmarkFunctions'>
+    <button class='ControlButton open' title='Open Bookmark' type='button'
      onclick="window.open('${mark.url}','_blank')">
       ${IconExternalLink}
     </button>
-    <button class="ControlButton erase" title="Delete Bookmark" type="button" value="${mark.url}">
+    <button class='ControlButton erase' title='Delete Bookmark' type='button' value='${mark.url}'>
       ${IconTrash}
     </button>
   </pan>
@@ -5240,13 +5567,13 @@ ${wrapStyle(
     );
   };
   const BookmarkPanel = `
-<div id="BookmarksOverlay" class="overlay"></div>
-<div id="BookmarksPanel" class="panel">
-  <button id="CloseBookmarks" class="closeButton" title="${getLocaleString("CLOSE")}">
+<div id='BookmarksOverlay' class='overlay'></div>
+<div id='BookmarksPanel' class='panel'>
+  <button id='CloseBookmarks' class='closeButton' title='${getLocaleString("CLOSE")}'>
     ${IconX}
   </button>
   <h2>${getLocaleString("BOOKMARKS")}</h2>
-  <div id="BookmarksList">
+  <div id='BookmarksList'>
     ${listBookmarks().join("")}
   </div>
 </div>
@@ -5258,7 +5585,7 @@ ${wrapStyle(
     }
   }
 
-  const listOptions = (times, begin) => indexList(times, begin).map((index) => `<option value="${index}">${index}</option>`);
+  const listOptions = (times, begin) => indexList(times, begin).map((index) => `<option value='${index}'>${index}</option>`);
   const app = (manga, begin = 1) => `
 <div id='MangaOnlineViewer'
   class='${useSettings().colorScheme} 
@@ -5309,10 +5636,14 @@ ${wrapStyle(
           title='${getLocaleString("TOGGLE_CONTROLS")}' class='ControlButton tablets'>
           ${IconListNumbers}
         </button>
-        <button id='bookmarks' title='${getLocaleString("BOOKMARKS")}' class='ControlButton tablets'>
+        <button id='bookmarks' title='${getLocaleString(
+  "BOOKMARKS"
+)}' class='ControlButton tablets'>
           ${IconBookmarks}
         </button>
-        <button id='settings' title='${getLocaleString("SETTINGS")}' class='ControlButton tablets phones'>
+        <button id='settings' title='${getLocaleString(
+  "SETTINGS"
+)}' class='ControlButton tablets phones'>
           ${IconSettings}
         </button>
       </span>
@@ -5508,6 +5839,7 @@ ${wrapStyle(
       {
         type: "blob"
       }
+      // logScript, progress
     ).then((content) => {
       logScript("Download Ready");
       const zipName = `${document.querySelector("#MangaTitle")?.textContent?.trim()}.zip`;
@@ -5580,7 +5912,10 @@ ${wrapStyle(
     return new Promise((resolve) => {
       logScript("Fetching page: ", url);
       fetch(url).then(
-        (response) => response.text()
+        (response) => (
+          // When the page is loaded convert it to text
+          response.text()
+        )
       ).then((html) => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, format);
@@ -6177,11 +6512,13 @@ ${wrapStyle(
     zoom();
   }
 
-  function display(manga, begin = 0) {
+  function display(manga, begin = 0, end = void 0) {
     window.stop();
     if (manga.before !== void 0) {
       manga.before();
     }
+    if (end !== void 0)
+      manga.pages = end;
     [document.documentElement, document.head, document.body].forEach((element) => {
       element.getAttributeNames().forEach((attr) => element.removeAttribute(attr));
     });
@@ -6214,25 +6551,53 @@ ${wrapStyle(
   async function lateStart(site, begin = 1) {
     const manga = await site.run();
     logScript("LateStart");
+    let beginPage = begin || 1;
+    let endPage = manga.pages;
     const options = {
       title: getLocaleString("STARTING"),
-      input: "range",
-      inputAttributes: {
-        min: "1",
-        max: manga.pages.toString(),
-        step: "1"
-      },
-      inputValue: begin || 1,
-      text: getLocaleString("CHOOSE_BEGINNING"),
+      html: `
+    ${getLocaleString("CHOOSE_BEGINNING")}
+    <span id='pagesValues'></span>
+    <div id='pagesSlider' style='display: flex; justify-content: center;align-content: center;'></div>
+    `,
       showCancelButton: true,
       cancelButtonColor: "#d33",
       reverseButtons: true,
-      icon: "question"
+      icon: "question",
+      didOpen() {
+        const Slider = new RangeInputSlider(document.getElementById("pagesSlider"), {
+          minPoint: 1,
+          maxPoint: manga.pages,
+          min: beginPage,
+          max: endPage,
+          onValueChangeStop(newValues) {
+            const el = document.getElementById("pagesValues");
+            beginPage = newValues.min;
+            endPage = newValues.max;
+            if (el) {
+              el.innerText = `${newValues.min} - ${newValues.max}`;
+            }
+          },
+          onValueChange(newValues) {
+            const el = document.getElementById("pagesValues");
+            beginPage = newValues.min;
+            endPage = newValues.max;
+            if (el) {
+              el.innerText = `${newValues.min} - ${newValues.max}`;
+            }
+          },
+          serifs: [
+            { position: 0, html: "1" },
+            { position: 100, html: `${manga.pages}` }
+          ]
+        });
+        Slider.init();
+      }
     };
     Swal.fire(options).then((result) => {
       if (result.value) {
-        logScript(`Choice: ${result.value}`);
-        display(manga, result.value);
+        logScript(`Choice: ${beginPage} - ${endPage}`);
+        display(manga, beginPage, endPage);
       } else {
         logScript(result.dismiss);
       }
@@ -6279,6 +6644,8 @@ ${wrapStyle(
     const style = document.createElement("style");
     style.appendChild(document.createTextNode(sweetalertStyle));
     document.body.appendChild(style);
+    const W = typeof unsafeWindow !== "undefined" ? unsafeWindow : window;
+    W.MOV = (startPage, endPage) => display(manga, startPage, endPage);
     switch (site.start ?? useSettings()?.loadMode) {
       case "never":
         createLateStartButton(site, beginning);

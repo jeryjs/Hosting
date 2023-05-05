@@ -93,5 +93,33 @@
         "id": "linked_1650207975284_r",
         "text": "https://jeemain.nic.in/jeemainapp/root/loginpage.aspx?enc=EiPu4N%20RhiF3r1foFct3Eg",
         "url": "https://www.quora.com/What-is-the-procedure-to-change-exam-center-in-JEE-Mains"
+    },
+    {
+        "date": 1676026870558,
+        "id": "linked_1676026870558_r",
+        "text": "https://forum.xda-developers.com/t/lenovo-k8-note-xt1902-3-fix-dead-hard-bricked-phone-downgrade-to-nougat-from-oreo.3791839/\nhttps://www.samsung.com/in/web/store/campus/payment\n",
+        "url": "https://www.samsung.com/in/web/store/campus/payment"
+    },
+    {
+        "id": "note_1676529348201_c",
+        "text": "9486102648 - Jeyashankar\nkarthik laptop - 3916\n\n"
+    },
+    {
+        "date": 1678366100510,
+        "id": "linked_1678366100510_r",
+        "text": "shell:AppsFolder\\***!app\n\n\nSome of the other answers have the right idea, but are vague about which specific values to use or where to find them. Other answers have breaking typos. So here is an explanation of what you truly need, without requiring any additional shortcuts.\n\nThe Windows Store apps are in the Apps Folder, which you can see by entering shell:AppsFolder in the Win+R run window. The location identifier for the app is in the form: shell:AppsFolder\\<PackageFamilyName>!<Name.id>, where <PackageFamilyName> and <Name.id> are placeholders. You'll need to replace those placeholders with the values for your application. For example, the location string for WhatsApp is shell:AppsFolder\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm!WhatsAppDesktop.\n\nTo discover the values for your application, go into PowerShell and look through the output of Get-AppxPackage to find the application you want. You can probably find it using: Get-AppxPackage -Name \"*<AppName>*\", substituting your own <AppName>. (Don't forget the asterisk wildcard.) The following will find WhatsApp, for example:\n\nGet-AppxPackage -Name \"*WhatsApp*\"\nIf you still can't find it, enter the following in PowerShell and hit the spacebar to page through the output:\n\nGet-AppxPackage * | more\nFinally once you've formed the full application location identifier, use it in AutoHotkey like this:\n\nRun \"explorer.exe shell:AppsFolder\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm!WhatsAppDesktop\"\nNote that this uses the AutoHotkey v2 syntax.",
+        "url": "https://stackoverflow.com/questions/35125286/how-to-start-windows-store-apps-in-autohotkey"
+    },
+    {
+        "date": 1681048978714,
+        "id": "linked_1681048978714_r",
+        "text": "i  - https://myanimelist.net/manga/642/Vinland_Saga/pics\nH - https://myanimelist.net/anime/40052/Great_Pretender/pics\nU - https://myanimelist.net/anime/26441/Junketsu_no_Maria/pics",
+        "url": "https://myanimelist.net/anime/40052/Great_Pretender/pics"
+    },
+    {
+        "date": 1681050787210,
+        "id": "linked_1681050787210_r",
+        "text": "Quotes-\n\"Better bend than Break\"  -  Mahoutsukai no Yome ep 5",
+        "url": "https://www.reddit.com/r/MyAnimeList/comments/12fsimu/mal_2023_easy_easter_hunt_solution/"
     }
 ]

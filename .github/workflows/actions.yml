@@ -3,6 +3,7 @@ name: run Scrape_Score-and-Synopsis.py
 on:
   schedule:
     - cron: '0 0 * * 0' # At 00:00 on Every Sunday
+  workflow_dispatch:
 
 jobs:
   build:

@@ -40,21 +40,23 @@ class MALService:
         return response.json()
     
 def generate_template(entry, type):
-    template = f'/* {entry["title"]} */ '
+    template = f'/* {entry.get("title", "N/A")} */ '
     # Replace newline characters with '\a' and escape double quotes.
-    synopsis = entry["synopsis"].replace('\n', '\\a ').replace('"', '\\"')
-    if 'mean' in entry:
-        template += f'.list-table td.data.image > a[href^="/{type}/{entry["id"]}/"]::after ' \
-                    f'{{ content: "{entry["mean"]}"; visibility: visible !important; }} '
-    else:
-        template += f'.list-table td.data.image > a[href^="/{type}/{entry["id"]}/"]::after ' \
-                    f'{{ content: "N/A"; visibility: visible !important; }} '
+    synopsis = entry.get("synopsis", "N/A").replace('\n', '\\a ').replace('"', '\\"')
+    
+    mean = entry.get("mean", "N/A")
+    rank = entry.get("rank", "N/A")
+    popularity = entry.get("popularity", "N/A")
+    alt_title = entry.get("alternative_titles", {}).get("en", "N/A")
+
+    template += f'.list-table td.data.image > a[href^="/{type}/{entry["id"]}/"]::after ' \
+                f'{{ content: "{mean}"; visibility: visible !important; }} '
 
     template += f'.list-table .list-table-data .data.title:hover ' \
                 f'.link[href^="/{type}/{entry["id"]}/"]::before ' \
-                f'{{ content: "Rank : {entry["rank"]}   |   ' \
-                f'Popularity : {entry["popularity"]}   |   ' \
-                f'Alt. Title : {entry["alternative_titles"]["en"]} \\a \\a ' \
+                f'{{ content: "Rank : {rank}   |   ' \
+                f'Popularity : {popularity}   |   ' \
+                f'Alt. Title : {alt_title} \\a \\a ' \
                 f'{synopsis}"; '
 
     template += f'background-image: url({entry["main_picture"]["medium"]}); ' \
@@ -63,14 +65,17 @@ def generate_template(entry, type):
 
     return template
 
-def discord_notify(content):
+def discord_notify(content, error=False):
     discord_id = "1022735992014254183"
     discord_webhook = "https://ptb.discord.com/api/webhooks/1031955469998243962/UO379MCHeXTXwk9s86qeZedKKNOa5aDVMHInqGea_dUEOzfPZf66i00CPbGOA0lOkIxp"
     
+    if error:
+        content = f"<@{discord_id}> {content}\nCheck https://github.com/jeryjs/Hosting/actions/workflows/actions.yml for more details."
+
     payload = {
         'username': 'MAL List Scraper',
         'avatar_url': 'https://i.imgur.com/TCNOflM.jpg',
-        'content': f'<@{discord_id}> {content}',
+        'content': content,
     }
     
     headers = {
@@ -101,7 +106,7 @@ def main():
             entry = entry['node']
             params = "id, title, synopsis, alternative_titles, mean, rank, popularity"
             
-            # print(f'{i}] id:{entry["id"]} {entry["title"]}')
+            print(f'{i}] id:{entry["id"]} {entry["title"]}')
 
             details = mal_service.get_entry_details(entry['id'], params, type)
 
@@ -110,7 +115,7 @@ def main():
         with open(f'{type.capitalize()}-Score-and-Synopsis.css', 'w', encoding='utf-8') as f:
             f.write(template)
         
-        discord_response += f'{type.capitalize()}-Score-and-Synopsis.css was updated.\n'
+        discord_response += f'`{type.capitalize()}-Score-and-Synopsis.css` was updated.\n'
 
     discord_notify(discord_response)
 
@@ -119,5 +124,5 @@ if __name__ == "__main__":
     try: 
         main()
     except Exception as e:
-        discord_notify("MAL List Scraper ran into an error.\nCheck https://github.com/jeryjs/Hosting/actions/workflows/actions.yml for more details.")
+        discord_notify("MAL List Scraper ran into an error.", True)
         e.with_traceback()

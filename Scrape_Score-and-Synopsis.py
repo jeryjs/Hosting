@@ -101,7 +101,7 @@ def main():
             entry = entry['node']
             params = "id, title, synopsis, alternative_titles, mean, rank, popularity"
             
-            print(f'{i}] id:{entry["id"]} {entry["title"]}')
+            # print(f'{i}] id:{entry["id"]} {entry["title"]}')
 
             details = mal_service.get_entry_details(entry['id'], params, type)
 
@@ -119,5 +119,5 @@ if __name__ == "__main__":
     try: 
         main()
     except Exception as e:
-        discord_notify("MAL List Scraper ran into an error.\nCheck https://github.com/jeryjs/Hosting/actions for more details.")
+        discord_notify("MAL List Scraper ran into an error.\nCheck https://github.com/jeryjs/Hosting/actions/workflows/actions.yml for more details.")
         e.with_traceback()

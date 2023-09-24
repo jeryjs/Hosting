@@ -81,7 +81,8 @@ def generate_template(entry, type):
 
         template += f'background-image: url({entry["main_picture"]["medium"]}); ' \
                     f'background-size: cover; ' \
-                    f'background-blend-mode: overlay; }}'
+                    f'background-blend-mode: overlay; ' \
+                    f'background-position: center center; }}'
 
         return template
     except Exception as e:

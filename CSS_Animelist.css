@@ -1286,8 +1286,8 @@ html { scroll-behavior: smooth; }
 /* List Hover Circle */
 .list-table-data:hover {
     background: url(https://i.ibb.co/8jsXnf4/Hover-Circle-Neon-Cyan.gif) no-repeat;
-    background-position: -3px;
-    background-size: 9.7%;
+    background-position: -2px;
+    background-size: 85px;
 }
 
 /* Anime+ Stats */

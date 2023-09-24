@@ -145,8 +145,11 @@ def main():
             f.write(template)
         
         discord_response += f'`{type.capitalize()}-Score-and-Synopsis.css` was updated.\n'
-
-    discord_response += f'Time taken: {time.time() - start_time:.2f} seconds.'
+        
+    elapsed_time = time.time() - start_time
+    minutes = int(elapsed_time / 60)
+    seconds = int(elapsed_time % 60)
+    discord_response += f'Time taken: {minutes} minutes and {seconds} seconds'
 
     discord_notify(discord_response)
 

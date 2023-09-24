@@ -72,9 +72,6 @@ def generate_template(entry, type):
         popularity = entry.get("popularity", "N/A")
         alt_title = entry.get("alternative_titles", {}).get("en", "N/A")
 
-        template += f'.list-table td.data.image > a[href^="/{type}/{entry["id"]}/"]::after ' \
-                    f'{{ content: "{mean}"; visibility: visible !important; }} '
-
         template += f'.list-table .list-table-data .data.title:hover ' \
                     f'.link[href^="/{type}/{entry["id"]}/"]::before ' \
                     f'{{ content: "Rank : {rank}   |   ' \

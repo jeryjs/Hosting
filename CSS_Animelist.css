@@ -111,7 +111,8 @@ td.data.public-score a {
 	padding: 4px 4px 4px 4px !important;
 	background: black;
 	margin: 14px 0 0 23px;
-	border-radius: 40px 40px 100px 100px;
+    	border-radius: 140px 140px 40px 40px;
+	width: 25px;
 	z-index: 10;
 }
 /*------------------------------*\
@@ -1167,9 +1168,9 @@ td.data.mal_score {
     padding: 4px 4px 4px 4px !important;
     background: black;
     margin: 52px 0 0 23px;
-    border-radius: 40px 40px 100px 100px;
+    border-radius: 140px 140px 40px 40px;
+	width: 25px;
   	z-index: 5;
-  	color: var(--text) !important;
 }
 /*------------------------------*\
 |  Anime/Manga-Synopsis    |
@@ -1178,10 +1179,10 @@ td.data.mal_score {
 	background-position: top right;
 	background-size: contain;
 	background-repeat: no-repeat;
-  position: fixed;
-  color: var(--text);
+	position: fixed;
+  	color: var(--text);
 	text-shadow: none !important;
-  right: 0.5%;
+  	right: 0.5%;
 	width: 40%;
 	height: auto;
   top: 0.5%;

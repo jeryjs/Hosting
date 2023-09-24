@@ -103,7 +103,17 @@ body.ownlist.manga .list-table .list-table-data .data.tags {
 a.icon-menu:last-child {
     z-index: -999;
 }
-
+/*------------------------------*\
+|   Global Scores {UserScript}    |
+\*------------------------------*/
+td.data.public-score a {
+	position: absolute;
+	padding: 4px 4px 4px 4px !important;
+	background: black;
+	margin: 14px 0 0 23px;
+	border-radius: 40px 40px 100px 100px;
+	z-index: 10;
+}
 /*------------------------------*\
 |   Quick Sort Button   |
 \*------------------------------*/
@@ -1156,7 +1166,7 @@ td.data.mal_score {
     position: absolute;
     padding: 4px 4px 4px 4px !important;
     background: black;
-    margin: 52px 0 0 48px;
+    margin: 52px 0 0 23px;
     border-radius: 40px 40px 100px 100px;
   	z-index: 5;
   	color: var(--text) !important;

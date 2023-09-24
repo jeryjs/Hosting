@@ -99,15 +99,21 @@ body.ownlist.manga .list-table .list-table-data .data.tags {
     background: #161616 !important
 }
 /*------------------------------*\
+|  List Tools btn (UserScript)   |
+\*------------------------------*/
+a.icon-menu:last-child {
+    z-index: -999;
+}
+/*------------------------------*\
 |   Global Scores {UserScript}    |
 \*------------------------------*/
 td.data.public-score a {
-position: absolute;
-padding: 4px 4px 4px 4px !important;
-background: black;
-margin: 14px 0 0 23px;
-border-radius: 40px 40px 100px 100px;
-z-index: 10;
+	position: absolute;
+	padding: 4px 4px 4px 4px !important;
+	background: black;
+	margin: 14px 0 0 23px;
+	border-radius: 40px 40px 100px 100px;
+	z-index: 10;
 }
 
 /*------------------------------*\
@@ -1084,21 +1090,14 @@ body.ownlist .data.genre textarea { right: -1060px; }
 /*------------------------------*\
 |  Anime/Manga-Score    |
 \*------------------------------*/
-.data.image a:after {
-  z-index: 5;
-  color: var(--text) !important;
-  position: absolute;
-  padding: 4px !important;
-  border-radius: 40px 40px 100px 100px !important;
-  background: black;
-  margin-left: 100px;
-  left: -85px;
-  top: 46px;
-  visibility: hidden;
-  opacity: 1 !important;
-  height: auto !important; 
-  width: auto !important;
-  font: inherit !important;
+td.data.mal_score {
+    position: absolute;
+    padding: 4px 4px 4px 4px !important;
+    background: black;
+    margin: 52px 0 0 23px;
+    border-radius: 40px 40px 100px 100px;
+  	z-index: 5;
+  	color: var(--text) !important;
 }
 /*------------------------------*\
 |  Anime/Manga-Synopsis    |

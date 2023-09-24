@@ -65,13 +65,15 @@ def generate_template(entry, type):
         # Replace newline characters with '\a' and escape double quotes.
         synopsis = entry.get("synopsis", "N/A").replace('\n', '\\a ').replace('"', '\\"')
         
-        mean = float(entry.get("mean", "N/A"))
+        mean = entry.get("mean", "N/A")
+        if mean != "N/A":
+            mean = f"{float(mean):.2f}"
         rank = entry.get("rank", "N/A")
         popularity = entry.get("popularity", "N/A")
         alt_title = entry.get("alternative_titles", {}).get("en", "N/A")
 
         template += f'.list-table td.data.image > a[href^="/{type}/{entry["id"]}/"]::after ' \
-                    f'{{ content: "{mean:.2f}"; visibility: visible !important; }} '
+                    f'{{ content: "{mean}"; visibility: visible !important; }} '
 
         template += f'.list-table .list-table-data .data.title:hover ' \
                     f'.link[href^="/{type}/{entry["id"]}/"]::before ' \

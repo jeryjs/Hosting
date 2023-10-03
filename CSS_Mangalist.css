@@ -60,6 +60,9 @@ td.data.volume {
 body.ownlist.manga .data.score {
     margin-right: 20px;
 }
+.data.mal_score::before {
+    content: "";
+}
 /*------------------------------*\
 |   Tags    |
 \*------------------------------*/

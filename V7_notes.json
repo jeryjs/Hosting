@@ -14,7 +14,7 @@
             {
                 "date": 1645690844566,
                 "id": "linked_1645690844566_r",
-                "text": "A/M Templates:\n\n/* [TITLE] *[DEL]/ .list-table td.data.image > a[href^=\"/[TYPE]/[ID]/\"]::after { content: \"[SCORE]\"; visibility: visible !important; }\n\n.list-table .list-table-data .data.title:hover .link[href^=\"/[TYPE]/[ID]/\"]::before { content:\"Popularity Ranking : [RANK]   |   Alt. Title : [TITLEENG] \\a \\a [DESC]\"; }",
+                "text": "A/M Templates:\n\n/* [TITLE] *[DEL]/\n.list-table td.data.image > a[href^=\"/[TYPE]/[ID]/\"]::after { content: \"[SCORE]\"; visibility: visible !important; }\n.list-table .list-table-data .data.title:hover .link[href^=\"/[TYPE]/[ID]/\"]::before { content:\"Popularity Ranking : [RANK]   |   Alt. Title : [TITLEENG] \\a \\a [DESC]\"; }",
                 "url": "https://github.com/jeryjs/Hosting/blob/main/Anime-Score.css"
             },
             {
@@ -71,12 +71,6 @@
         "text": "Techy\n"
     },
     {
-        "date": 1645893571189,
-        "id": "linked_1645893571189_r",
-        "text": "Term 2 Syllabus\nhttps://byjus.com/cbse-class-12-english-syllabus/\nhttps://byjus.com/cbse/class-12-physics-syllabus/\nhttps://byjus.com/cbse/class-12-chemistry-syllabus/\nhttps://byjus.com/cbse/class-12-maths-syllabus/\nhttps://byjus.com/cbse/class-12-biology-syllabus/",
-        "url": "https://byjus.com/cbse/class-12-physics-syllabus/"
-    },
-    {
         "date": 1646403234800,
         "id": "linked_1646403234800_r",
         "text": "Jee main/NEET application number\n\nJee - 220310906560  (Old: 220310101776)\nNEET - 220410110030",
@@ -89,18 +83,6 @@
         "url": "https://iisr.halerp.com/admin/forms/loadForm/2?loginSuccess=1#"
     },
     {
-        "date": 1650207975284,
-        "id": "linked_1650207975284_r",
-        "text": "https://jeemain.nic.in/jeemainapp/root/loginpage.aspx?enc=EiPu4N%20RhiF3r1foFct3Eg",
-        "url": "https://www.quora.com/What-is-the-procedure-to-change-exam-center-in-JEE-Mains"
-    },
-    {
-        "date": 1676026870558,
-        "id": "linked_1676026870558_r",
-        "text": "https://forum.xda-developers.com/t/lenovo-k8-note-xt1902-3-fix-dead-hard-bricked-phone-downgrade-to-nougat-from-oreo.3791839/\nhttps://www.samsung.com/in/web/store/campus/payment\n",
-        "url": "https://www.samsung.com/in/web/store/campus/payment"
-    },
-    {
         "id": "note_1676529348201_c",
         "text": "9486102648 - Jeyashankar\nkarthik laptop - 3916\n\n"
     },
@@ -111,15 +93,25 @@
         "url": "https://stackoverflow.com/questions/35125286/how-to-start-windows-store-apps-in-autohotkey"
     },
     {
-        "date": 1681048978714,
-        "id": "linked_1681048978714_r",
-        "text": "i  - https://myanimelist.net/manga/642/Vinland_Saga/pics\nH - https://myanimelist.net/anime/40052/Great_Pretender/pics\nU - https://myanimelist.net/anime/26441/Junketsu_no_Maria/pics",
-        "url": "https://myanimelist.net/anime/40052/Great_Pretender/pics"
-    },
-    {
         "date": 1681050787210,
         "id": "linked_1681050787210_r",
-        "text": "Quotes-\n\"Better bend than Break\"  -  Mahoutsukai no Yome ep 5",
+        "text": "Quotes-\n\"Better bend than Break\"  -  Mahoutsukai no Yome ep 5\n\"The reward for good work is more work!\" - A HoYoLab user",
         "url": "https://www.reddit.com/r/MyAnimeList/comments/12fsimu/mal_2023_easy_easter_hunt_solution/"
+    },
+    {
+        "date": 1689997592741,
+        "id": "linked_1689997592741_r",
+        "text": "Warning: the sepolicy.rule file of modules may be stored in the cache partition. DO NOT WIPE THE CACHE PARTITION.",
+        "url": "https://topjohnwu.github.io/Magisk/install.html#samsung-system-as-root"
+    },
+    {
+        "id": "note_1697987486500_c",
+        "text": "https://trigger.macrodroid.com/7b822357-87b6-4143-8b00-e0b51b84fa63/unlock-device"
+    },
+    {
+        "date": 1700340268814,
+        "id": "linked_1700340268814_r",
+        "text": "Igneous Cookie: g0uxhndgellvab16zkw",
+        "url": "https://e-hentai.org/"
     }
 ]

@@ -140,7 +140,7 @@ def main():
             if details is not None:
                 template += generate_template(details, type) + '\n'
 
-            time.sleep(0.5)   # Rate limiting requests to every 500ms
+            time.sleep(1)   # Rate limiting requests to every 500ms
 
         with open(f'{type.capitalize()}-Score-and-Synopsis.css', 'w', encoding='utf-8') as f:
             f.write(template)

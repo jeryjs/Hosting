@@ -57,7 +57,7 @@ class MALService:
                 response.raise_for_status()
         except Exception as e:
             print(f"An error occurred: {e}")
-            self.error_count++
+            self.error_count += 1
             traceback.print_exc()
             return None
     

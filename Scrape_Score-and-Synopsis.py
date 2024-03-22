@@ -7,6 +7,7 @@ class MALService:
         self.clientId = clientId
         self.proxyUrl = 'https://corsproxy.io/?'
         self.apiBaseUrl = 'https://api.myanimelist.net/v2'
+        self.error_count = 0
 
     def get_user_list(self, username, type):
         try:
@@ -56,6 +57,7 @@ class MALService:
                 response.raise_for_status()
         except Exception as e:
             print(f"An error occurred: {e}")
+            self.error_count++
             traceback.print_exc()
             return None
     
@@ -151,6 +153,7 @@ def main():
     minutes = int(elapsed_time / 60)
     seconds = int(elapsed_time % 60)
     discord_response += f'Time taken: {minutes} minutes and {seconds} seconds'
+    discord_response += f'\nErrors Counted: {mal_service.error_count}'
 
     discord_notify(discord_response)
 

@@ -120,6 +120,7 @@ def discord_notify(content, error=False):
 
 def main():
     clientId = os.getenv("MAL_APP_CLIENTID")
+    username = 'jery_js'
     types = ['anime', 'manga']
 
     mal_service = MALService(clientId)

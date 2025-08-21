@@ -1,6 +1,7 @@
 import time
 import traceback
 import requests
+import os
 
 class MALService:
     def __init__(self, clientId):
@@ -94,7 +95,7 @@ def generate_template(entry, type):
 
 def discord_notify(content, error=False):
     discord_id = "1022735992014254183"
-    discord_webhook = "https://ptb.discord.com/api/webhooks/1031955469998243962/UO379MCHeXTXwk9s86qeZedKKNOa5aDVMHInqGea_dUEOzfPZf66i00CPbGOA0lOkIxp"
+    discord_webhook = os.getenv("DISCORD_WEBHOOK")
     
     if error:
         content = f"<@{discord_id}> {content}\nCheck https://github.com/jeryjs/Hosting/actions/workflows/actions.yml for more details."
@@ -118,8 +119,7 @@ def discord_notify(content, error=False):
 
 
 def main():
-    clientId = 'cfdd50f8037e9e8cf489992df497c761'
-    username = 'jery_js'
+    clientId = os.getenv("MAL_APP_CLIENTID")
     types = ['anime', 'manga']
 
     mal_service = MALService(clientId)

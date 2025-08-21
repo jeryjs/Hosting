@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      MAL_APP_CLIENTID: ${{ secrets.MAL_APP_CLIENTID }}
     steps:
 
       - name: checkout repo content

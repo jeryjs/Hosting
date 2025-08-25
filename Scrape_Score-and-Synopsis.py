@@ -59,7 +59,7 @@ class MALService:
             else:
                 response.raise_for_status()
         except Exception as e:
-            print(f"An error occurred: {e}")
+            print(f"[get details] An error occurred: {e}")
             self.error_count += 1
             traceback.print_exc()
             return None
@@ -73,7 +73,7 @@ class MALService:
                     for lbl, val in re.findall(r'<span class="dark_text">(.*?):</span>\s*([^<]+)', html) }
             return data
         except Exception as e:
-            print(f"An error occurred: {e}")
+            print(f"[get info] An error occurred: {e}")
             self.error_count += 1
             traceback.print_exc()
             return None
@@ -162,7 +162,7 @@ def main():
             if details is not None:
                 template += generate_template(details, info, type) + '\n'
 
-            time.sleep(3)   # Rate limiting requests to every 3000ms
+            time.sleep(1)   # Rate limiting requests to every 1000ms
 
         with open(f'{type.capitalize()}-Score-and-Synopsis.css', 'w', encoding='utf-8') as f:
             f.write(template)

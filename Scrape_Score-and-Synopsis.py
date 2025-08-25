@@ -2,6 +2,8 @@ import time
 import traceback
 import requests
 import os
+import re
+from html import unescape
 
 class MALService:
     def __init__(self, clientId):
@@ -61,8 +63,22 @@ class MALService:
             self.error_count += 1
             traceback.print_exc()
             return None
-    
-def generate_template(entry, type):
+
+    def get_entry_info(self, entry_id, type):
+        try:
+            t = 65 if type == 'manga' else 64   # 65 for manga, 64 for anime
+            html = requests.get(f'https://myanimelist.net/includes/ajax.inc.php?t={t}&id={entry_id}').text
+            # find every `<span class="dark_text">Label:</span> value`
+            data = { lbl.lower().strip(':') : unescape(val.strip())
+                    for lbl, val in re.findall(r'<span class="dark_text">(.*?):</span>\s*([^<]+)', html) }
+            return data
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            self.error_count += 1
+            traceback.print_exc()
+            return None
+
+def generate_template(entry, info, type):
     try:
         template = f'/* {entry.get("title", "N/A")} */ '
         # Replace newline characters with '\a' and escape double quotes.
@@ -74,12 +90,14 @@ def generate_template(entry, type):
         rank = entry.get("rank", "N/A")
         popularity = entry.get("popularity", "N/A")
         alt_title = entry.get("alternative_titles", {}).get("en", "N/A")
+        genres = info.get("genres", "N/A")
 
         template += f'.list-table .list-table-data .data.title:hover ' \
                     f'.link[href^="/{type}/{entry["id"]}/"]::before ' \
                     f'{{ content: "Rank : {rank}   |   ' \
                     f'Popularity : {popularity}   |   ' \
-                    f'Alt. Title : {alt_title} \\a \\a ' \
+                    f'Alt. Title : {alt_title} \\a ' \
+                    f'Genres : {genres} \\a \\a ' \
                     f'{synopsis}"; '
 
         template += f'background-image: url({entry["main_picture"]["medium"]}); ' \
@@ -139,9 +157,10 @@ def main():
             print(f'{i+1}] id:{entry["id"]} {entry["title"]}')
 
             details = mal_service.get_entry_details(entry['id'], params, type)
+            info = mal_service.get_entry_info(entry['id'], type)
 
             if details is not None:
-                template += generate_template(details, type) + '\n'
+                template += generate_template(details, info, type) + '\n'
 
             time.sleep(3)   # Rate limiting requests to every 3000ms
 

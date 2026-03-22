@@ -2,7 +2,7 @@ name: run Scrape_Score-and-Synopsis.py
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # At 00:00 on Every Sunday
+    - cron: '0 9 * * 3' # At 09:00 on Every Wednesday
   workflow_dispatch:
 
 jobs:
@@ -11,6 +11,13 @@ jobs:
     env:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       MAL_APP_CLIENTID: ${{ secrets.MAL_APP_CLIENTID }}
+      OXYLABS_PROXY_USER: ${{ secrets.OXYLABS_PROXY_USER }}
+      OXYLABS_PROXY_PASS: ${{ secrets.OXYLABS_PROXY_PASS }}
+      OXYLABS_PROXY_HOST: dc.oxylabs.io
+      OXYLABS_PROXY_PORTS: 8001,8002,8003,8004,8005
+      MAL_REQUEST_INTERVAL_SECONDS: 1
+      MAL_INFO_REFRESH_DAYS: 28
+      MAL_MAX_WORKERS: 5
     steps:
 
       - name: checkout repo content
@@ -34,7 +41,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "[MAL List Scraper] Refreshed data from MAL" --allow-empty)
+          git diff-index --quiet HEAD || (git commit -a -m "[MAL List Scraper] Refreshed data from MAL")
           
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0

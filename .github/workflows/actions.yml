@@ -18,10 +18,10 @@ jobs:
       WEBSHARE_PROXY_USER: ${{ secrets.WEBSHARE_PROXY_USER }}
       WEBSHARE_PROXY_PASS: ${{ secrets.WEBSHARE_PROXY_PASS }}
       WEBSHARE_PROXY_HOST: p.webshare.io
-      WEBSHARE_PROXY_PORTS: 80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80  # 20 ports = 20 workers; This is a auto rotation proxy, so all ports are the same
+      WEBSHARE_PROXY_PORTS: 80,80,80,80,80,80,80,80,80,80  # 10 ports = 10 workers; This is a auto rotation proxy, so all ports are the same
       MAL_REQUEST_INTERVAL_SECONDS: 1
       MAL_INFO_REFRESH_DAYS: 28
-      MAL_MAX_WORKERS: 20
+      MAL_MAX_WORKERS: 10
     steps:
 
       - name: checkout repo content

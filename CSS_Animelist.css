@@ -1005,6 +1005,24 @@ https://myanimelist.net/forum/?topicid=1723114
 /* Fall 2025*/ 
 .data.tags span a[href*="=Fall%202025"]:after { content: "Animes I watched on a weekly basis in Fall 2025" }
 
+/* Winter 2026*/ 
+.data.tags span a[href*="=Winter%202026"]:after { content: "Animes I watched on a weekly basis in Winter 2026" }
+/* Spring 2026*/ 
+.data.tags span a[href*="=Spring%202026"]:after { content: "Animes I watched on a weekly basis in Spring 2026" }
+/* Summer 2026*/ 
+.data.tags span a[href*="=Summer%202026"]:after { content: "Animes I watched on a weekly basis in Summer 2026" }
+/* Fall 2026*/ 
+.data.tags span a[href*="=Fall%202026"]:after { content: "Animes I watched on a weekly basis in Fall 2026" }
+
+/* Winter 2027*/ 
+.data.tags span a[href*="=Winter%202027"]:after { content: "Animes I watched on a weekly basis in Winter 2027" }
+/* Spring 2027*/ 
+.data.tags span a[href*="=Spring%202027"]:after { content: "Animes I watched on a weekly basis in Spring 2027" }
+/* Summer 2027*/ 
+.data.tags span a[href*="=Summer%202027"]:after { content: "Animes I watched on a weekly basis in Summer 2027" }
+/* Fall 2027*/ 
+.data.tags span a[href*="=Fall%202027"]:after { content: "Animes I watched on a weekly basis in Fall 2027" }
+
 /*------------------------E-N-D-*/
 
 /*-------------------------------*\

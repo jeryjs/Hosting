@@ -270,10 +270,10 @@ def process_chunk(service, chunk, type, params, cache_entries, now_ts, info_refr
 
 
 def build_proxy_urls():
-    host = os.getenv('OXYLABS_PROXY_HOST', 'dc.oxylabs.io')
-    ports = [p.strip() for p in os.getenv('OXYLABS_PROXY_PORTS', '').split(',') if p.strip()]
-    user = os.getenv('OXYLABS_PROXY_USER')
-    password = os.getenv('OXYLABS_PROXY_PASS')
+    host = os.getenv('WEBSHARE_PROXY_HOST', 'dc.oxylabs.io')
+    ports = [p.strip() for p in os.getenv('WEBSHARE_PROXY_PORTS', '').split(',') if p.strip()]
+    user = os.getenv('WEBSHARE_PROXY_USER')
+    password = os.getenv('WEBSHARE_PROXY_PASS')
 
     if not ports or not user or not password:
         return []
